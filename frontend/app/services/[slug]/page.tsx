@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -70,37 +71,79 @@ export default async function ServicePage({
   return (
     <main>
       {/* =====================================================
-          HERO
-      ====================================================== */}
-      <Section className="bg-white text-[#172033]">
-        <div className="max-w-4xl">
-          <Link
-            href="/services"
-            className="mb-7 inline-flex text-sm text-[#64748B] transition-colors hover:text-[#8B2346]"
-          >
-            ← Back to Services
-          </Link>
+    HERO
+====================================================== */}
+<Section className="bg-white text-[#172033]">
+  <div
+    className={
+      slug === "web-development" || slug === "ecommerce"
+        ? "grid items-center gap-12 lg:grid-cols-[1fr_0.95fr] lg:gap-16"
+        : ""
+    }
+  >
+    <div className="max-w-4xl">
+      <Link
+        href="/services"
+        className="mb-7 inline-flex text-sm text-[#64748B] transition-colors hover:text-[#8B2346]"
+      >
+        ← Back to Services
+      </Link>
 
-          <p className="mb-5 text-sm font-medium uppercase tracking-[0.2em] text-[#8B2346]">
-            Service
-          </p>
+      <p className="mb-5 text-sm font-medium uppercase tracking-[0.2em] text-[#8B2346]">
+        Service
+      </p>
 
-          <Heading as="h1" className="text-[#172033]">
-            {service.title}
-          </Heading>
+      <Heading as="h1" className="text-[#172033]">
+        {service.title}
+      </Heading>
 
-          <p className="mt-7 max-w-2xl text-base leading-8 text-[#64748B] sm:text-lg">
-            {service.shortDescription}
-          </p>
+      <p className="mt-7 max-w-2xl text-base leading-8 text-[#64748B] sm:text-lg">
+        {service.shortDescription}
+      </p>
 
-          <Link
-            href={`/contact?service=${encodeURIComponent(service.title)}`}
-            className="mt-9 inline-flex rounded-full bg-[#8B2346] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#6F1837]"
-          >
-            Get a Free Consultation
-          </Link>
+      <Link
+        href={`/contact?service=${encodeURIComponent(service.title)}`}
+        className="mt-9 inline-flex rounded-full bg-[#8B2346] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#6F1837]"
+      >
+        Get a Free Consultation
+      </Link>
+    </div>
+
+    {slug === "web-development" && (
+      <div className="relative mx-auto w-full max-w-[620px]">
+        <div className="overflow-hidden rounded-[28px] border border-[#E5E7EB] bg-[#F8F9FB] p-2 shadow-[0_20px_50px_rgba(23,32,51,0.08)]">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-[22px]">
+            <Image
+              src="/images/web-development.jpg"
+              alt="Web Development"
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 620px"
+              className="object-cover"
+            />
+          </div>
         </div>
-      </Section>
+      </div>
+    )}
+
+    {slug === "ecommerce" && (
+      <div className="relative mx-auto w-full max-w-[620px]">
+        <div className="overflow-hidden rounded-[28px] border border-[#E5E7EB] bg-[#F8F9FB] p-2 shadow-[0_20px_50px_rgba(23,32,51,0.08)]">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-[22px]">
+            <Image
+              src="/images/ecommerce.jpg"
+              alt="E-Commerce"
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 620px"
+              className="object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    )}
+  </div>
+</Section>
 
       {/* =====================================================
           PROBLEM / BUSINESS NEED
