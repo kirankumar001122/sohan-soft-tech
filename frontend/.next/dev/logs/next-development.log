@@ -1,6 +1,0 @@
-{"timestamp":"00:00:14.650","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:00:25.485","source":"Server","level":"WARN","message":"⚠️  Node.js 20 and below are deprecated and will no longer be supported in future versions of @supabase/supabase-js. Please upgrade to Node.js 22 or later. For more information, visit: https://github.com/orgs/supabase/discussions/45715"}
-{"timestamp":"00:00:32.461","source":"Server","level":"LOG","message":"○ Compiling / ..."}
-{"timestamp":"00:00:43.722","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:00:45.358","source":"Browser","level":"WARN","message":"Image with src \"/sohan-logo.png\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes"}
-{"timestamp":"00:00:45.415","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mImage with src \\\"/sohan-logo.png\\\" has \\\"fill\\\" but is missing \\\"sizes\\\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes\\u001b[39m\""}
