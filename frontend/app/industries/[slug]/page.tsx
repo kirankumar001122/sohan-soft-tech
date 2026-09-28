@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -54,6 +55,17 @@ export function generateStaticParams() {
   }));
 }
 
+const industryImages: Record<string, string> = {
+  education: "/images/education_ind.jpg",
+  healthcare: "/images/healthcare_ind.jpg",
+  "retail-ecommerce": "/images/retaail_ind.jpg",
+  "food-hospitality": "/images/hospitality_ind.jpg",
+  "professional-services": "/images/business_ind.jpg",
+  manufacturing: "/images/manufacturing_ind.jpg",
+  smb: "/images/SMB_ind.png",
+  "corporate-offices": "/images/corporate_ind.jpg",
+};
+
 export default async function IndustryPage({
   params,
 }: IndustryPageProps) {
@@ -70,41 +82,79 @@ export default async function IndustryPage({
       {/* Hero */}
       <section className="bg-white text-[#172033]">
         <div className="mx-auto max-w-7xl px-5 py-24 sm:px-6 sm:py-28 lg:px-8 lg:py-32">
-          <div className="max-w-4xl">
-            <Link
-              href="/industries"
-              className="inline-flex items-center text-sm text-[#64748B] transition-colors hover:text-[#8B2346]"
-            >
-              ← Back to Industries
-            </Link>
-
-            <p className="mt-10 text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
-              Industry
-            </p>
-
-            <h1 className="mt-5 text-4xl font-semibold tracking-tight text-[#172033] sm:text-5xl lg:text-7xl">
-              {industry.title}
-            </h1>
-
-            <p className="mt-7 max-w-3xl text-lg leading-8 text-[#64748B] sm:text-xl">
-              {industry.shortDescription}
-            </p>
-
-            <div className="mt-9 flex flex-wrap gap-4">
+          <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+            <div className="max-w-4xl">
               <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-[#8B2346] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#6F1837]"
+                href="/industries"
+                className="inline-flex items-center text-sm text-[#64748B] transition-colors hover:text-[#8B2346]"
               >
-                Get a Free Consultation
+                ← Back to Industries
               </Link>
 
-              <Link
-                href="#challenges"
-                className="inline-flex items-center justify-center rounded-full border border-[#8B2346] bg-white px-6 py-3 text-sm font-medium text-[#8B2346] transition-colors hover:bg-[#8B2346] hover:text-white"
-              >
-                Explore Industry
-              </Link>
+              <p className="mt-10 text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
+                Industry
+              </p>
+
+              <h1 className="mt-5 text-4xl font-semibold tracking-tight text-[#172033] sm:text-5xl lg:text-6xl">
+                {industry.title}
+              </h1>
+
+              <p className="mt-7 max-w-3xl text-lg leading-8 text-[#64748B] sm:text-xl">
+                {industry.shortDescription}
+              </p>
+
+              <p className="mt-5 max-w-3xl text-base leading-7 text-[#64748B]">
+                We bring together digital solutions, software, automation and
+                technology services around the practical requirements of
+                organizations operating in this industry.
+              </p>
+
+              <div className="mt-8 grid max-w-4xl gap-4 border-y border-[#E5E7EB] py-6 sm:grid-cols-3">
+                {industry.solutions.slice(0, 3).map((solution, index) => (
+                  <div key={solution.slug}>
+                    <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[#8B2346]">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <p className="mt-2 text-sm font-semibold leading-5 text-[#172033]">
+                      {solution.title}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-9 flex flex-wrap gap-4">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center rounded-full bg-[#8B2346] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#6F1837]"
+                >
+                  Get a Free Consultation
+                </Link>
+
+                <Link
+                  href="#challenges"
+                  className="inline-flex items-center justify-center rounded-full border border-[#8B2346] bg-white px-6 py-3 text-sm font-medium text-[#8B2346] transition-colors hover:bg-[#8B2346] hover:text-white"
+                >
+                  Explore Industry
+                </Link>
+              </div>
             </div>
+
+            {industryImages[slug] && (
+              <div className="relative mx-auto w-full max-w-[560px] lg:ml-auto">
+                <div className="overflow-hidden rounded-[24px] border border-[#E5E7EB] bg-white p-2 shadow-[0_20px_50px_rgba(23,32,51,0.08)]">
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-[18px] bg-[#F8F9FB]">
+                    <Image
+                      src={industryImages[slug]}
+                      alt={`${industry.title} technology solutions`}
+                      fill
+                      priority
+                      sizes="(max-width: 1024px) 100vw, 560px"
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -128,9 +178,37 @@ export default async function IndustryPage({
             </p>
 
             <p className="mt-5 text-base leading-7 text-[#64748B]">
-              Explore the challenges, solution areas, services, products and
-              automation opportunities relevant to this industry.
+              Every organization has a different operating environment,
+              technology stack and growth plan. Our approach is to understand
+              those requirements first and then connect the appropriate digital
+              capabilities around them.
             </p>
+
+            <p className="mt-5 text-base leading-7 text-[#64748B]">
+              This industry page brings together the key challenges, solution
+              areas, relevant services, products, automation opportunities and
+              technology areas that can form part of a broader implementation.
+            </p>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+              {[
+                { label: "Solutions", value: industry.solutions.length },
+                { label: "Services", value: getServiceLinks(industry.slug).length },
+                { label: "Automation Areas", value: industry.automationOpportunities.length },
+              ].map((item) => (
+                <div
+                  key={item.label}
+                  className="rounded-[14px] border border-[#E5E7EB] bg-[#F8F9FB] p-5"
+                >
+                  <p className="text-2xl font-semibold text-[#172033]">
+                    {item.value}
+                  </p>
+                  <p className="mt-1 text-xs font-medium uppercase tracking-[0.12em] text-[#8B2346]">
+                    {item.label}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </Section>
@@ -152,8 +230,9 @@ export default async function IndustryPage({
 
             <p className="mt-5 text-lg leading-8 text-[#64748B]">
               Organizations in this industry can have different operational
-              needs. The following areas represent the requirements covered by
-              our current solution architecture.
+              needs. The following areas represent common requirements that can
+              be addressed through the right combination of software, digital
+              processes, automation, infrastructure and support.
             </p>
           </div>
 
@@ -189,7 +268,9 @@ export default async function IndustryPage({
 
           <p className="mt-5 text-lg leading-8 text-[#64748B]">
             Explore technology solution areas that can be considered based on
-            the organization's requirements.
+            the organization's requirements. These areas can be combined into
+            a connected technology approach rather than treated as isolated
+            services.
           </p>
         </div>
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -59,6 +60,40 @@ export function generateStaticParams() {
   ];
 }
 
+// =====================================================
+// PRODUCT IMAGES
+// =====================================================
+// Keep these in the SAME ORDER as products in:
+// frontend/data/products.ts
+//
+// 1  -> billing_pr.jpg
+// 2  -> pos_pr.jpg
+// 3  -> BMS_pr.jpg
+// 4  -> WMS_pr.jpeg
+// 5  -> erp_pr.jpg
+// 6  -> lms_pr.jpg
+// 7  -> attendence_pr.jpg
+// 8  -> whatsapp_pr.jpg
+// 9  -> dlt_pr.jpg
+// 10 -> custom_pr.jpg
+//
+// All images should be inside:
+// frontend/public/images/
+// =====================================================
+
+const productImageFiles = [
+  "/images/business_ind.jpg",
+  "/images/pos_pr.jpg",
+  "/images/BMS_pr.jpg",
+  "/images/WMS_pr.jpeg",
+  "/images/erp_pr.jpg",
+  "/images/learning.jpg",
+  "/images/attendence_pr.jpg",
+  "/images/whatsapp_pr.jpg",
+  "/images/dlt.jpg",
+  "/images/custom_pr.jpg",
+];
+
 export default async function ProductPage({
   params,
 }: ProductPageProps) {
@@ -70,46 +105,124 @@ export default async function ProductPage({
     notFound();
   }
 
+  const productIndex = products.findIndex(
+    (item) => item.slug === product.slug
+  );
+
+  const productImage =
+    productIndex >= 0 ? productImageFiles[productIndex] : undefined;
+
   return (
     <main>
-      {/* Hero */}
+      {/* =====================================================
+          HERO
+      ===================================================== */}
       <section className="bg-white py-24 text-[#172033] sm:py-28 lg:py-32">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
-          <div className="max-w-4xl">
-            <Link
-              href="/products"
-              className="mb-6 inline-flex items-center gap-2 text-sm text-[#64748B] transition-colors hover:text-[#8B2346]"
-            >
-              ← All Products
-            </Link>
+          <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
 
-            <p className="mb-5 text-sm font-medium uppercase tracking-[0.2em] text-[#8B2346]">
-              Product
-            </p>
-
-            <Heading as="h1" className="text-[#172033]">
-              {product.title}
-            </Heading>
-
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-[#64748B] sm:text-xl">
-              {product.shortDescription}
-            </p>
-
-            <div className="mt-8">
+            {/* LEFT SIDE */}
+            <div className="max-w-4xl">
               <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-[#8B2346] px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[#6F1837]"
+                href="/products"
+                className="mb-6 inline-flex items-center gap-2 text-sm text-[#64748B] transition-colors hover:text-[#8B2346]"
               >
-                Request a Consultation
+                ← All Products
               </Link>
+
+              <p className="mb-5 text-sm font-medium uppercase tracking-[0.2em] text-[#8B2346]">
+                Product
+              </p>
+
+              <Heading as="h1" className="text-[#172033]">
+                {product.title}
+              </Heading>
+
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-[#64748B] sm:text-xl">
+                {product.shortDescription}
+              </p>
+
+              <p className="mt-5 max-w-3xl text-base leading-7 text-[#64748B]">
+                Practical technology designed around business workflows,
+                operational requirements and the needs of the teams using it.
+              </p>
+
+              <div className="mt-8 grid max-w-2xl gap-4 border-y border-[#E5E7EB] py-6 sm:grid-cols-3">
+
+                <div>
+                  <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[#8B2346]">
+                    01
+                  </span>
+
+                  <p className="mt-2 text-sm font-semibold text-[#172033]">
+                    Business focused
+                  </p>
+                </div>
+
+                <div>
+                  <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[#8B2346]">
+                    02
+                  </span>
+
+                  <p className="mt-2 text-sm font-semibold text-[#172033]">
+                    Structured workflows
+                  </p>
+                </div>
+
+                <div>
+                  <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[#8B2346]">
+                    03
+                  </span>
+
+                  <p className="mt-2 text-sm font-semibold text-[#172033]">
+                    Scalable technology
+                  </p>
+                </div>
+
+              </div>
+
+              <div className="mt-8">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center rounded-full bg-[#8B2346] px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[#6F1837]"
+                >
+                  Request a Consultation
+                </Link>
+              </div>
             </div>
+
+            {/* RIGHT SIDE IMAGE */}
+            {productImage && (
+              <div className="relative mx-auto w-full max-w-[560px] lg:ml-auto">
+                <div className="overflow-hidden rounded-[24px] border border-[#E5E7EB] bg-white p-2 shadow-[0_20px_50px_rgba(23,32,51,0.08)]">
+
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-[18px] bg-[#F8F9FB]">
+
+                    <Image
+                      src={productImage}
+                      alt={`${product.title} product image`}
+                      fill
+                      priority
+                      sizes="(max-width: 1024px) 100vw, 560px"
+                      className="object-cover"
+                    />
+
+                  </div>
+
+                </div>
+              </div>
+            )}
+
           </div>
         </div>
       </section>
 
-      {/* Problem + Solution */}
+      {/* =====================================================
+          PROBLEM + SOLUTION
+      ===================================================== */}
       <Section>
         <div className="grid gap-12 lg:grid-cols-2">
+
           <div>
             <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
               The Business Need
@@ -137,12 +250,16 @@ export default async function ProductPage({
               {product.solution}
             </p>
           </div>
+
         </div>
       </Section>
 
-      {/* Features */}
+      {/* =====================================================
+          FEATURES
+      ===================================================== */}
       <Section className="bg-[#F8F9FB]">
         <div className="mb-12 max-w-2xl">
+
           <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
             Capabilities
           </p>
@@ -155,9 +272,11 @@ export default async function ProductPage({
             Core capabilities can be structured around the operational
             requirements of the product.
           </p>
+
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+
           {product.features.map((feature, index) => (
             <div
               key={feature}
@@ -172,12 +291,16 @@ export default async function ProductPage({
               </h3>
             </div>
           ))}
+
         </div>
       </Section>
 
-      {/* Workflow */}
+      {/* =====================================================
+          WORKFLOW
+      ===================================================== */}
       <Section>
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+
           <div>
             <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
               Workflow
@@ -194,6 +317,7 @@ export default async function ProductPage({
           </div>
 
           <div className="space-y-4">
+
             {product.workflow.map((step, index) => (
               <div
                 key={step}
@@ -204,17 +328,25 @@ export default async function ProductPage({
                 </span>
 
                 <div>
-                  <h3 className="font-semibold text-[#172033]">{step}</h3>
+                  <h3 className="font-semibold text-[#172033]">
+                    {step}
+                  </h3>
                 </div>
+
               </div>
             ))}
+
           </div>
         </div>
       </Section>
 
-      {/* Benefits */}
+      {/* =====================================================
+          BENEFITS
+      ===================================================== */}
       <Section className="bg-white">
+
         <div className="mb-12 max-w-2xl">
+
           <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
             Business Value
           </p>
@@ -222,9 +354,11 @@ export default async function ProductPage({
           <Heading as="h2" className="mt-4 text-[#172033]">
             Designed around practical outcomes.
           </Heading>
+
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+
           {product.benefits.map((benefit, index) => (
             <div
               key={benefit}
@@ -239,12 +373,17 @@ export default async function ProductPage({
               </p>
             </div>
           ))}
+
         </div>
       </Section>
 
-      {/* Industries */}
+      {/* =====================================================
+          INDUSTRIES
+      ===================================================== */}
       <Section>
+
         <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
+
           <div>
             <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
               Industries
@@ -256,6 +395,7 @@ export default async function ProductPage({
           </div>
 
           <div className="grid gap-3 sm:grid-cols-2">
+
             {product.industries.map((industry) => (
               <div
                 key={industry}
@@ -264,14 +404,20 @@ export default async function ProductPage({
                 {industry}
               </div>
             ))}
+
           </div>
         </div>
       </Section>
 
-      {/* Integrations + Security */}
+      {/* =====================================================
+          INTEGRATIONS + SECURITY
+      ===================================================== */}
       <Section className="bg-[#F8F9FB]">
+
         <div className="grid gap-6 lg:grid-cols-2">
+
           <div className="rounded-[20px] border border-[#E5E7EB] bg-white p-8 sm:p-10">
+
             <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
               Integrations
             </p>
@@ -281,6 +427,7 @@ export default async function ProductPage({
             </h2>
 
             <div className="mt-8 space-y-3">
+
               {product.integrations.map((integration) => (
                 <div
                   key={integration}
@@ -289,10 +436,12 @@ export default async function ProductPage({
                   {integration}
                 </div>
               ))}
+
             </div>
           </div>
 
           <div className="rounded-[20px] border border-[#E5E7EB] bg-white p-8 sm:p-10">
+
             <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
               Security
             </p>
@@ -302,6 +451,7 @@ export default async function ProductPage({
             </h2>
 
             <div className="mt-8 space-y-3">
+
               {product.security.map((item) => (
                 <div
                   key={item}
@@ -310,14 +460,20 @@ export default async function ProductPage({
                   {item}
                 </div>
               ))}
+
             </div>
           </div>
+
         </div>
       </Section>
 
-      {/* Product Demo CTA */}
+      {/* =====================================================
+          PRODUCT CTA
+      ===================================================== */}
       <Section>
+
         <div className="rounded-[20px] bg-[#F8EEF2] px-6 py-12 text-center sm:px-10 lg:px-16 lg:py-16">
+
           <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
             Explore Further
           </p>
@@ -332,6 +488,7 @@ export default async function ProductPage({
           </p>
 
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+
             <Link
               href="/contact"
               className="inline-flex items-center justify-center rounded-full bg-[#8B2346] px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[#6F1837]"
@@ -345,14 +502,20 @@ export default async function ProductPage({
             >
               View All Products
             </Link>
+
           </div>
         </div>
       </Section>
 
-      {/* FAQ */}
+      {/* =====================================================
+          FAQ
+      ===================================================== */}
       <Section className="bg-[#F8F9FB]">
+
         <div className="mx-auto max-w-4xl">
+
           <div className="mb-12">
+
             <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
               FAQ
             </p>
@@ -360,30 +523,39 @@ export default async function ProductPage({
             <Heading as="h2" className="mt-4">
               Frequently asked questions
             </Heading>
+
           </div>
 
           <div className="space-y-4">
+
             {product.faqs.map((faq) => (
               <details
                 key={faq.question}
                 className="group rounded-[14px] border border-[#E5E7EB] bg-white"
               >
                 <summary className="cursor-pointer list-none px-6 py-5 font-semibold text-[#172033]">
+
                   <div className="flex items-center justify-between gap-5">
+
                     <span>{faq.question}</span>
 
                     <span className="text-xl text-[#8B2346] transition-transform group-open:rotate-45">
                       +
                     </span>
+
                   </div>
+
                 </summary>
 
                 <div className="border-t border-[#E5E7EB] px-6 py-5 leading-7 text-[#64748B]">
                   {faq.answer}
                 </div>
+
               </details>
             ))}
+
           </div>
+
         </div>
       </Section>
     </main>

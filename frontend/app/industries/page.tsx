@@ -294,6 +294,164 @@ export default function IndustriesPage() {
         </div>
       </section>
 
+
+      {/* Business Priorities */}
+      <section className="bg-[#F8F9FB] py-16 sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#8B2346]">
+              Business priorities
+            </p>
+
+            <Heading as="h2" className="mt-4 text-[#172033]">
+              Technology focused on practical business outcomes.
+            </Heading>
+
+            <p className="mt-5 text-lg leading-8 text-[#64748B]">
+              Technology should solve real operational problems. Our approach
+              focuses on connecting the right digital capabilities with the
+              priorities of each organization.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                title: "Improve Operations",
+                description:
+                  "Digitize processes, organize information and connect business workflows to make day-to-day operations easier to manage.",
+              },
+              {
+                title: "Connect Customers",
+                description:
+                  "Create better customer communication through websites, WhatsApp, SMS, email and other digital channels.",
+              },
+              {
+                title: "Reduce Repetitive Work",
+                description:
+                  "Identify repetitive tasks and explore automation opportunities that can improve efficiency and consistency.",
+              },
+              {
+                title: "Manage Business Data",
+                description:
+                  "Bring business information together through applications, databases, dashboards and connected systems.",
+              },
+              {
+                title: "Modernize Technology",
+                description:
+                  "Improve existing technology environments through modern applications, cloud platforms, integrations and digital systems.",
+              },
+              {
+                title: "Support Business Growth",
+                description:
+                  "Build technology foundations that can evolve as the organization, customers and operational requirements grow.",
+              },
+            ].map((item, index) => (
+              <div
+                key={item.title}
+                className="rounded-[20px] border border-[#E5E7EB] bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#8B2346] hover:shadow-[0_15px_40px_rgba(23,32,51,0.07)]"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-semibold text-[#8B2346]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#F8EEF2] text-[#8B2346]">
+                    →
+                  </span>
+                </div>
+
+                <h3 className="mt-7 text-xl font-semibold tracking-tight text-[#172033]">
+                  {item.title}
+                </h3>
+
+                <p className="mt-4 text-sm leading-7 text-[#64748B]">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Industry Technology Model */}
+      <section className="bg-white py-16 sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-20">
+            <div>
+              <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#8B2346]">
+                Industry technology model
+              </p>
+
+              <Heading as="h2" className="mt-4 text-[#172033]">
+                Start with the requirement. Build the technology around it.
+              </Heading>
+
+              <p className="mt-6 text-lg leading-8 text-[#64748B]">
+                We do not treat every organization the same. The technology
+                approach can be shaped around the organization's workflows,
+                customers, teams, existing systems and future requirements.
+              </p>
+
+              <p className="mt-5 text-base leading-7 text-[#64748B]">
+                This allows different technology capabilities to work together
+                instead of operating as disconnected systems.
+              </p>
+            </div>
+
+            <div className="rounded-[24px] border border-[#E5E7EB] bg-[#F8F9FB] p-6 sm:p-8">
+              <div className="space-y-6">
+                {[
+                  {
+                    number: "01",
+                    title: "Industry requirement",
+                    description:
+                      "Understand the organization's workflows, users, challenges and objectives.",
+                  },
+                  {
+                    number: "02",
+                    title: "Technology opportunities",
+                    description:
+                      "Identify suitable software, digital, automation, communication and IT capabilities.",
+                  },
+                  {
+                    number: "03",
+                    title: "Connected solution",
+                    description:
+                      "Bring the relevant technologies together into a practical solution structure.",
+                  },
+                  {
+                    number: "04",
+                    title: "Continuous improvement",
+                    description:
+                      "Adapt the technology as business requirements and operational needs evolve.",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.number}
+                    className="flex gap-5 border-b border-[#E5E7EB] pb-6 last:border-0 last:pb-0"
+                  >
+                    <span className="shrink-0 text-sm font-semibold text-[#8B2346]">
+                      {item.number}
+                    </span>
+
+                    <div>
+                      <h3 className="text-base font-semibold text-[#172033]">
+                        {item.title}
+                      </h3>
+
+                      <p className="mt-2 text-sm leading-6 text-[#64748B]">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-[#F8EEF2]">
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-20 lg:px-8">

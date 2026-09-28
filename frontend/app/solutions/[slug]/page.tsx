@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -15,6 +16,143 @@ interface SolutionPageProps {
     slug: string;
   }>;
 }
+
+/* ---------------------------------------------------------
+ * IMAGE MAPPING
+ * --------------------------------------------------------- */
+
+function getSolutionImage(slug: string) {
+  const imageMap: Record<string, string> = {
+    "business-solutions": "/images/business_solution.jpg",
+    "digital-transformation": "/images/digital_transformation.jpg",
+    automation: "/images/automation_solution.jpg",
+
+    "education-solutions": "/images/education_solution.jpg",
+    "learning-management": "/images/learning_solution.jpg",
+
+    "whatsapp-business": "/images/whatsapp_solution.jpg",
+
+    "customer-communication": "/images/digital_solution.jpg",
+    "digital-communication": "/images/digital_solution.jpg",
+  };
+
+  return imageMap[slug] ?? "/images/business_solution.jpg";
+}
+
+/* ---------------------------------------------------------
+ * CATEGORY IMAGE MAPPING
+ * --------------------------------------------------------- */
+
+function getCategoryImage(slug: string) {
+  const imageMap: Record<string, string> = {
+    business: "/images/business_solution.jpg",
+    "digital-transformation": "/images/digital_transformation.jpg",
+    automation: "/images/automation_solution.jpg",
+    education: "/images/education_solution.jpg",
+    communication: "/images/whatsapp_solution.jpg",
+    "office-technology": "/images/business_solution.jpg",
+  };
+
+  return imageMap[slug] ?? "/images/business_solution.jpg";
+}
+
+/* ---------------------------------------------------------
+ * PROFESSIONAL SOLUTION CONTENT
+ * --------------------------------------------------------- */
+
+const solutionDetails: Record<
+  string,
+  { overview: string; capabilities: string[]; value: string }
+> = {
+  "business-solutions": {
+    overview:
+      "Connected technology solutions that bring business processes, software and digital operations together around the way an organization works.",
+    capabilities: [
+      "Business process digitization",
+      "Custom business software",
+      "Workflow and system integration",
+      "Operational dashboards and reporting",
+    ],
+    value:
+      "Improve operational visibility, reduce manual work and give teams technology that supports everyday business processes.",
+  },
+  "digital-transformation": {
+    overview:
+      "Modernize business processes and customer experiences by connecting websites, applications, software, cloud, automation and AI into a practical digital environment.",
+    capabilities: [
+      "Process modernization",
+      "Web and application transformation",
+      "Cloud and system integration",
+      "AI and workflow automation",
+    ],
+    value:
+      "Create a more connected digital environment while improving processes, accessibility and operational efficiency.",
+  },
+  automation: {
+    overview:
+      "Automation solutions designed to reduce repetitive work, connect workflows and improve how information moves between people, applications and business systems.",
+    capabilities: [
+      "Workflow automation",
+      "WhatsApp and communication automation",
+      "Lead and form automation",
+      "Data synchronization and notifications",
+    ],
+    value:
+      "Reduce repetitive tasks, improve response times and allow teams to focus on higher-value activities.",
+  },
+  "education-solutions": {
+    overview:
+      "Technology solutions designed around the operational, academic and communication requirements of schools, colleges, PU colleges, coaching institutes and other education organizations.",
+    capabilities: [
+      "Education ERP systems",
+      "Student and staff management",
+      "Attendance and fee workflows",
+      "Parent communication and notifications",
+    ],
+    value:
+      "Connect academic and administrative workflows while making communication between institutions, staff, students and parents easier.",
+  },
+  "learning-management": {
+    overview:
+      "Digital learning solutions that help organizations manage courses, learning content, students, training workflows and online learning activities.",
+    capabilities: [
+      "Learning management systems",
+      "Course and content management",
+      "Student learning workflows",
+      "Online training and communication",
+    ],
+    value:
+      "Provide a structured digital environment for delivering, managing and tracking learning experiences.",
+  },
+  "whatsapp-business": {
+    overview:
+      "WhatsApp-based business communication solutions for customer conversations, notifications, lead management and automated business workflows.",
+    capabilities: [
+      "WhatsApp business automation",
+      "Customer notifications",
+      "Lead collection and follow-up",
+      "Automated communication workflows",
+    ],
+    value:
+      "Help businesses communicate with customers faster while reducing repetitive communication tasks.",
+  },
+  "customer-communication": {
+    overview:
+      "Connected digital communication solutions that help businesses manage customer interactions across WhatsApp, SMS, email and other digital channels.",
+    capabilities: [
+      "WhatsApp communication",
+      "SMS and notification workflows",
+      "Email automation",
+      "Lead and customer communication",
+    ],
+    value:
+      "Create consistent communication workflows that help businesses stay connected with customers throughout their journey.",
+  },
+};
+
+/* ---------------------------------------------------------
+ * METADATA
+ * --------------------------------------------------------- */
 
 export async function generateMetadata({
   params,
@@ -72,6 +210,10 @@ export async function generateMetadata({
   };
 }
 
+/* ---------------------------------------------------------
+ * STATIC PARAMS
+ * --------------------------------------------------------- */
+
 export function generateStaticParams() {
   const categoryParams = solutionCategories.map((category) => ({
     slug: category.slug,
@@ -96,65 +238,98 @@ export function generateStaticParams() {
   ];
 }
 
+/* ---------------------------------------------------------
+ * PAGE
+ * --------------------------------------------------------- */
+
 export default async function SolutionPage({
   params,
 }: SolutionPageProps) {
   const { slug } = await params;
 
-  /*
-   * ---------------------------------------------------------
+  /* ---------------------------------------------------------
    * CATEGORY PAGE
-   * ---------------------------------------------------------
-   */
+   * --------------------------------------------------------- */
 
   const solutionCategory = getSolutionCategoryBySlug(slug);
 
   if (solutionCategory) {
+    const categoryImage = getCategoryImage(solutionCategory.slug);
+
     return (
       <main>
-        {/* Hero */}
+        {/* =====================================================
+            CATEGORY HERO
+        ===================================================== */}
+
         <section className="bg-white text-[#172033]">
-          <div className="mx-auto max-w-7xl px-5 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
-            <div className="max-w-4xl">
-              <Link
-                href="/solutions"
-                className="inline-flex items-center text-sm text-[#64748B] transition-colors hover:text-[#8B2346]"
-              >
-                ← Back to Solutions
-              </Link>
+          <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+            <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
+              {/* LEFT CONTENT */}
 
-              <p className="mt-10 text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
-                Solution
-              </p>
-
-              <h1 className="mt-5 text-4xl font-semibold tracking-tight text-[#172033] sm:text-5xl lg:text-7xl">
-                {solutionCategory.title}
-              </h1>
-
-              <p className="mt-7 max-w-3xl text-lg leading-8 text-[#64748B] sm:text-xl">
-                {solutionCategory.description}
-              </p>
-
-              <div className="mt-9 flex flex-wrap gap-4">
+              <div className="lg:col-span-7">
                 <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center rounded-full bg-[#8B2346] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#6F1837]"
+                  href="/solutions"
+                  className="inline-flex items-center text-sm text-[#64748B] transition-colors hover:text-[#8B2346]"
                 >
-                  Get a Free Consultation
+                  ← Back to Solutions
                 </Link>
 
-                <Link
-                  href="#capabilities"
-                  className="inline-flex items-center justify-center rounded-full border border-[#8B2346] bg-white px-6 py-3 text-sm font-medium text-[#8B2346] transition-colors hover:bg-[#8B2346] hover:text-white"
-                >
-                  Explore Capabilities
-                </Link>
+                <p className="mt-10 text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
+                  Solution
+                </p>
+
+                <h1 className="mt-5 max-w-3xl text-4xl font-semibold tracking-tight text-[#172033] sm:text-5xl lg:text-6xl xl:text-7xl">
+                  {solutionCategory.title}
+                </h1>
+
+                <p className="mt-7 max-w-2xl text-lg leading-8 text-[#64748B] sm:text-xl">
+                  {solutionCategory.description}
+                </p>
+
+                <div className="mt-9 flex flex-wrap gap-4">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center rounded-full bg-[#8B2346] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#6F1837]"
+                  >
+                    Get a Free Consultation
+                  </Link>
+
+                  <Link
+                    href="#capabilities"
+                    className="inline-flex items-center justify-center rounded-full border border-[#8B2346] bg-white px-6 py-3 text-sm font-medium text-[#8B2346] transition-colors hover:bg-[#8B2346] hover:text-white"
+                  >
+                    Explore Capabilities
+                  </Link>
+                </div>
+              </div>
+
+              {/* RIGHT IMAGE */}
+
+              <div className="lg:col-span-5">
+                <div className="relative mx-auto w-full max-w-[560px]">
+                  <div className="overflow-hidden rounded-[28px] border border-[#E5E7EB] bg-[#F8F9FB] p-2 shadow-[0_20px_50px_rgba(23,32,51,0.08)]">
+                    <div className="relative aspect-[4/3] overflow-hidden rounded-[22px] bg-[#F8F9FB]">
+                      <Image
+                        src={categoryImage}
+                        alt={`${solutionCategory.title} - Sohan Soft Tech`}
+                        fill
+                        priority
+                        sizes="(max-width: 1024px) 100vw, 42vw"
+                        className="object-cover transition-transform duration-700 hover:scale-[1.03]"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Introduction */}
+        {/* =====================================================
+            INTRODUCTION
+        ===================================================== */}
+
         <Section>
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
             <div>
@@ -180,7 +355,10 @@ export default async function SolutionPage({
           </div>
         </Section>
 
-        {/* Capabilities */}
+        {/* =====================================================
+            CAPABILITIES
+        ===================================================== */}
+
         <section
           id="capabilities"
           className="bg-[#F8F9FB] py-16 sm:py-20 lg:py-24"
@@ -215,60 +393,136 @@ export default async function SolutionPage({
           </div>
         </section>
 
-        {/* Solution Areas */}
+        {/* =====================================================
+            SOLUTION AREAS
+        ===================================================== */}
+
         <Section>
-          <div className="max-w-3xl">
+          <div className="max-w-4xl">
             <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#8B2346]">
               Solution Areas
             </p>
 
             <Heading as="h2" className="mt-4 text-[#172033]">
-              Explore the possibilities.
+              Technology solutions built around real business requirements.
             </Heading>
 
-            <p className="mt-5 text-lg leading-8 text-[#64748B]">
-              Each solution can be structured around the organization's
-              requirements, workflows and technology environment.
+            <p className="mt-5 max-w-3xl text-lg leading-8 text-[#64748B]">
+              Explore each solution area to understand the capabilities,
+              applications and business value that can be combined around
+              your organization's requirements.
             </p>
           </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
+          <div className="mt-14 grid gap-8">
             {solutionCategory.solutions.map((item, index) => {
               const href =
                 item.slug === "customer-communication"
                   ? "/solutions/digital-communication"
                   : `/solutions/${item.slug}`;
 
+              const itemImage = getSolutionImage(item.slug);
+              const details = solutionDetails[item.slug] ?? {
+                overview: item.description,
+                capabilities: [
+                  "Requirement-focused implementation",
+                  "Business workflow integration",
+                  "System integration",
+                  "Scalable technology approach",
+                ],
+                value:
+                  "A practical technology solution structured around the organization's requirements and existing systems.",
+              };
+
               return (
                 <Link
                   key={item.slug}
                   href={href}
-                  className="group block rounded-[20px] border border-[#E5E7EB] bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#8B2346] hover:shadow-[0_10px_30px_rgba(23,32,51,0.06)]"
+                  className="group overflow-hidden rounded-[24px] border border-[#E5E7EB] bg-white transition-all duration-300 hover:-translate-y-1 hover:border-[#8B2346] hover:shadow-[0_18px_45px_rgba(23,32,51,0.08)]"
                 >
-                  <div className="flex items-start justify-between gap-5">
-                    <span className="text-sm font-semibold text-[#8B2346]">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
+                  <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
+                    <div className="relative min-h-[280px] overflow-hidden bg-[#F8F9FB] lg:min-h-[360px]">
+                      <Image
+                        src={itemImage}
+                        alt={`${item.title} - Sohan Soft Tech`}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 45vw"
+                        className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                      />
 
-                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#F8EEF2] text-[#8B2346] transition-transform duration-300 group-hover:translate-x-1">
-                      →
-                    </span>
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#172033]/30 via-transparent to-transparent" />
+
+                      <div className="absolute left-6 top-6 flex h-11 w-11 items-center justify-center rounded-full bg-white/95 text-sm font-semibold text-[#8B2346] shadow-sm">
+                        {String(index + 1).padStart(2, "0")}
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col justify-center p-7 sm:p-9 lg:p-11">
+                      <div className="flex items-start justify-between gap-5">
+                        <div>
+                          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[#8B2346]">
+                            Solution Area
+                          </p>
+
+                          <h3 className="mt-3 text-2xl font-semibold tracking-tight text-[#172033] sm:text-3xl">
+                            {item.title}
+                          </h3>
+                        </div>
+
+                        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#F8EEF2] text-[#8B2346] transition-transform duration-300 group-hover:translate-x-1">
+                          →
+                        </span>
+                      </div>
+
+                      <p className="mt-5 text-base leading-7 text-[#64748B]">
+                        {details.overview}
+                      </p>
+
+                      <div className="mt-7">
+                        <p className="text-sm font-semibold text-[#172033]">
+                          What this can include
+                        </p>
+
+                        <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                          {details.capabilities.map((capability) => (
+                            <div
+                              key={capability}
+                              className="flex items-start gap-3"
+                            >
+                              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#8B2346]" />
+                              <span className="text-sm leading-6 text-[#64748B]">
+                                {capability}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="mt-7 border-t border-[#E5E7EB] pt-6">
+                        <p className="text-sm font-semibold text-[#172033]">
+                          Business value
+                        </p>
+
+                        <p className="mt-2 text-sm leading-6 text-[#64748B]">
+                          {details.value}
+                        </p>
+                      </div>
+
+                      <div className="mt-7 text-sm font-semibold text-[#8B2346] transition-colors group-hover:text-[#6F1837]">
+                        Explore solution →
+                      </div>
+                    </div>
                   </div>
-
-                  <h3 className="mt-8 text-2xl font-semibold tracking-tight text-[#172033]">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-4 text-base leading-7 text-[#64748B]">
-                    {item.description}
-                  </p>
                 </Link>
               );
             })}
           </div>
         </Section>
 
-        {/* Approach */}
+        {/* =====================================================
+            APPROACH
+        ===================================================== */}
+
         <section className="bg-white py-16 sm:py-20 lg:py-24">
           <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
             <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
@@ -331,7 +585,10 @@ export default async function SolutionPage({
           </div>
         </section>
 
-        {/* Related Services */}
+        {/* =====================================================
+            RELATED SERVICES
+        ===================================================== */}
+
         <Section>
           <div className="max-w-3xl">
             <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#8B2346]">
@@ -361,7 +618,10 @@ export default async function SolutionPage({
           </div>
         </Section>
 
-        {/* FAQ */}
+        {/* =====================================================
+            FAQ
+        ===================================================== */}
+
         <section className="bg-[#F8F9FB] py-16 sm:py-20 lg:py-24">
           <div className="mx-auto max-w-4xl px-5 sm:px-6 lg:px-8">
             <div className="text-center">
@@ -396,7 +656,10 @@ export default async function SolutionPage({
           </div>
         </section>
 
-        {/* CTA */}
+        {/* =====================================================
+            CTA
+        ===================================================== */}
+
         <section className="bg-[#F8EEF2]">
           <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-20 lg:px-8">
             <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
@@ -429,11 +692,9 @@ export default async function SolutionPage({
     );
   }
 
-  /*
-   * ---------------------------------------------------------
+  /* ---------------------------------------------------------
    * INDIVIDUAL SOLUTION PAGE
-   * ---------------------------------------------------------
-   */
+   * --------------------------------------------------------- */
 
   const individualSlug =
     slug === "digital-communication"
@@ -446,51 +707,82 @@ export default async function SolutionPage({
     notFound();
   }
 
+  const individualImage = getSolutionImage(individualSlug);
+
   return (
     <main>
-      {/* Hero */}
+      {/* =====================================================
+          INDIVIDUAL SOLUTION HERO
+      ===================================================== */}
+
       <section className="bg-white text-[#172033]">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
-          <div className="max-w-4xl">
-            <Link
-              href="/solutions"
-              className="inline-flex items-center text-sm text-[#64748B] transition-colors hover:text-[#8B2346]"
-            >
-              ← Back to Solutions
-            </Link>
+        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+          <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
+            {/* LEFT CONTENT */}
 
-            <p className="mt-10 text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
-              Solution
-            </p>
-
-            <h1 className="mt-5 text-4xl font-semibold tracking-tight text-[#172033] sm:text-5xl lg:text-7xl">
-              {individualSolution.title}
-            </h1>
-
-            <p className="mt-7 max-w-3xl text-lg leading-8 text-[#64748B] sm:text-xl">
-              {individualSolution.description}
-            </p>
-
-            <div className="mt-9 flex flex-wrap gap-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-[#8B2346] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#6F1837]"
-              >
-                Get a Free Consultation
-              </Link>
-
+            <div className="lg:col-span-7">
               <Link
                 href="/solutions"
-                className="inline-flex items-center justify-center rounded-full border border-[#8B2346] bg-white px-6 py-3 text-sm font-medium text-[#8B2346] transition-colors hover:bg-[#8B2346] hover:text-white"
+                className="inline-flex items-center text-sm text-[#64748B] transition-colors hover:text-[#8B2346]"
               >
-                Explore All Solutions
+                ← Back to Solutions
               </Link>
+
+              <p className="mt-10 text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
+                Solution
+              </p>
+
+              <h1 className="mt-5 max-w-3xl text-4xl font-semibold tracking-tight text-[#172033] sm:text-5xl lg:text-6xl xl:text-7xl">
+                {individualSolution.title}
+              </h1>
+
+              <p className="mt-7 max-w-2xl text-lg leading-8 text-[#64748B] sm:text-xl">
+                {individualSolution.description}
+              </p>
+
+              <div className="mt-9 flex flex-wrap gap-4">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center rounded-full bg-[#8B2346] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#6F1837]"
+                >
+                  Get a Free Consultation
+                </Link>
+
+                <Link
+                  href="/solutions"
+                  className="inline-flex items-center justify-center rounded-full border border-[#8B2346] bg-white px-6 py-3 text-sm font-medium text-[#8B2346] transition-colors hover:bg-[#8B2346] hover:text-white"
+                >
+                  Explore All Solutions
+                </Link>
+              </div>
+            </div>
+
+            {/* RIGHT IMAGE */}
+
+            <div className="lg:col-span-5">
+              <div className="relative mx-auto w-full max-w-[560px]">
+                <div className="overflow-hidden rounded-[28px] border border-[#E5E7EB] bg-[#F8F9FB] p-2 shadow-[0_20px_50px_rgba(23,32,51,0.08)]">
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-[22px] bg-[#F8F9FB]">
+                    <Image
+                      src={individualImage}
+                      alt={`${individualSolution.title} - Sohan Soft Tech`}
+                      fill
+                      priority
+                      sizes="(max-width: 1024px) 100vw, 42vw"
+                      className="object-cover transition-transform duration-700 hover:scale-[1.03]"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Overview */}
+      {/* =====================================================
+          OVERVIEW
+      ===================================================== */}
+
       <Section>
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <div>
@@ -517,7 +809,10 @@ export default async function SolutionPage({
         </div>
       </Section>
 
-      {/* Capabilities */}
+      {/* =====================================================
+          CAPABILITIES
+      ===================================================== */}
+
       <section className="bg-[#F8F9FB] py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
@@ -566,7 +861,10 @@ export default async function SolutionPage({
         </div>
       </section>
 
-      {/* Connected Technology */}
+      {/* =====================================================
+          CONNECTED TECHNOLOGY
+      ===================================================== */}
+
       <Section>
         <div className="grid gap-12 lg:grid-cols-[1fr_0.8fr] lg:gap-20">
           <div>
@@ -601,7 +899,10 @@ export default async function SolutionPage({
         </div>
       </Section>
 
-      {/* CTA */}
+      {/* =====================================================
+          CTA
+      ===================================================== */}
+
       <section className="bg-[#F8EEF2]">
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-20 lg:px-8">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
@@ -634,11 +935,9 @@ export default async function SolutionPage({
   );
 }
 
-/*
- * ---------------------------------------------------------
+/* ---------------------------------------------------------
  * RELATED SERVICES
- * ---------------------------------------------------------
- */
+ * --------------------------------------------------------- */
 
 function getRelatedServiceLinks(slug: string) {
   const common = [
@@ -741,11 +1040,9 @@ function getRelatedServiceLinks(slug: string) {
   return serviceMap[slug] ?? common;
 }
 
-/*
- * ---------------------------------------------------------
+/* ---------------------------------------------------------
  * FAQ
- * ---------------------------------------------------------
- */
+ * --------------------------------------------------------- */
 
 function getSolutionFaqs(slug: string) {
   const faqs: Record<

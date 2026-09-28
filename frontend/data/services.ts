@@ -682,7 +682,6 @@ export function getServiceCategoryBySlug(
     (category) => category.slug === slug
   );
 }
-
 /**
  * Find an individual service using its URL slug.
  */
