@@ -35,17 +35,17 @@ export default async function ResourcePage({
   return (
     <main>
       {/* Hero */}
-      <section className="bg-[var(--background-dark)] py-24 text-white sm:py-28 lg:py-32">
+      <section className="bg-[var(--background-dark)] py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 text-white sm:py-18 md:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 lg:py-18 md:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
         <div className="mx-auto w-full max-w-4xl px-5 sm:px-6 lg:px-8">
           <Link
             href="/resources"
-            className="mb-7 inline-flex items-center gap-2 text-sm text-white/60 transition-colors hover:text-[var(--brand-green)]"
+            className="mb-7 inline-flex items-center gap-2 text-sm text-white/60 transition-colors hover:text-[var(--brand-gold-deep)]"
           >
             ← All Resources
           </Link>
 
           <div className="flex flex-wrap items-center gap-3">
-            <span className="rounded-full bg-[var(--brand-green)]/15 px-3 py-1 text-xs font-medium text-[var(--brand-green)]">
+            <span className="rounded-full bg-[var(--brand-gold)]/15 px-3 py-1 text-xs font-medium text-[var(--brand-gold-deep)]">
               {resource.type}
             </span>
 
@@ -68,7 +68,7 @@ export default async function ResourcePage({
       <Section>
         <article className="mx-auto max-w-3xl">
           <div className="mb-10">
-            <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-green)]">
+            <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
               Resource
             </p>
 
@@ -105,9 +105,9 @@ export default async function ResourcePage({
       </Section>
 
       {/* CTA */}
-      <Section className="bg-[var(--brand-green-light)]">
+      <Section className="bg-[var(--brand-gold-soft)]">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-green)]">
+          <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
             Need Help?
           </p>
 
@@ -123,14 +123,14 @@ export default async function ResourcePage({
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-[var(--brand-green)] px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[var(--brand-green-dark)]"
+              className="inline-flex items-center justify-center rounded-full bg-[var(--brand-gold-deep)] px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[var(--brand-gold-hover)]"
             >
               Get a Free Consultation
             </Link>
 
             <Link
               href="/resources"
-              className="inline-flex items-center justify-center rounded-full border border-[var(--border-light)] bg-white px-7 py-3.5 text-sm font-medium text-[var(--text-primary)] transition-colors hover:border-[var(--brand-green)] hover:text-[var(--brand-green)]"
+              className="inline-flex items-center justify-center rounded-full border border-[var(--border-light)] bg-white px-7 py-3.5 text-sm font-medium text-[var(--text-primary)] transition-colors hover:border-[var(--brand-gold)] hover:text-[var(--brand-gold-deep)]"
             >
               Back to Resources
             </Link>

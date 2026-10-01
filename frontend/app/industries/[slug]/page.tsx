@@ -80,42 +80,42 @@ export default async function IndustryPage({
   return (
     <main>
       {/* Hero */}
-      <section className="bg-white text-[#172033]">
-        <div className="mx-auto max-w-7xl px-5 py-24 sm:px-6 sm:py-28 lg:px-8 lg:py-32">
+      <section className="bg-[var(--background)] text-[var(--ink)]">
+        <div className="mx-auto max-w-7xl px-5 py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 sm:px-6 sm:py-18 md:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 lg:px-8 lg:py-18 md:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
           <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
             <div className="max-w-4xl">
               <Link
                 href="/industries"
-                className="inline-flex items-center text-sm text-[#64748B] transition-colors hover:text-[#8B2346]"
+                className="inline-flex items-center text-sm text-[var(--text-secondary)] transition-colors hover:text-[var(--brand-gold-deep)]"
               >
                 ← Back to Industries
               </Link>
 
-              <p className="mt-10 text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
+              <p className="mt-10 text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
                 Industry
               </p>
 
-              <h1 className="mt-5 text-4xl font-semibold tracking-tight text-[#172033] sm:text-5xl lg:text-6xl">
+              <h1 className="mt-5 text-4xl font-semibold tracking-tight text-[var(--ink)] sm:text-5xl lg:text-6xl">
                 {industry.title}
               </h1>
 
-              <p className="mt-7 max-w-3xl text-lg leading-8 text-[#64748B] sm:text-xl">
+              <p className="mt-7 max-w-3xl text-lg leading-8 text-[var(--text-secondary)] sm:text-xl">
                 {industry.shortDescription}
               </p>
 
-              <p className="mt-5 max-w-3xl text-base leading-7 text-[#64748B]">
+              <p className="mt-5 max-w-3xl text-base leading-7 text-[var(--text-secondary)]">
                 We bring together digital solutions, software, automation and
                 technology services around the practical requirements of
                 organizations operating in this industry.
               </p>
 
-              <div className="mt-8 grid max-w-4xl gap-4 border-y border-[#E5E7EB] py-6 sm:grid-cols-3">
+              <div className="mt-8 grid max-w-4xl gap-4 border-y border-[var(--border-light)] py-6 sm:grid-cols-3">
                 {industry.solutions.slice(0, 3).map((solution, index) => (
                   <div key={solution.slug}>
-                    <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[#8B2346]">
+                    <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand-gold-deep)]">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <p className="mt-2 text-sm font-semibold leading-5 text-[#172033]">
+                    <p className="mt-2 text-sm font-semibold leading-5 text-[var(--ink)]">
                       {solution.title}
                     </p>
                   </div>
@@ -125,14 +125,14 @@ export default async function IndustryPage({
               <div className="mt-9 flex flex-wrap gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center rounded-full bg-[#8B2346] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#6F1837]"
+                  className="inline-flex items-center justify-center rounded-full bg-[var(--brand-gold-deep)] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[var(--brand-gold-hover)]"
                 >
                   Get a Free Consultation
                 </Link>
 
                 <Link
                   href="#challenges"
-                  className="inline-flex items-center justify-center rounded-full border border-[#8B2346] bg-white px-6 py-3 text-sm font-medium text-[#8B2346] transition-colors hover:bg-[#8B2346] hover:text-white"
+                  className="inline-flex items-center justify-center rounded-full border border-[var(--brand-gold)] bg-white px-6 py-3 text-sm font-medium text-[var(--brand-gold-deep)] transition-colors hover:bg-[var(--brand-gold-deep)] hover:text-white"
                 >
                   Explore Industry
                 </Link>
@@ -141,8 +141,8 @@ export default async function IndustryPage({
 
             {industryImages[slug] && (
               <div className="relative mx-auto w-full max-w-[560px] lg:ml-auto">
-                <div className="overflow-hidden rounded-[24px] border border-[#E5E7EB] bg-white p-2 shadow-[0_20px_50px_rgba(23,32,51,0.08)]">
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-[18px] bg-[#F8F9FB]">
+                <div className="overflow-hidden rounded-[24px] border border-[var(--border-light)] bg-white p-2 shadow-[0_20px_50px_rgba(17,17,17,0.08)]">
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-[18px] bg-[var(--background-soft)]">
                     <Image
                       src={industryImages[slug]}
                       alt={`${industry.title} technology solutions`}
@@ -163,7 +163,7 @@ export default async function IndustryPage({
       <Section>
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <div>
-            <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#8B2346]">
+            <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
               Industry perspective
             </p>
 
@@ -173,18 +173,18 @@ export default async function IndustryPage({
           </div>
 
           <div className="max-w-2xl">
-            <p className="text-lg leading-8 text-[#64748B]">
+            <p className="text-lg leading-8 text-[var(--text-secondary)]">
               {industry.shortDescription}
             </p>
 
-            <p className="mt-5 text-base leading-7 text-[#64748B]">
+            <p className="mt-5 text-base leading-7 text-[var(--text-secondary)]">
               Every organization has a different operating environment,
               technology stack and growth plan. Our approach is to understand
               those requirements first and then connect the appropriate digital
               capabilities around them.
             </p>
 
-            <p className="mt-5 text-base leading-7 text-[#64748B]">
+            <p className="mt-5 text-base leading-7 text-[var(--text-secondary)]">
               This industry page brings together the key challenges, solution
               areas, relevant services, products, automation opportunities and
               technology areas that can form part of a broader implementation.
@@ -198,12 +198,12 @@ export default async function IndustryPage({
               ].map((item) => (
                 <div
                   key={item.label}
-                  className="rounded-[14px] border border-[#E5E7EB] bg-[#F8F9FB] p-5"
+                  className="rounded-[14px] border border-[var(--border-light)] bg-[var(--background-soft)] p-5"
                 >
-                  <p className="text-2xl font-semibold text-[#172033]">
+                  <p className="text-2xl font-semibold text-[var(--ink)]">
                     {item.value}
                   </p>
-                  <p className="mt-1 text-xs font-medium uppercase tracking-[0.12em] text-[#8B2346]">
+                  <p className="mt-1 text-xs font-medium uppercase tracking-[0.12em] text-[var(--brand-gold-deep)]">
                     {item.label}
                   </p>
                 </div>
@@ -216,11 +216,11 @@ export default async function IndustryPage({
       {/* Challenges */}
       <section
         id="challenges"
-        className="bg-[#F8F9FB] py-16 sm:py-20 lg:py-24"
+        className="bg-[var(--background-soft)] py-16 sm:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18"
       >
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#8B2346]">
+            <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
               Industry challenges
             </p>
 
@@ -228,7 +228,7 @@ export default async function IndustryPage({
               Common technology and operational requirements.
             </Heading>
 
-            <p className="mt-5 text-lg leading-8 text-[#64748B]">
+            <p className="mt-5 text-lg leading-8 text-[var(--text-secondary)]">
               Organizations in this industry can have different operational
               needs. The following areas represent common requirements that can
               be addressed through the right combination of software, digital
@@ -240,13 +240,13 @@ export default async function IndustryPage({
             {industry.challenges.map((challenge, index) => (
               <div
                 key={challenge}
-                className="rounded-[14px] border border-[#E5E7EB] bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#8B2346] hover:shadow-[0_10px_30px_rgba(23,32,51,0.06)]"
+                className="rounded-[14px] border border-[var(--border-light)] bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--brand-gold)] hover:shadow-[0_10px_30px_rgba(17,17,17,0.06)]"
               >
-                <span className="text-sm font-semibold text-[#8B2346]">
+                <span className="text-sm font-semibold text-[var(--brand-gold-deep)]">
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
-                <p className="mt-5 text-base font-medium leading-7 text-[#172033]">
+                <p className="mt-5 text-base font-medium leading-7 text-[var(--ink)]">
                   {challenge}
                 </p>
               </div>
@@ -258,7 +258,7 @@ export default async function IndustryPage({
       {/* Solutions */}
       <Section>
         <div className="max-w-3xl">
-          <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#8B2346]">
+          <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
             Solutions
           </p>
 
@@ -266,7 +266,7 @@ export default async function IndustryPage({
             Solution areas for {industry.title}.
           </Heading>
 
-          <p className="mt-5 text-lg leading-8 text-[#64748B]">
+          <p className="mt-5 text-lg leading-8 text-[var(--text-secondary)]">
             Explore technology solution areas that can be considered based on
             the organization's requirements. These areas can be combined into
             a connected technology approach rather than treated as isolated
@@ -278,17 +278,17 @@ export default async function IndustryPage({
           {industry.solutions.map((solution, index) => (
             <article
               key={solution.slug}
-              className="rounded-[20px] border border-[#E5E7EB] bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#8B2346] hover:shadow-[0_10px_30px_rgba(23,32,51,0.06)]"
+              className="rounded-[20px] border border-[var(--border-light)] bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--brand-gold)] hover:shadow-[0_10px_30px_rgba(17,17,17,0.06)]"
             >
-              <span className="text-sm font-semibold text-[#8B2346]">
+              <span className="text-sm font-semibold text-[var(--brand-gold-deep)]">
                 {String(index + 1).padStart(2, "0")}
               </span>
 
-              <h3 className="mt-7 text-2xl font-semibold tracking-tight text-[#172033]">
+              <h3 className="mt-7 text-2xl font-semibold tracking-tight text-[var(--ink)]">
                 {solution.title}
               </h3>
 
-              <p className="mt-4 text-base leading-7 text-[#64748B]">
+              <p className="mt-4 text-base leading-7 text-[var(--text-secondary)]">
                 {solution.description}
               </p>
             </article>
@@ -297,10 +297,10 @@ export default async function IndustryPage({
       </Section>
 
       {/* Relevant Services */}
-      <section className="bg-[#F8F9FB] py-16 sm:py-20 lg:py-24">
+      <section className="bg-[var(--background-soft)] py-16 sm:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#8B2346]">
+            <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
               Relevant services
             </p>
 
@@ -308,7 +308,7 @@ export default async function IndustryPage({
               Services that can support this industry.
             </Heading>
 
-            <p className="mt-5 text-lg leading-8 text-[#64748B]">
+            <p className="mt-5 text-lg leading-8 text-[var(--text-secondary)]">
               Depending on the requirement, different services can be combined
               to create a broader technology solution.
             </p>
@@ -319,7 +319,7 @@ export default async function IndustryPage({
               <Link
                 key={service.href}
                 href={service.href}
-                className="rounded-full border border-[#E5E7EB] bg-white px-5 py-3 text-sm font-medium text-[#172033] transition-all duration-200 hover:border-[#8B2346] hover:bg-[#F8EEF2] hover:text-[#8B2346]"
+                className="rounded-full border border-[var(--border-light)] bg-white px-5 py-3 text-sm font-medium text-[var(--ink)] transition-all duration-200 hover:border-[var(--brand-gold)] hover:bg-[var(--background-soft)] hover:text-[var(--brand-gold-deep)]"
               >
                 {service.title}
               </Link>
@@ -331,7 +331,7 @@ export default async function IndustryPage({
       {/* Relevant Products */}
       <Section>
         <div className="max-w-3xl">
-          <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#8B2346]">
+          <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
             Relevant products
           </p>
 
@@ -339,7 +339,7 @@ export default async function IndustryPage({
             Products that can support the workflow.
           </Heading>
 
-          <p className="mt-5 text-lg leading-8 text-[#64748B]">
+          <p className="mt-5 text-lg leading-8 text-[var(--text-secondary)]">
             The following product areas are mapped to this industry based on
             the current project scope.
           </p>
@@ -349,13 +349,13 @@ export default async function IndustryPage({
           {industry.relevantProducts.map((product, index) => (
             <div
               key={product}
-              className="rounded-[14px] border border-[#E5E7EB] bg-white p-6 transition-all duration-300 hover:border-[#8B2346] hover:bg-[#F8EEF2]"
+              className="rounded-[14px] border border-[var(--border-light)] bg-white p-6 transition-all duration-300 hover:border-[var(--brand-gold)] hover:bg-[var(--background-soft)]"
             >
-              <span className="text-sm font-semibold text-[#8B2346]">
+              <span className="text-sm font-semibold text-[var(--brand-gold-deep)]">
                 {String(index + 1).padStart(2, "0")}
               </span>
 
-              <h3 className="mt-5 text-lg font-semibold text-[#172033]">
+              <h3 className="mt-5 text-lg font-semibold text-[var(--ink)]">
                 {product}
               </h3>
             </div>
@@ -364,19 +364,19 @@ export default async function IndustryPage({
       </Section>
 
       {/* Automation */}
-      <section className="bg-white py-16 sm:py-20 lg:py-24">
+      <section className="bg-[var(--background)] py-16 sm:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
             <div>
-              <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#8B2346]">
+              <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
                 Automation opportunities
               </p>
 
-              <Heading as="h2" className="mt-4 text-[#172033]">
+              <Heading as="h2" className="mt-4 text-[var(--ink)]">
                 Reduce repetitive work with connected technology.
               </Heading>
 
-              <p className="mt-5 text-lg leading-8 text-[#64748B]">
+              <p className="mt-5 text-lg leading-8 text-[var(--text-secondary)]">
                 Automation opportunities depend on the organization's actual
                 workflows and technology environment.
               </p>
@@ -386,13 +386,13 @@ export default async function IndustryPage({
               {industry.automationOpportunities.map((item, index) => (
                 <div
                   key={item}
-                  className="rounded-[14px] border border-[#E5E7EB] bg-white p-6 transition-all duration-300 hover:border-[#8B2346] hover:bg-[#F8EEF2]"
+                  className="rounded-[14px] border border-[var(--border-light)] bg-white p-6 transition-all duration-300 hover:border-[var(--brand-gold)] hover:bg-[var(--background-soft)]"
                 >
-                  <span className="text-sm font-semibold text-[#8B2346]">
+                  <span className="text-sm font-semibold text-[var(--brand-gold-deep)]">
                     {String(index + 1).padStart(2, "0")}
                   </span>
 
-                  <p className="mt-5 text-base font-medium text-[#172033]">
+                  <p className="mt-5 text-base font-medium text-[var(--ink)]">
                     {item}
                   </p>
                 </div>
@@ -405,7 +405,7 @@ export default async function IndustryPage({
       {/* Technology */}
       <Section>
         <div className="max-w-3xl">
-          <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#8B2346]">
+          <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
             Technology
           </p>
 
@@ -413,7 +413,7 @@ export default async function IndustryPage({
             Technology areas that can support the industry.
           </Heading>
 
-          <p className="mt-5 text-lg leading-8 text-[#64748B]">
+          <p className="mt-5 text-lg leading-8 text-[var(--text-secondary)]">
             Technology choices should be based on the organization's
             requirements, existing environment and implementation needs.
           </p>
@@ -423,13 +423,13 @@ export default async function IndustryPage({
           {industry.technology.map((technology, index) => (
             <div
               key={technology}
-              className="rounded-[14px] border border-[#E5E7EB] bg-[#F8F9FB] p-6 transition-all duration-300 hover:border-[#8B2346] hover:bg-[#F8EEF2]"
+              className="rounded-[14px] border border-[var(--border-light)] bg-[var(--background-soft)] p-6 transition-all duration-300 hover:border-[var(--brand-gold)] hover:bg-[var(--background-soft)]"
             >
-              <span className="text-sm font-semibold text-[#8B2346]">
+              <span className="text-sm font-semibold text-[var(--brand-gold-deep)]">
                 {String(index + 1).padStart(2, "0")}
               </span>
 
-              <h3 className="mt-5 text-lg font-semibold text-[#172033]">
+              <h3 className="mt-5 text-lg font-semibold text-[var(--ink)]">
                 {technology}
               </h3>
             </div>
@@ -438,9 +438,9 @@ export default async function IndustryPage({
       </Section>
 
       {/* Case Studies Placeholder */}
-      <section className="bg-[#F8F9FB] py-16 sm:py-20 lg:py-24">
+      <section className="bg-[var(--background-soft)] py-16 sm:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
         <div className="mx-auto max-w-4xl px-5 text-center sm:px-6 lg:px-8">
-          <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#8B2346]">
+          <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
             Case studies
           </p>
 
@@ -448,7 +448,7 @@ export default async function IndustryPage({
             Real projects will be showcased here.
           </Heading>
 
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[#64748B]">
+          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[var(--text-secondary)]">
             This section will be populated with verified Sohan Soft Tech
             projects, outcomes and client information once the actual project
             data is available.
@@ -457,10 +457,10 @@ export default async function IndustryPage({
       </section>
 
       {/* FAQ */}
-      <section className="bg-white py-16 sm:py-20 lg:py-24">
+      <section className="bg-[var(--background)] py-16 sm:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
         <div className="mx-auto max-w-4xl px-5 sm:px-6 lg:px-8">
           <div className="text-center">
-            <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#8B2346]">
+            <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
               FAQ
             </p>
 
@@ -469,20 +469,20 @@ export default async function IndustryPage({
             </Heading>
           </div>
 
-          <div className="mt-10 divide-y divide-[#E5E7EB] rounded-[20px] border border-[#E5E7EB] bg-white">
+          <div className="mt-10 divide-y divide-[var(--border-light)] rounded-[20px] border border-[var(--border-light)] bg-white">
             {industry.faqs.map((faq) => (
               <details key={faq.question} className="group p-6">
-                <summary className="cursor-pointer list-none pr-8 text-base font-semibold text-[#172033]">
+                <summary className="cursor-pointer list-none pr-8 text-base font-semibold text-[var(--ink)]">
                   <div className="flex items-center justify-between gap-5">
                     <span>{faq.question}</span>
 
-                    <span className="text-xl font-normal text-[#8B2346] transition-transform group-open:rotate-45">
+                    <span className="text-xl font-normal text-[var(--brand-gold-deep)] transition-transform group-open:rotate-45">
                       +
                     </span>
                   </div>
                 </summary>
 
-                <p className="mt-4 max-w-3xl text-sm leading-7 text-[#64748B]">
+                <p className="mt-4 max-w-3xl text-sm leading-7 text-[var(--text-secondary)]">
                   {faq.answer}
                 </p>
               </details>
@@ -492,19 +492,19 @@ export default async function IndustryPage({
       </section>
 
       {/* CTA */}
-      <section className="bg-[#F8EEF2]">
-        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <section className="bg-[var(--background-soft)]">
+        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-14 md:py-16 lg:py-18 lg:px-8">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
-              <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#8B2346]">
+              <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
                 Let's build
               </p>
 
-              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-[#172033] sm:text-4xl">
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] sm:text-4xl">
                 Have a requirement in {industry.title}?
               </h2>
 
-              <p className="mt-4 text-base leading-7 text-[#64748B]">
+              <p className="mt-4 text-base leading-7 text-[var(--text-secondary)]">
                 Tell us about your organization and explore the technology
                 approach that fits your requirements.
               </p>
@@ -512,7 +512,7 @@ export default async function IndustryPage({
 
             <Link
               href="/contact"
-              className="inline-flex shrink-0 items-center justify-center rounded-full bg-[#8B2346] px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[#6F1837]"
+              className="inline-flex shrink-0 items-center justify-center rounded-full bg-[var(--brand-gold-deep)] px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[var(--brand-gold-hover)]"
             >
               Get a Free Consultation
               <span className="ml-2">→</span>

@@ -262,42 +262,42 @@ export default async function SolutionPage({
             CATEGORY HERO
         ===================================================== */}
 
-        <section className="bg-white text-[#172033]">
-          <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+        <section className="bg-[var(--background)] text-[var(--ink)]">
+          <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-14 md:py-16 lg:py-18 lg:px-8 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
             <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
               {/* LEFT CONTENT */}
 
               <div className="lg:col-span-7">
                 <Link
                   href="/solutions"
-                  className="inline-flex items-center text-sm text-[#64748B] transition-colors hover:text-[#8B2346]"
+                  className="inline-flex items-center text-sm text-[var(--text-secondary)] transition-colors hover:text-[var(--brand-gold-deep)]"
                 >
                   ← Back to Solutions
                 </Link>
 
-                <p className="mt-10 text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
+                <p className="mt-10 text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
                   Solution
                 </p>
 
-                <h1 className="mt-5 max-w-3xl text-4xl font-semibold tracking-tight text-[#172033] sm:text-5xl lg:text-6xl xl:text-7xl">
+                <h1 className="mt-5 max-w-3xl text-4xl font-semibold tracking-tight text-[var(--ink)] sm:text-5xl lg:text-6xl xl:text-5xl lg:text-6xl">
                   {solutionCategory.title}
                 </h1>
 
-                <p className="mt-7 max-w-2xl text-lg leading-8 text-[#64748B] sm:text-xl">
+                <p className="mt-7 max-w-2xl text-lg leading-8 text-[var(--text-secondary)] sm:text-xl">
                   {solutionCategory.description}
                 </p>
 
                 <div className="mt-9 flex flex-wrap gap-4">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center rounded-full bg-[#8B2346] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#6F1837]"
+                    className="inline-flex items-center justify-center rounded-full bg-[var(--brand-gold-deep)] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[var(--brand-gold-hover)]"
                   >
                     Get a Free Consultation
                   </Link>
 
                   <Link
                     href="#capabilities"
-                    className="inline-flex items-center justify-center rounded-full border border-[#8B2346] bg-white px-6 py-3 text-sm font-medium text-[#8B2346] transition-colors hover:bg-[#8B2346] hover:text-white"
+                    className="inline-flex items-center justify-center rounded-full border border-[var(--brand-gold)] bg-white px-6 py-3 text-sm font-medium text-[var(--brand-gold-deep)] transition-colors hover:bg-[var(--brand-gold-deep)] hover:text-white"
                   >
                     Explore Capabilities
                   </Link>
@@ -308,8 +308,8 @@ export default async function SolutionPage({
 
               <div className="lg:col-span-5">
                 <div className="relative mx-auto w-full max-w-[560px]">
-                  <div className="overflow-hidden rounded-[28px] border border-[#E5E7EB] bg-[#F8F9FB] p-2 shadow-[0_20px_50px_rgba(23,32,51,0.08)]">
-                    <div className="relative aspect-[4/3] overflow-hidden rounded-[22px] bg-[#F8F9FB]">
+                  <div className="overflow-hidden rounded-[28px] border border-[var(--border-light)] bg-[var(--background-soft)] p-2 shadow-[0_20px_50px_rgba(17,17,17,0.08)]">
+                    <div className="relative aspect-[4/3] overflow-hidden rounded-[22px] bg-[var(--background-soft)]">
                       <Image
                         src={categoryImage}
                         alt={`${solutionCategory.title} - Sohan Soft Tech`}
@@ -333,21 +333,21 @@ export default async function SolutionPage({
         <Section>
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
             <div>
-              <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#8B2346]">
+              <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
                 Overview
               </p>
 
-              <Heading as="h2" className="mt-4 text-[#172033]">
+              <Heading as="h2" className="mt-4 text-[var(--ink)]">
                 A connected technology approach.
               </Heading>
             </div>
 
             <div className="max-w-2xl">
-              <p className="text-lg leading-8 text-[#64748B]">
+              <p className="text-lg leading-8 text-[var(--text-secondary)]">
                 {solutionCategory.description}
               </p>
 
-              <p className="mt-5 text-base leading-7 text-[#64748B]">
+              <p className="mt-5 text-base leading-7 text-[var(--text-secondary)]">
                 Explore the capabilities and solution areas that can form part
                 of this technology approach.
               </p>
@@ -361,15 +361,15 @@ export default async function SolutionPage({
 
         <section
           id="capabilities"
-          className="bg-[#F8F9FB] py-16 sm:py-20 lg:py-24"
+          className="bg-[var(--background-soft)] py-16 sm:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18"
         >
           <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
-              <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#8B2346]">
+              <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
                 Capabilities
               </p>
 
-              <Heading as="h2" className="mt-4 text-[#172033]">
+              <Heading as="h2" className="mt-4 text-[var(--ink)]">
                 What this solution can include.
               </Heading>
             </div>
@@ -378,13 +378,13 @@ export default async function SolutionPage({
               {solutionCategory.capabilities.map((capability, index) => (
                 <div
                   key={capability}
-                  className="rounded-[14px] border border-[#E5E7EB] bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#8B2346] hover:shadow-[0_10px_30px_rgba(23,32,51,0.06)]"
+                  className="rounded-[14px] border border-[var(--border-light)] bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--brand-gold)] hover:shadow-[0_10px_30px_rgba(17,17,17,0.06)]"
                 >
-                  <span className="text-sm font-semibold text-[#8B2346]">
+                  <span className="text-sm font-semibold text-[var(--brand-gold-deep)]">
                     {String(index + 1).padStart(2, "0")}
                   </span>
 
-                  <p className="mt-5 text-base font-medium text-[#172033]">
+                  <p className="mt-5 text-base font-medium text-[var(--ink)]">
                     {capability}
                   </p>
                 </div>
@@ -399,15 +399,15 @@ export default async function SolutionPage({
 
         <Section>
           <div className="max-w-4xl">
-            <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#8B2346]">
+            <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
               Solution Areas
             </p>
 
-            <Heading as="h2" className="mt-4 text-[#172033]">
+            <Heading as="h2" className="mt-4 text-[var(--ink)]">
               Technology solutions built around real business requirements.
             </Heading>
 
-            <p className="mt-5 max-w-3xl text-lg leading-8 text-[#64748B]">
+            <p className="mt-5 max-w-3xl text-lg leading-8 text-[var(--text-secondary)]">
               Explore each solution area to understand the capabilities,
               applications and business value that can be combined around
               your organization's requirements.
@@ -438,10 +438,10 @@ export default async function SolutionPage({
                 <Link
                   key={item.slug}
                   href={href}
-                  className="group overflow-hidden rounded-[24px] border border-[#E5E7EB] bg-white transition-all duration-300 hover:-translate-y-1 hover:border-[#8B2346] hover:shadow-[0_18px_45px_rgba(23,32,51,0.08)]"
+                  className="group overflow-hidden rounded-[24px] border border-[var(--border-light)] bg-white transition-all duration-300 hover:-translate-y-1 hover:border-[var(--brand-gold)] hover:shadow-[0_18px_45px_rgba(17,17,17,0.08)]"
                 >
                   <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
-                    <div className="relative min-h-[280px] overflow-hidden bg-[#F8F9FB] lg:min-h-[360px]">
+                    <div className="relative min-h-[280px] overflow-hidden bg-[var(--background-soft)] lg:min-h-[360px]">
                       <Image
                         src={itemImage}
                         alt={`${item.title} - Sohan Soft Tech`}
@@ -450,9 +450,9 @@ export default async function SolutionPage({
                         className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                       />
 
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#172033]/30 via-transparent to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[var(--background-dark)]/30 via-transparent to-transparent" />
 
-                      <div className="absolute left-6 top-6 flex h-11 w-11 items-center justify-center rounded-full bg-white/95 text-sm font-semibold text-[#8B2346] shadow-sm">
+                      <div className="absolute left-6 top-6 flex h-11 w-11 items-center justify-center rounded-full bg-white/95 text-sm font-semibold text-[var(--brand-gold-deep)] shadow-sm">
                         {String(index + 1).padStart(2, "0")}
                       </div>
                     </div>
@@ -460,26 +460,26 @@ export default async function SolutionPage({
                     <div className="flex flex-col justify-center p-7 sm:p-9 lg:p-11">
                       <div className="flex items-start justify-between gap-5">
                         <div>
-                          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[#8B2346]">
+                          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
                             Solution Area
                           </p>
 
-                          <h3 className="mt-3 text-2xl font-semibold tracking-tight text-[#172033] sm:text-3xl">
+                          <h3 className="mt-3 text-2xl font-semibold tracking-tight text-[var(--ink)] sm:text-3xl">
                             {item.title}
                           </h3>
                         </div>
 
-                        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#F8EEF2] text-[#8B2346] transition-transform duration-300 group-hover:translate-x-1">
+                        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--background-soft)] text-[var(--brand-gold-deep)] transition-transform duration-300 group-hover:translate-x-1">
                           →
                         </span>
                       </div>
 
-                      <p className="mt-5 text-base leading-7 text-[#64748B]">
+                      <p className="mt-5 text-base leading-7 text-[var(--text-secondary)]">
                         {details.overview}
                       </p>
 
                       <div className="mt-7">
-                        <p className="text-sm font-semibold text-[#172033]">
+                        <p className="text-sm font-semibold text-[var(--ink)]">
                           What this can include
                         </p>
 
@@ -489,8 +489,8 @@ export default async function SolutionPage({
                               key={capability}
                               className="flex items-start gap-3"
                             >
-                              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#8B2346]" />
-                              <span className="text-sm leading-6 text-[#64748B]">
+                              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--brand-gold-deep)]" />
+                              <span className="text-sm leading-6 text-[var(--text-secondary)]">
                                 {capability}
                               </span>
                             </div>
@@ -498,17 +498,17 @@ export default async function SolutionPage({
                         </div>
                       </div>
 
-                      <div className="mt-7 border-t border-[#E5E7EB] pt-6">
-                        <p className="text-sm font-semibold text-[#172033]">
+                      <div className="mt-7 border-t border-[var(--border-light)] pt-6">
+                        <p className="text-sm font-semibold text-[var(--ink)]">
                           Business value
                         </p>
 
-                        <p className="mt-2 text-sm leading-6 text-[#64748B]">
+                        <p className="mt-2 text-sm leading-6 text-[var(--text-secondary)]">
                           {details.value}
                         </p>
                       </div>
 
-                      <div className="mt-7 text-sm font-semibold text-[#8B2346] transition-colors group-hover:text-[#6F1837]">
+                      <div className="mt-7 text-sm font-semibold text-[var(--brand-gold-deep)] transition-colors group-hover:text-[var(--brand-gold-hover)]">
                         Explore solution →
                       </div>
                     </div>
@@ -523,15 +523,15 @@ export default async function SolutionPage({
             APPROACH
         ===================================================== */}
 
-        <section className="bg-white py-16 sm:py-20 lg:py-24">
+        <section className="bg-[var(--background)] py-16 sm:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
           <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
             <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
               <div>
-                <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#8B2346]">
+                <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
                   Our Approach
                 </p>
 
-                <Heading as="h2" className="mt-4 text-[#172033]">
+                <Heading as="h2" className="mt-4 text-[var(--ink)]">
                   From requirements to connected technology.
                 </Heading>
               </div>
@@ -565,17 +565,17 @@ export default async function SolutionPage({
                 ].map((item) => (
                   <div
                     key={item.number}
-                    className="rounded-[14px] border border-[#E5E7EB] bg-white p-6 transition-all duration-300 hover:border-[#8B2346] hover:bg-[#F8EEF2]"
+                    className="rounded-[14px] border border-[var(--border-light)] bg-white p-6 transition-all duration-300 hover:border-[var(--brand-gold)] hover:bg-[var(--background-soft)]"
                   >
-                    <span className="text-sm font-semibold text-[#8B2346]">
+                    <span className="text-sm font-semibold text-[var(--brand-gold-deep)]">
                       {item.number}
                     </span>
 
-                    <h3 className="mt-5 text-xl font-semibold text-[#172033]">
+                    <h3 className="mt-5 text-xl font-semibold text-[var(--ink)]">
                       {item.title}
                     </h3>
 
-                    <p className="mt-3 text-sm leading-6 text-[#64748B]">
+                    <p className="mt-3 text-sm leading-6 text-[var(--text-secondary)]">
                       {item.description}
                     </p>
                   </div>
@@ -591,15 +591,15 @@ export default async function SolutionPage({
 
         <Section>
           <div className="max-w-3xl">
-            <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#8B2346]">
+            <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
               Related Services
             </p>
 
-            <Heading as="h2" className="mt-4 text-[#172033]">
+            <Heading as="h2" className="mt-4 text-[var(--ink)]">
               Services that can support this solution.
             </Heading>
 
-            <p className="mt-5 text-lg leading-8 text-[#64748B]">
+            <p className="mt-5 text-lg leading-8 text-[var(--text-secondary)]">
               Solutions often bring multiple technology capabilities together.
               Explore the relevant services that can support this area.
             </p>
@@ -610,7 +610,7 @@ export default async function SolutionPage({
               <Link
                 key={service.href}
                 href={service.href}
-                className="rounded-full border border-[#E5E7EB] bg-white px-5 py-3 text-sm font-medium text-[#172033] transition-colors hover:border-[#8B2346] hover:text-[#8B2346]"
+                className="rounded-full border border-[var(--border-light)] bg-white px-5 py-3 text-sm font-medium text-[var(--ink)] transition-colors hover:border-[var(--brand-gold)] hover:text-[var(--brand-gold-deep)]"
               >
                 {service.title}
               </Link>
@@ -622,32 +622,32 @@ export default async function SolutionPage({
             FAQ
         ===================================================== */}
 
-        <section className="bg-[#F8F9FB] py-16 sm:py-20 lg:py-24">
+        <section className="bg-[var(--background-soft)] py-16 sm:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
           <div className="mx-auto max-w-4xl px-5 sm:px-6 lg:px-8">
             <div className="text-center">
-              <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#8B2346]">
+              <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
                 FAQ
               </p>
 
-              <Heading as="h2" className="mt-4 text-[#172033]">
+              <Heading as="h2" className="mt-4 text-[var(--ink)]">
                 Questions about this solution?
               </Heading>
             </div>
 
-            <div className="mt-10 divide-y divide-[#E5E7EB] rounded-[20px] border border-[#E5E7EB] bg-white">
+            <div className="mt-10 divide-y divide-[var(--border-light)] rounded-[20px] border border-[var(--border-light)] bg-white">
               {getSolutionFaqs(solutionCategory.slug).map((faq) => (
                 <details key={faq.question} className="group p-6">
-                  <summary className="cursor-pointer list-none pr-8 text-base font-semibold text-[#172033]">
+                  <summary className="cursor-pointer list-none pr-8 text-base font-semibold text-[var(--ink)]">
                     <div className="flex items-center justify-between gap-5">
                       <span>{faq.question}</span>
 
-                      <span className="text-xl font-normal text-[#8B2346] transition-transform group-open:rotate-45">
+                      <span className="text-xl font-normal text-[var(--brand-gold-deep)] transition-transform group-open:rotate-45">
                         +
                       </span>
                     </div>
                   </summary>
 
-                  <p className="mt-4 max-w-3xl text-sm leading-7 text-[#64748B]">
+                  <p className="mt-4 max-w-3xl text-sm leading-7 text-[var(--text-secondary)]">
                     {faq.answer}
                   </p>
                 </details>
@@ -660,19 +660,19 @@ export default async function SolutionPage({
             CTA
         ===================================================== */}
 
-        <section className="bg-[#F8EEF2]">
-          <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-20 lg:px-8">
+        <section className="bg-[var(--background-soft)]">
+          <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-14 md:py-16 lg:py-18 lg:px-8">
             <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-2xl">
-                <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#8B2346]">
+                <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
                   Let's Build
                 </p>
 
-                <h2 className="mt-3 text-3xl font-semibold tracking-tight text-[#172033] sm:text-4xl">
+                <h2 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] sm:text-4xl">
                   Have a requirement in this area?
                 </h2>
 
-                <p className="mt-4 text-base leading-7 text-[#64748B]">
+                <p className="mt-4 text-base leading-7 text-[var(--text-secondary)]">
                   Tell us what you are trying to build, automate, connect or
                   improve.
                 </p>
@@ -680,7 +680,7 @@ export default async function SolutionPage({
 
               <Link
                 href="/contact"
-                className="inline-flex shrink-0 items-center justify-center rounded-full bg-[#8B2346] px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[#6F1837]"
+                className="inline-flex shrink-0 items-center justify-center rounded-full bg-[var(--brand-gold-deep)] px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[var(--brand-gold-hover)]"
               >
                 Get a Free Consultation
                 <span className="ml-2">→</span>
@@ -715,42 +715,42 @@ export default async function SolutionPage({
           INDIVIDUAL SOLUTION HERO
       ===================================================== */}
 
-      <section className="bg-white text-[#172033]">
-        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+      <section className="bg-[var(--background)] text-[var(--ink)]">
+        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-14 md:py-16 lg:py-18 lg:px-8 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
           <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
             {/* LEFT CONTENT */}
 
             <div className="lg:col-span-7">
               <Link
                 href="/solutions"
-                className="inline-flex items-center text-sm text-[#64748B] transition-colors hover:text-[#8B2346]"
+                className="inline-flex items-center text-sm text-[var(--text-secondary)] transition-colors hover:text-[var(--brand-gold-deep)]"
               >
                 ← Back to Solutions
               </Link>
 
-              <p className="mt-10 text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
+              <p className="mt-10 text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
                 Solution
               </p>
 
-              <h1 className="mt-5 max-w-3xl text-4xl font-semibold tracking-tight text-[#172033] sm:text-5xl lg:text-6xl xl:text-7xl">
+              <h1 className="mt-5 max-w-3xl text-4xl font-semibold tracking-tight text-[var(--ink)] sm:text-5xl lg:text-6xl xl:text-5xl lg:text-6xl">
                 {individualSolution.title}
               </h1>
 
-              <p className="mt-7 max-w-2xl text-lg leading-8 text-[#64748B] sm:text-xl">
+              <p className="mt-7 max-w-2xl text-lg leading-8 text-[var(--text-secondary)] sm:text-xl">
                 {individualSolution.description}
               </p>
 
               <div className="mt-9 flex flex-wrap gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center rounded-full bg-[#8B2346] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#6F1837]"
+                  className="inline-flex items-center justify-center rounded-full bg-[var(--brand-gold-deep)] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[var(--brand-gold-hover)]"
                 >
                   Get a Free Consultation
                 </Link>
 
                 <Link
                   href="/solutions"
-                  className="inline-flex items-center justify-center rounded-full border border-[#8B2346] bg-white px-6 py-3 text-sm font-medium text-[#8B2346] transition-colors hover:bg-[#8B2346] hover:text-white"
+                  className="inline-flex items-center justify-center rounded-full border border-[var(--brand-gold)] bg-white px-6 py-3 text-sm font-medium text-[var(--brand-gold-deep)] transition-colors hover:bg-[var(--brand-gold-deep)] hover:text-white"
                 >
                   Explore All Solutions
                 </Link>
@@ -761,8 +761,8 @@ export default async function SolutionPage({
 
             <div className="lg:col-span-5">
               <div className="relative mx-auto w-full max-w-[560px]">
-                <div className="overflow-hidden rounded-[28px] border border-[#E5E7EB] bg-[#F8F9FB] p-2 shadow-[0_20px_50px_rgba(23,32,51,0.08)]">
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-[22px] bg-[#F8F9FB]">
+                <div className="overflow-hidden rounded-[28px] border border-[var(--border-light)] bg-[var(--background-soft)] p-2 shadow-[0_20px_50px_rgba(17,17,17,0.08)]">
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-[22px] bg-[var(--background-soft)]">
                     <Image
                       src={individualImage}
                       alt={`${individualSolution.title} - Sohan Soft Tech`}
@@ -786,21 +786,21 @@ export default async function SolutionPage({
       <Section>
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <div>
-            <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#8B2346]">
+            <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
               Solution Overview
             </p>
 
-            <Heading as="h2" className="mt-4 text-[#172033]">
+            <Heading as="h2" className="mt-4 text-[var(--ink)]">
               Technology designed around the requirement.
             </Heading>
           </div>
 
           <div>
-            <p className="text-lg leading-8 text-[#64748B]">
+            <p className="text-lg leading-8 text-[var(--text-secondary)]">
               {individualSolution.description}
             </p>
 
-            <p className="mt-5 text-base leading-7 text-[#64748B]">
+            <p className="mt-5 text-base leading-7 text-[var(--text-secondary)]">
               This solution can be considered as part of a broader technology
               approach based on the organization's requirements, workflows and
               existing systems.
@@ -813,18 +813,18 @@ export default async function SolutionPage({
           CAPABILITIES
       ===================================================== */}
 
-      <section className="bg-[#F8F9FB] py-16 sm:py-20 lg:py-24">
+      <section className="bg-[var(--background-soft)] py-16 sm:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#8B2346]">
+            <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
               Explore
             </p>
 
-            <Heading as="h2" className="mt-4 text-[#172033]">
+            <Heading as="h2" className="mt-4 text-[var(--ink)]">
               How this solution can support your organization.
             </Heading>
 
-            <p className="mt-5 text-lg leading-8 text-[#64748B]">
+            <p className="mt-5 text-lg leading-8 text-[var(--text-secondary)]">
               The solution can be adapted around the relevant business,
               operational and technology requirements.
             </p>
@@ -841,17 +841,17 @@ export default async function SolutionPage({
             ].map((item, index) => (
               <div
                 key={item}
-                className="rounded-[14px] border border-[#E5E7EB] bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#8B2346] hover:shadow-[0_10px_30px_rgba(23,32,51,0.06)]"
+                className="rounded-[14px] border border-[var(--border-light)] bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--brand-gold)] hover:shadow-[0_10px_30px_rgba(17,17,17,0.06)]"
               >
-                <span className="text-sm font-semibold text-[#8B2346]">
+                <span className="text-sm font-semibold text-[var(--brand-gold-deep)]">
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
-                <h3 className="mt-5 text-lg font-semibold text-[#172033]">
+                <h3 className="mt-5 text-lg font-semibold text-[var(--ink)]">
                   {item}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-[#64748B]">
+                <p className="mt-3 text-sm leading-6 text-[var(--text-secondary)]">
                   Structured around the organization's specific requirements
                   and technology environment.
                 </p>
@@ -868,31 +868,31 @@ export default async function SolutionPage({
       <Section>
         <div className="grid gap-12 lg:grid-cols-[1fr_0.8fr] lg:gap-20">
           <div>
-            <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#8B2346]">
+            <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
               Connected Technology
             </p>
 
-            <Heading as="h2" className="mt-4 text-[#172033]">
+            <Heading as="h2" className="mt-4 text-[var(--ink)]">
               Part of a broader technology ecosystem.
             </Heading>
 
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-[#64748B]">
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-[var(--text-secondary)]">
               Individual solutions can work together with websites, business
               software, automation, digital systems and communication
               platforms where required.
             </p>
           </div>
 
-          <div className="rounded-[20px] border border-[#E5E7EB] bg-[#F8F9FB] p-7">
-            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#64748B]">
+          <div className="rounded-[20px] border border-[var(--border-light)] bg-[var(--background-soft)] p-7">
+            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--text-secondary)]">
               Solution
             </p>
 
-            <h3 className="mt-4 text-2xl font-semibold text-[#172033]">
+            <h3 className="mt-4 text-2xl font-semibold text-[var(--ink)]">
               {individualSolution.title}
             </h3>
 
-            <p className="mt-4 text-sm leading-7 text-[#64748B]">
+            <p className="mt-4 text-sm leading-7 text-[var(--text-secondary)]">
               {individualSolution.description}
             </p>
           </div>
@@ -903,19 +903,19 @@ export default async function SolutionPage({
           CTA
       ===================================================== */}
 
-      <section className="bg-[#F8EEF2]">
-        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <section className="bg-[var(--background-soft)]">
+        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-14 md:py-16 lg:py-18 lg:px-8">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
-              <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#8B2346]">
+              <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
                 Let's Build
               </p>
 
-              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-[#172033] sm:text-4xl">
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] sm:text-4xl">
                 Need this solution for your business?
               </h2>
 
-              <p className="mt-4 text-base leading-7 text-[#64748B]">
+              <p className="mt-4 text-base leading-7 text-[var(--text-secondary)]">
                 Tell us about your requirement and explore the appropriate
                 technology approach.
               </p>
@@ -923,7 +923,7 @@ export default async function SolutionPage({
 
             <Link
               href="/contact"
-              className="inline-flex shrink-0 items-center justify-center rounded-full bg-[#8B2346] px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[#6F1837]"
+              className="inline-flex shrink-0 items-center justify-center rounded-full bg-[var(--brand-gold-deep)] px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[var(--brand-gold-hover)]"
             >
               Get a Free Consultation
               <span className="ml-2">→</span>

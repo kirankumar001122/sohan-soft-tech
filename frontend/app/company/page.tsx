@@ -30,29 +30,29 @@ export default function CompanyPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-white py-20 text-[#172033] sm:py-24 lg:py-28">
+      <section className="bg-[var(--background)] py-14 md:py-16 lg:py-18 text-[var(--ink)] sm:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 lg:py-18 md:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
-            <p className="mb-5 text-sm font-medium uppercase tracking-[0.2em] text-[#8B2346]">
+            <p className="mb-5 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
               Company
             </p>
 
-            <Heading as="h1" className="text-[#172033]">
+            <Heading as="h1" className="text-[var(--ink)]">
               Technology That Works for Your Business.
             </Heading>
 
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-[#64748B] sm:text-xl">
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-[var(--text-secondary)] sm:text-xl">
               {companyData.introduction}
             </p>
 
-            <p className="mt-6 text-sm font-medium uppercase tracking-[0.18em] text-[#64748B]">
+            <p className="mt-6 text-sm font-medium uppercase tracking-[0.18em] text-[var(--text-secondary)]">
               {companyData.tagline}
             </p>
 
             <div className="mt-8">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-[#172033] px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[#0F172A]"
+                className="inline-flex items-center justify-center rounded-full bg-[var(--background-dark)] px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[var(--background-dark-soft)]"
               >
                 Talk to Us
               </Link>
@@ -65,21 +65,21 @@ export default function CompanyPage() {
       <Section>
         <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr]">
           <div>
-            <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
+            <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
               Who We Are
             </p>
 
-            <Heading as="h2" className="mt-4 text-[#172033]">
+            <Heading as="h2" className="mt-4 text-[var(--ink)]">
               A technology partner built around business needs.
             </Heading>
           </div>
 
           <div>
-            <p className="text-xl leading-9 text-[#64748B]">
+            <p className="text-xl leading-9 text-[var(--text-secondary)]">
               {companyData.introduction}
             </p>
 
-            <p className="mt-6 leading-8 text-[#64748B]">
+            <p className="mt-6 leading-8 text-[var(--text-secondary)]">
               Our approach brings together digital solutions, business
               software, automation, communication technology and IT
               capabilities within a connected technology ecosystem.
@@ -89,34 +89,34 @@ export default function CompanyPage() {
       </Section>
 
       {/* Mission + Vision */}
-<Section className="bg-[#F8F9FB]">
+<Section className="bg-[var(--background-soft)]">
   <div className="grid gap-6 lg:grid-cols-2">
     {/* Mission */}
-    <div className="rounded-[20px] border border-[#E5E7EB] bg-white p-8 sm:p-10">
-      <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
+    <div className="rounded-[20px] border border-[var(--border-light)] bg-white p-8 sm:p-10">
+      <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
         Mission
       </p>
 
-      <h2 className="mt-5 text-3xl font-semibold tracking-tight text-[#172033]">
+      <h2 className="mt-5 text-3xl font-semibold tracking-tight text-[var(--ink)]">
         What we aim to enable.
       </h2>
 
-      <p className="mt-5 text-lg leading-8 text-[#64748B]">
+      <p className="mt-5 text-lg leading-8 text-[var(--text-secondary)]">
         {companyData.mission}
       </p>
     </div>
 
     {/* Vision */}
-    <div className="rounded-[20px] border border-[#E5E7EB] bg-white p-8 sm:p-10">
-      <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
+    <div className="rounded-[20px] border border-[var(--border-light)] bg-white p-8 sm:p-10">
+      <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
         Vision
       </p>
 
-      <h2 className="mt-5 text-3xl font-semibold tracking-tight text-[#172033]">
+      <h2 className="mt-5 text-3xl font-semibold tracking-tight text-[var(--ink)]">
         Where we are heading.
       </h2>
 
-      <p className="mt-5 text-lg leading-8 text-[#64748B]">
+      <p className="mt-5 text-lg leading-8 text-[var(--text-secondary)]">
         {companyData.vision}
       </p>
     </div>
@@ -126,15 +126,15 @@ export default function CompanyPage() {
       {/* Values */}
       <Section>
         <div className="mb-12 max-w-3xl">
-          <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
+          <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
             Our Principles
           </p>
 
-          <Heading as="h2" className="mt-4 text-[#172033]">
+          <Heading as="h2" className="mt-4 text-[var(--ink)]">
             How we think about technology.
           </Heading>
 
-          <p className="mt-5 text-lg leading-8 text-[#64748B]">
+          <p className="mt-5 text-lg leading-8 text-[var(--text-secondary)]">
             These principles provide a foundation for how technology
             solutions can be approached and developed.
           </p>
@@ -144,17 +144,17 @@ export default function CompanyPage() {
           {companyData.values.map((value, index) => (
             <div
               key={value.title}
-              className="rounded-[20px] border border-[#E5E7EB] p-7 sm:p-8"
+              className="rounded-[20px] border border-[var(--border-light)] p-7 sm:p-8"
             >
-              <span className="text-sm font-medium text-[#8B2346]">
+              <span className="text-sm font-medium text-[var(--brand-gold-deep)]">
                 {String(index + 1).padStart(2, "0")}
               </span>
 
-              <h3 className="mt-5 text-2xl font-semibold tracking-tight text-[#172033]">
+              <h3 className="mt-5 text-2xl font-semibold tracking-tight text-[var(--ink)]">
                 {value.title}
               </h3>
 
-              <p className="mt-4 leading-7 text-[#64748B]">
+              <p className="mt-4 leading-7 text-[var(--text-secondary)]">
                 {value.description}
               </p>
             </div>
@@ -163,17 +163,17 @@ export default function CompanyPage() {
       </Section>
 
       {/* Capabilities */}
-      <Section className="bg-[#F8F9FB]">
+      <Section className="bg-[var(--background-soft)]">
         <div className="mb-12 max-w-3xl">
-          <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
+          <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
             Capabilities
           </p>
 
-          <Heading as="h2" className="mt-4 text-[#172033]">
+          <Heading as="h2" className="mt-4 text-[var(--ink)]">
             Technology capabilities across the business lifecycle.
           </Heading>
 
-          <p className="mt-5 text-lg leading-8 text-[#64748B]">
+          <p className="mt-5 text-lg leading-8 text-[var(--text-secondary)]">
             From digital experiences to operational systems and automation,
             our capability structure is designed around connected business
             requirements.
@@ -184,17 +184,17 @@ export default function CompanyPage() {
           {companyData.capabilities.map((capability, index) => (
             <div
               key={capability.title}
-              className="rounded-[20px] border border-[#E5E7EB] bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#8B2346] hover:shadow-[0_10px_30px_rgba(23,32,51,0.06)]"
+              className="rounded-[20px] border border-[var(--border-light)] bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--brand-gold)] hover:shadow-[0_10px_30px_rgba(17,17,17,0.06)]"
             >
-              <span className="text-sm font-medium text-[#8B2346]">
+              <span className="text-sm font-medium text-[var(--brand-gold-deep)]">
                 {String(index + 1).padStart(2, "0")}
               </span>
 
-              <h3 className="mt-5 text-xl font-semibold text-[#172033]">
+              <h3 className="mt-5 text-xl font-semibold text-[var(--ink)]">
                 {capability.title}
               </h3>
 
-              <p className="mt-4 leading-7 text-[#64748B]">
+              <p className="mt-4 leading-7 text-[var(--text-secondary)]">
                 {capability.description}
               </p>
             </div>
@@ -203,24 +203,24 @@ export default function CompanyPage() {
       </Section>
 
      {/* How We Work */}
-<section className="bg-white py-16 sm:py-20 lg:py-24">
+<section className="bg-[var(--background)] py-16 sm:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
   <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
     <div className="max-w-3xl">
-      <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#8B2346]">
+      <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
         How We Work
       </p>
 
-      <h2 className="mt-4 text-4xl font-semibold tracking-tight text-[#172033] sm:text-5xl">
+      <h2 className="mt-4 text-4xl font-semibold tracking-tight text-[var(--ink)] sm:text-5xl">
         A structured approach from idea to implementation.
       </h2>
 
-      <p className="mt-5 max-w-2xl text-lg leading-8 text-[#64748B]">
+      <p className="mt-5 max-w-2xl text-lg leading-8 text-[var(--text-secondary)]">
         Every project starts with understanding the requirement and moves
         through planning, implementation, testing and deployment.
       </p>
     </div>
 
-    <div className="mt-12 grid gap-0 border-y border-[#E5E7EB] sm:grid-cols-2 lg:grid-cols-3">
+    <div className="mt-12 grid gap-0 border-y border-[var(--border-light)] sm:grid-cols-2 lg:grid-cols-3">
       {[
         {
           number: "01",
@@ -261,7 +261,7 @@ export default function CompanyPage() {
       ].map((item, index) => (
         <div
           key={item.number}
-          className={`border-[#E5E7EB] p-7 sm:p-8 ${
+          className={`border-[var(--border-light)] p-7 sm:p-8 ${
             index < 3 ? "lg:border-b" : ""
           } ${
             index % 3 !== 2 ? "lg:border-r" : ""
@@ -269,15 +269,15 @@ export default function CompanyPage() {
             index % 2 === 0 ? "sm:border-r lg:border-r" : ""
           }`}
         >
-          <span className="text-sm font-semibold text-[#8B2346]">
+          <span className="text-sm font-semibold text-[var(--brand-gold-deep)]">
             {item.number}
           </span>
 
-          <h3 className="mt-8 text-xl font-semibold tracking-tight text-[#172033]">
+          <h3 className="mt-8 text-xl font-semibold tracking-tight text-[var(--ink)]">
             {item.title}
           </h3>
 
-          <p className="mt-3 text-sm leading-7 text-[#64748B]">
+          <p className="mt-3 text-sm leading-7 text-[var(--text-secondary)]">
             {item.description}
           </p>
         </div>
@@ -287,18 +287,18 @@ export default function CompanyPage() {
 </section>
 
       {/* Technology */}
-<Section className="bg-white">
+<Section className="bg-[var(--background)]">
   <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr]">
     <div>
-      <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
+      <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
         Technology
       </p>
 
-      <Heading as="h2" className="mt-4 text-[#172033]">
+      <Heading as="h2" className="mt-4 text-[var(--ink)]">
         A broad technology foundation.
       </Heading>
 
-      <p className="mt-5 leading-8 text-[#64748B]">
+      <p className="mt-5 leading-8 text-[var(--text-secondary)]">
         Technology requirements can vary from one organization to
         another. Our capability areas span software, cloud, automation,
         integrations and IT technology.
@@ -309,7 +309,7 @@ export default function CompanyPage() {
       {companyData.technologyAreas.map((technology) => (
         <div
           key={technology}
-          className="rounded-xl border border-[#E5E7EB] bg-white px-5 py-4 text-[#172033] transition-all duration-300 hover:border-[#8B2346] hover:bg-[#F8EEF2]"
+          className="rounded-xl border border-[var(--border-light)] bg-white px-5 py-4 text-[var(--ink)] transition-all duration-300 hover:border-[var(--brand-gold)] hover:bg-[var(--background-soft)]"
         >
           {technology}
         </div>
@@ -321,11 +321,11 @@ export default function CompanyPage() {
       {/* Industries */}
       <Section>
         <div className="mb-10 max-w-3xl">
-          <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
+          <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
             Industries
           </p>
 
-          <Heading as="h2" className="mt-4 text-[#172033]">
+          <Heading as="h2" className="mt-4 text-[var(--ink)]">
             Technology across different business environments.
           </Heading>
         </div>
@@ -347,7 +347,7 @@ export default function CompanyPage() {
               <Link
                 key={industry}
                 href={`/industries/${industrySlugs[industry]}`}
-                className="rounded-[14px] border border-[#E5E7EB] p-5 font-medium text-[#172033] transition-colors hover:border-[#8B2346] hover:text-[#8B2346]"
+                className="rounded-[14px] border border-[var(--border-light)] p-5 font-medium text-[var(--ink)] transition-colors hover:border-[var(--brand-gold)] hover:text-[var(--brand-gold-deep)]"
               >
                 {industry}
               </Link>
@@ -357,31 +357,31 @@ export default function CompanyPage() {
       </Section>
 
       {/* Partnership */}
-      <Section className="bg-[#F8EEF2]">
+      <Section className="bg-[var(--background-soft)]">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
+          <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
             Long-Term Partnership
           </p>
 
-          <Heading as="h2" className="mt-4 text-[#172033]">
+          <Heading as="h2" className="mt-4 text-[var(--ink)]">
             Technology that can evolve with the business.
           </Heading>
 
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-[#64748B]">
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-[var(--text-secondary)]">
             {companyData.partnership}
           </p>
 
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-[#8B2346] px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[#6F1837]"
+              className="inline-flex items-center justify-center rounded-full bg-[var(--brand-gold-deep)] px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[var(--brand-gold-hover)]"
             >
               Get a Free Consultation
             </Link>
 
             <Link
               href="/services"
-              className="inline-flex items-center justify-center rounded-full border border-[#E5E7EB] bg-white px-7 py-3.5 text-sm font-medium text-[#172033] transition-colors hover:border-[#8B2346] hover:text-[#8B2346]"
+              className="inline-flex items-center justify-center rounded-full border border-[var(--border-light)] bg-white px-7 py-3.5 text-sm font-medium text-[var(--ink)] transition-colors hover:border-[var(--brand-gold)] hover:text-[var(--brand-gold-deep)]"
             >
               Explore Services
             </Link>

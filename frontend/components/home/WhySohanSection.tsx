@@ -1,72 +1,69 @@
 import Heading from "@/components/ui/Heading";
 import Section from "@/components/ui/Section";
 
-const principles = [
+const points = [
   {
-    number: "01",
     title: "Business-first thinking",
     description:
-      "Technology decisions should start with the business requirement, not with technology for its own sake.",
+      "Requirements, users and outcomes come before tools.",
   },
   {
-    number: "02",
-    title: "Connected capabilities",
+    title: "Customized solutions",
     description:
-      "Digital products, automation, software and infrastructure can work together as part of a broader technology ecosystem.",
+      "Implementation is shaped around how your organization already works.",
   },
   {
-    number: "03",
-    title: "Practical solutions",
+    title: "Multiple capabilities, one partner",
     description:
-      "Solutions should be understandable, useful and aligned with how organizations actually operate.",
+      "Digital products, software, automation and infrastructure can sit together.",
   },
   {
-    number: "04",
-    title: "Long-term approach",
+    title: "Appropriate modern technology",
     description:
-      "Technology should support the business beyond the initial implementation as needs evolve.",
+      "We choose technology that fits the problem, not a single default stack.",
+  },
+  {
+    title: "Scalable implementation",
+    description:
+      "Start with what is needed now, with room to expand later.",
+  },
+  {
+    title: "System integration",
+    description:
+      "Connect forms, messaging, records and operations where it reduces manual work.",
+  },
+  {
+    title: "Long-term technology support",
+    description:
+      "Delivery includes the expectation that systems will continue to change.",
   },
 ];
 
 export default function WhySohanSection() {
   return (
-    <Section className="bg-white">
-      <div className="grid gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-        {/* Introduction */}
+    <Section className="bg-[var(--background)]">
+      <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
         <div>
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-green)]">
-            Why Sohan Soft Tech
-          </p>
-
-          <Heading as="h2">
-            Technology with a practical business perspective.
+          <p className="text-eyebrow">Why Sohan Soft Tech</p>
+          <Heading as="h2" className="mt-4 max-w-[12ch]">
+            A partner for practical technology work.
           </Heading>
-
-          <p className="mt-6 max-w-xl text-base leading-8 text-[var(--text-secondary)]">
-            We approach technology as a business enabler — connecting
-            digital experiences, software, automation and technology
-            infrastructure around real organizational requirements.
+          <p className="mt-6 max-w-md text-base leading-8 text-[var(--text-secondary)]">
+            We do not publish awards, client counts or testimonials that we
+            cannot verify. The case for working with us is the way we think
+            and deliver.
           </p>
         </div>
-
-        {/* Principles */}
-        <div className="divide-y divide-[var(--border-light)] border-y border-[var(--border-light)]">
-          {principles.map((principle) => (
-            <div
-              key={principle.number}
-              className="grid gap-4 py-7 sm:grid-cols-[80px_1fr] sm:gap-8"
-            >
-              <span className="text-sm font-medium text-[var(--brand-green)]">
-                {principle.number}
+        <div className="space-y-6">
+          {points.map((point, index) => (
+            <div key={point.title} className="grid gap-3 sm:grid-cols-[70px_1fr]">
+              <span className="text-sm font-semibold text-[var(--brand-gold-deep)]">
+                {String(index + 1).padStart(2, "0")}
               </span>
-
               <div>
-                <h3 className="text-xl font-semibold tracking-tight">
-                  {principle.title}
-                </h3>
-
-                <p className="mt-3 max-w-2xl text-sm leading-6 text-[var(--text-secondary)]">
-                  {principle.description}
+                <h3 className="text-xl">{point.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-[var(--text-secondary)]">
+                  {point.description}
                 </p>
               </div>
             </div>

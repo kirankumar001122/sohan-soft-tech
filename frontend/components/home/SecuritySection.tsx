@@ -30,11 +30,11 @@ const reliabilityPoints = [
 
 export default function SecuritySection() {
   return (
-    <Section className="bg-white">
+    <Section className="bg-[var(--background)]">
       <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
         {/* Introduction */}
         <div>
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-green)]">
+          <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
             Security & Reliability
           </p>
 
@@ -57,7 +57,7 @@ export default function SecuritySection() {
               key={point.number}
               className="rounded-2xl border border-[var(--border-light)] bg-[var(--background-soft)] p-7"
             >
-              <span className="text-sm font-medium text-[var(--brand-green)]">
+              <span className="text-sm font-medium text-[var(--brand-gold-deep)]">
                 {point.number}
               </span>
 

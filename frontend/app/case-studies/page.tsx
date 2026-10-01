@@ -25,18 +25,18 @@ export default function CaseStudiesPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-5 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-40">
+      <section className="bg-[var(--background)]">
+        <div className="mx-auto max-w-7xl px-5 py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 sm:px-6 sm:py-18 md:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 lg:px-8 lg:py-40">
           <div className="max-w-4xl">
-            <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
+            <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
               Case Studies
             </p>
 
-            <Heading as="h1" className="mt-5 text-[#172033]">
+            <Heading as="h1" className="mt-5 text-[var(--ink)]">
               Documented technology work and solution approaches.
             </Heading>
 
-            <p className="mt-6 max-w-2xl text-base leading-8 text-[#64748B] sm:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--text-secondary)] sm:text-lg">
               Explore documented projects and solution approaches as verified
               case study information becomes available.
             </p>
@@ -47,15 +47,15 @@ export default function CaseStudiesPage() {
       {/* Case Study Area */}
       <Section>
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
+          <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
             Project Stories
           </p>
 
-          <Heading as="h2" className="mt-4 text-[#172033]">
+          <Heading as="h2" className="mt-4 text-[var(--ink)]">
             Verified project stories will appear here.
           </Heading>
 
-          <p className="mt-6 leading-8 text-[#64748B]">
+          <p className="mt-6 leading-8 text-[var(--text-secondary)]">
             Case studies should be published using verified project
             information, including the actual business challenge, solution,
             implementation details and documented outcomes. No client names,
@@ -66,19 +66,19 @@ export default function CaseStudiesPage() {
       </Section>
 
       {/* CTA */}
-      <Section className="bg-[#F8F9FB]">
-        <div className="rounded-[var(--radius-lg)] bg-[#F8EEF2] p-8 sm:p-12">
-          <Heading as="h2" className="text-[#172033]">
+      <Section className="bg-[var(--background-soft)]">
+        <div className="rounded-[var(--radius-lg)] bg-[var(--background-soft)] p-8 sm:p-12">
+          <Heading as="h2" className="text-[var(--ink)]">
             Have a project you would like to discuss?
           </Heading>
 
-          <p className="mt-5 max-w-2xl leading-8 text-[#64748B]">
+          <p className="mt-5 max-w-2xl leading-8 text-[var(--text-secondary)]">
             Tell us about your business requirements and technology goals.
           </p>
 
           <a
             href="/contact"
-            className="mt-8 inline-flex items-center justify-center rounded-full bg-[#8B2346] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#6F1837]"
+            className="mt-8 inline-flex items-center justify-center rounded-full bg-[var(--brand-gold-deep)] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[var(--brand-gold-hover)]"
           >
             Talk to Us →
           </a>

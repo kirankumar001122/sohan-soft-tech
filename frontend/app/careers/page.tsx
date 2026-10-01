@@ -28,10 +28,10 @@ export default function CareersPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-[var(--background-dark)] py-24 text-white sm:py-28 lg:py-32">
+      <section className="bg-[var(--background-dark)] py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 text-white sm:py-18 md:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 lg:py-18 md:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
-            <p className="mb-5 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-green)]">
+            <p className="mb-5 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
               Careers
             </p>
 
@@ -46,7 +46,7 @@ export default function CareersPage() {
             <div className="mt-8">
               <a
                 href="#openings"
-                className="inline-flex items-center justify-center rounded-full bg-[var(--brand-green)] px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[var(--brand-green-dark)]"
+                className="inline-flex items-center justify-center rounded-full bg-[var(--brand-gold-deep)] px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[var(--brand-gold-hover)]"
               >
                 View Opportunities
               </a>
@@ -58,7 +58,7 @@ export default function CareersPage() {
       {/* Why Work With Us */}
       <Section>
         <div className="mb-12 max-w-3xl">
-          <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-green)]">
+          <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
             Why Sohan Soft Tech
           </p>
 
@@ -78,7 +78,7 @@ export default function CareersPage() {
               key={item.title}
               className="rounded-[var(--radius-lg)] border border-[var(--border-light)] p-7 sm:p-8"
             >
-              <span className="text-sm font-medium text-[var(--brand-green)]">
+              <span className="text-sm font-medium text-[var(--brand-gold-deep)]">
                 {String(index + 1).padStart(2, "0")}
               </span>
 
@@ -98,7 +98,7 @@ export default function CareersPage() {
       <Section className="bg-[var(--background-soft)]">
         <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr]">
           <div>
-            <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-green)]">
+            <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
               Culture
             </p>
 
@@ -133,7 +133,7 @@ export default function CareersPage() {
       <Section>
         <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr]">
           <div>
-            <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-green)]">
+            <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
               Technology Environment
             </p>
 
@@ -151,7 +151,7 @@ export default function CareersPage() {
             {careersData.technologyEnvironment.map((technology) => (
               <div
                 key={technology}
-                className="rounded-[var(--radius-md)] border border-[var(--border-light)] p-5 font-medium transition-colors hover:border-[var(--brand-green)] hover:text-[var(--brand-green)]"
+                className="rounded-[var(--radius-md)] border border-[var(--border-light)] p-5 font-medium transition-colors hover:border-[var(--brand-gold)] hover:text-[var(--brand-gold-deep)]"
               >
                 {technology}
               </div>
@@ -167,7 +167,7 @@ export default function CareersPage() {
       >
         <div id="openings" className="scroll-mt-28">
           <div className="mb-12 max-w-3xl">
-            <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-green)]">
+            <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
               Current Opportunities
             </p>
 
@@ -187,7 +187,7 @@ export default function CareersPage() {
                 <Link
                   key={job.slug}
                   href={`/careers/${job.slug}`}
-                  className="group rounded-[var(--radius-lg)] border border-[var(--border-light)] bg-white p-7 transition-all duration-300 hover:border-[var(--brand-green)] hover:shadow-[var(--shadow-soft)]"
+                  className="group rounded-[var(--radius-lg)] border border-[var(--border-light)] bg-white p-7 transition-all duration-300 hover:border-[var(--brand-gold)] hover:shadow-[var(--shadow-soft)]"
                 >
                   <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-center">
                     <div>
@@ -202,7 +202,7 @@ export default function CareersPage() {
                       </div>
                     </div>
 
-                    <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[var(--brand-green-light)] text-[var(--brand-green)] transition-transform group-hover:translate-x-1">
+                    <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[var(--brand-gold-soft)] text-[var(--brand-gold-deep)] transition-transform group-hover:translate-x-1">
                       →
                     </span>
                   </div>
@@ -211,7 +211,7 @@ export default function CareersPage() {
             </div>
           ) : (
             <div className="rounded-[var(--radius-lg)] border border-[var(--border-light)] bg-white px-7 py-12 text-center sm:px-10">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[var(--brand-green-light)] text-xl text-[var(--brand-green)]">
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[var(--brand-gold-soft)] text-xl text-[var(--brand-gold-deep)]">
                 +
               </div>
 
@@ -231,7 +231,7 @@ export default function CareersPage() {
       {/* Application Process */}
       <Section>
         <div className="mb-12 max-w-3xl">
-          <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-green)]">
+          <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
             Application Process
           </p>
 
@@ -251,7 +251,7 @@ export default function CareersPage() {
               key={step.step}
               className="rounded-[var(--radius-lg)] border border-[var(--border-light)] p-6"
             >
-              <span className="text-sm font-medium text-[var(--brand-green)]">
+              <span className="text-sm font-medium text-[var(--brand-gold-deep)]">
                 {step.step}
               </span>
 
@@ -268,9 +268,9 @@ export default function CareersPage() {
       </Section>
 
       {/* General CTA */}
-      <Section className="bg-[var(--brand-green-light)]">
+      <Section className="bg-[var(--brand-gold-soft)]">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-green)]">
+          <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
             Stay Connected
           </p>
 
@@ -286,14 +286,14 @@ export default function CareersPage() {
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <Link
               href="/company"
-              className="inline-flex items-center justify-center rounded-full border border-[var(--border-light)] bg-white px-7 py-3.5 text-sm font-medium text-[var(--text-primary)] transition-colors hover:border-[var(--brand-green)] hover:text-[var(--brand-green)]"
+              className="inline-flex items-center justify-center rounded-full border border-[var(--border-light)] bg-white px-7 py-3.5 text-sm font-medium text-[var(--text-primary)] transition-colors hover:border-[var(--brand-gold)] hover:text-[var(--brand-gold-deep)]"
             >
               About Sohan Soft Tech
             </Link>
 
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-[var(--brand-green)] px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[var(--brand-green-dark)]"
+              className="inline-flex items-center justify-center rounded-full bg-[var(--brand-gold-deep)] px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[var(--brand-gold-hover)]"
             >
               Contact Us
             </Link>

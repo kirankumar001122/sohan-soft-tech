@@ -18,6 +18,13 @@ export interface MegaMenuItem {
 export interface MegaMenu {
   label: string;
   href: string;
+  description: string;
+  featured?: {
+    title: string;
+    description: string;
+    href: string;
+    cta: string;
+  };
   bottomCtaText?: string;
   bottomCtaLinkText?: string;
   bottomCtaHref?: string;
@@ -58,6 +65,15 @@ export const mainNavigation: NavigationItem[] = [
 export const servicesMenu: MegaMenu = {
   label: "Services",
   href: "/services",
+  description:
+    "Web, commerce, mobile, automation, software and infrastructure capabilities under one technology partner.",
+  featured: {
+    title: "AI & Automation",
+    description:
+      "Connect enquiries, workflows and customer communication with practical automation.",
+    href: "/services/ai-automation",
+    cta: "Explore automation",
+  },
   bottomCtaText: "Looking for tailored technology solutions for your business?",
   bottomCtaLinkText: "Explore all services →",
   bottomCtaHref: "/services",
@@ -137,6 +153,15 @@ export const servicesMenu: MegaMenu = {
 export const solutionsMenu: MegaMenu = {
   label: "Solutions",
   href: "/solutions",
+  description:
+    "Solution paths organized around business need — from operations and education to automation and office technology.",
+  featured: {
+    title: "Digital Transformation",
+    description:
+      "Modernize processes, systems and customer journeys with a practical technology roadmap.",
+    href: "/solutions/digital-transformation",
+    cta: "See this solution",
+  },
   bottomCtaText: "Looking for tailored technology solutions for your business?",
   bottomCtaLinkText: "Explore all solutions →",
   bottomCtaHref: "/solutions",
@@ -204,6 +229,15 @@ export const solutionsMenu: MegaMenu = {
 export const industriesMenu: MegaMenu = {
   label: "Industries",
   href: "/industries",
+  description:
+    "Technology shaped around the operating realities of education, healthcare, retail, manufacturing and more.",
+  featured: {
+    title: "Education Technology",
+    description:
+      "ERP, learning systems and parent communication designed for institutions.",
+    href: "/industries/education",
+    cta: "View industry",
+  },
   bottomCtaText: "Looking for tailored technology solutions for your business?",
   bottomCtaLinkText: "Explore technology solutions for your industry →",
   bottomCtaHref: "/industries",
@@ -277,6 +311,15 @@ export const industriesMenu: MegaMenu = {
 export const productsMenu: MegaMenu = {
   label: "Products",
   href: "/products",
+  description:
+    "Software platforms for billing, POS, education, attendance, messaging and warranty operations.",
+  featured: {
+    title: "WhatsApp Automation Platform",
+    description:
+      "Structured WhatsApp workflows for enquiries, notifications and customer communication.",
+    href: "/products/whatsapp-automation-platform",
+    cta: "Request a demo",
+  },
   bottomCtaText: "Looking for a product built around your business?",
   bottomCtaLinkText: "Explore all products →",
   bottomCtaHref: "/products",
@@ -321,7 +364,7 @@ export const productsMenu: MegaMenu = {
         },
         {
           label: "Learning Management System",
-          href: "/products/lms",
+          href: "/products/learning-management",
           description:
             "Learning management capabilities for digital education.",
         },
@@ -362,6 +405,15 @@ export const productsMenu: MegaMenu = {
 export const companyMenu: MegaMenu = {
   label: "Company",
   href: "/company",
+  description:
+    "How Sohan Soft Tech approaches technology partnerships, delivery and long-term support.",
+  featured: {
+    title: "Our Approach",
+    description:
+      "Business-first thinking, practical technology and implementation that can scale with you.",
+    href: "/company/approach",
+    cta: "Read our approach",
+  },
   bottomCtaText: "Want to work with Sohan Soft Tech?",
   bottomCtaLinkText: "Talk to Us →",
   bottomCtaHref: "/contact",
@@ -376,10 +428,16 @@ export const companyMenu: MegaMenu = {
             "Our approach to technology and business solutions.",
         },
         {
-          label: "Our Capabilities",
-          href: "/services",
+          label: "Our Approach",
+          href: "/company/approach",
           description:
-            "Explore our technology and service capabilities.",
+            "How we connect business requirements with technology choices.",
+        },
+        {
+          label: "Careers",
+          href: "/careers",
+          description:
+            "Join the team building practical technology for businesses.",
         },
       ],
     },
@@ -388,13 +446,13 @@ export const companyMenu: MegaMenu = {
       items: [
         {
           label: "How We Work",
-          href: "/company#how-we-work",
+          href: "/company/how-we-work",
           description:
             "Understand our approach from discovery to delivery.",
         },
         {
           label: "Technology",
-          href: "/#technology",
+          href: "/company/technology",
           description:
             "Explore the technologies behind our solutions.",
         },
@@ -406,6 +464,15 @@ export const companyMenu: MegaMenu = {
 export const resourcesMenu: MegaMenu = {
   label: "Resources",
   href: "/resources",
+  description:
+    "Guides, FAQs and example layouts to help teams evaluate technology and automation decisions.",
+  featured: {
+    title: "FAQs",
+    description:
+      "Clear answers about services, delivery and how to start a conversation with our team.",
+    href: "/resources/faqs",
+    cta: "Open FAQs",
+  },
   bottomCtaText: "Have a technology question?",
   bottomCtaLinkText: "Talk to Us →",
   bottomCtaHref: "/contact",
@@ -437,10 +504,16 @@ export const resourcesMenu: MegaMenu = {
             "Answers to common questions about our services and solutions.",
         },
         {
-          label: "Resources",
-          href: "/resources",
+          label: "Guides",
+          href: "/resources/guides",
           description:
-            "Helpful resources for businesses exploring technology.",
+            "Example resource layouts for automation, software and digital growth.",
+        },
+        {
+          label: "Technology Resources",
+          href: "/resources/technology",
+          description:
+            "Reference material for evaluating platforms and implementation approaches.",
         },
       ],
     },

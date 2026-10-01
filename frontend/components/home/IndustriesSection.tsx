@@ -1,129 +1,107 @@
+import Image from "next/image";
 import Link from "next/link";
 import Heading from "@/components/ui/Heading";
 import Section from "@/components/ui/Section";
 
 const industries = [
   {
-    number: "01",
     title: "Education",
-    description:
-      "Digital platforms, education systems and communication tools for educational organizations.",
     href: "/industries/education",
+    image: "/images/education_ind.jpg",
+    span: "lg:col-span-2",
   },
   {
-    number: "02",
     title: "Healthcare",
-    description:
-      "Technology solutions that support healthcare operations, communication and digital experiences.",
     href: "/industries/healthcare",
+    image: "/images/healthcare_ind.jpg",
+    span: "",
   },
   {
-    number: "03",
-    title: "Retail & E-Commerce",
-    description:
-      "Digital commerce, business systems and customer-focused technology for retail businesses.",
+    title: "Retail & E-commerce",
     href: "/industries/retail-ecommerce",
+    image: "/images/retaail_ind.jpg",
+    span: "",
   },
   {
-    number: "04",
     title: "Manufacturing",
-    description:
-      "Business technology, automation and digital systems for manufacturing organizations.",
     href: "/industries/manufacturing",
+    image: "/images/manufacturing_ind.jpg",
+    span: "",
   },
   {
-    number: "05",
     title: "Food & Hospitality",
-    description:
-      "Technology solutions for restaurants, food businesses and hospitality operations.",
     href: "/industries/food-hospitality",
+    image: "/images/hospitality_ind.jpg",
+    span: "",
   },
   {
-    number: "06",
     title: "Professional Services",
-    description:
-      "Digital tools and business systems designed for professional service organizations.",
     href: "/industries/professional-services",
+    image: "/images/business_ind.jpg",
+    span: "",
   },
   {
-    number: "07",
     title: "Small & Medium Businesses",
-    description:
-      "Practical technology solutions that help growing businesses improve their operations.",
     href: "/industries/smb",
+    image: "/images/SMB_ind.png",
+    span: "",
   },
   {
-    number: "08",
     title: "Corporate Offices",
-    description:
-      "Office technology, infrastructure and systems for connected workplace operations.",
     href: "/industries/corporate-offices",
+    image: "/images/corporate_ind.jpg",
+    span: "lg:col-span-2",
   },
 ];
 
 export default function IndustriesSection() {
   return (
-    <Section className="bg-white">
-      {/* Section Header */}
-      <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-        <div>
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[#8B2346]">
-            Industries
-          </p>
-
-          <Heading as="h2">
-            Technology shaped around your industry.
+    <Section tone="warm">
+      <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+        <div className="max-w-2xl">
+          <p className="text-eyebrow">Industry expertise</p>
+          <Heading as="h2" className="mt-4">
+            Technology shaped around the way your industry works.
           </Heading>
+          <p className="mt-4 max-w-xl text-base leading-7 text-[var(--text-secondary)]">
+            Practical digital systems for the teams, customers and day-to-day realities in every sector.
+          </p>
         </div>
-
-        <p className="max-w-2xl text-base leading-8 text-[var(--text-secondary)] sm:text-lg">
-          Different industries have different challenges. We bring together
-          relevant technology, digital services and business systems around
-          the needs of each organization.
-        </p>
+        <Link
+          href="/industries"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--brand-gold-deep)] transition hover:text-[var(--ink)]"
+        >
+          All industries <span aria-hidden="true">→</span>
+        </Link>
       </div>
 
-      {/* Industry Grid */}
-      <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {industries.map((industry) => (
+      <div className="mt-12 grid auto-rows-[230px] gap-4 sm:grid-cols-2 lg:auto-rows-[250px] lg:grid-cols-4">
+        {industries.map((industry, index) => (
           <Link
-            key={industry.number}
+            key={industry.href}
             href={industry.href}
-            className="group rounded-2xl border border-[var(--border-light)] bg-white p-6 transition-all duration-200 hover:-translate-y-1 hover:border-[#8B2346] hover:shadow-[var(--shadow-soft)]"
+            className={`group relative isolate overflow-hidden rounded-2xl border border-white/70 shadow-[0_12px_30px_rgba(17,17,17,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-card-hover)] ${industry.span}`}
           >
-            <div className="flex items-start justify-between">
-              <span className="text-sm font-medium text-[#8B2346]">
-                {industry.number}
-              </span>
-
-              <span className="text-lg text-[var(--text-muted)] transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1">
-                ↗
-              </span>
+            <Image
+              src={industry.image}
+              alt={`${industry.title} industry`}
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 50vw"
+              className="-z-10 object-cover transition duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+            <div className="absolute inset-x-0 top-0 flex items-center justify-between p-5">
+              <span className="h-px w-9 bg-[var(--brand-gold-rich)] transition-all duration-300 group-hover:w-14" />
+              <span className="text-[10px] font-semibold tracking-[0.14em] text-white/75">0{index + 1}</span>
             </div>
-
-            <h3 className="mt-10 text-lg font-semibold tracking-tight text-[#172033]">
-              {industry.title}
-            </h3>
-
-            <p className="mt-3 text-sm leading-6 text-[var(--text-secondary)]">
-              {industry.description}
-            </p>
-
-            <div className="mt-6 text-sm font-semibold text-[#8B2346]">
-              Explore industry →
+            <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
+              <h3 className="max-w-[18ch] text-xl font-semibold leading-tight text-white sm:text-2xl">{industry.title}</h3>
+              <span className="mt-3 inline-flex items-center gap-2 text-xs font-semibold text-white/80 transition group-hover:text-white">
+                Explore industry <span aria-hidden="true" className="text-[var(--brand-gold-rich)]">→</span>
+              </span>
             </div>
           </Link>
         ))}
-      </div>
-
-      {/* CTA */}
-      <div className="mt-10 flex justify-center">
-        <Link
-          href="/industries"
-          className="rounded-full border border-[var(--border-light)] bg-white px-6 py-3 text-sm font-medium text-[#172033] transition-colors hover:border-[#8B2346] hover:text-[#8B2346]"
-        >
-          Explore All Industries
-        </Link>
       </div>
     </Section>
   );

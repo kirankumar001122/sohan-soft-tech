@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import AutomationFeature from "@/components/home/AutomationFeature";
 import CaseStudiesSection from "@/components/home/CaseStudiesSection";
 import CompanyIntro from "@/components/home/CompanyIntro";
 import FinalCTA from "@/components/home/FinalCTA";
@@ -6,12 +7,10 @@ import FounderSection from "@/components/home/FounderSection";
 import HeroSection from "@/components/home/HeroSection";
 import IndustriesSection from "@/components/home/IndustriesSection";
 import ProcessSection from "@/components/home/ProcessSection";
-import ProductsSection from "@/components/home/ProductsSection";
 import ResourcesSection from "@/components/home/ResourcesSection";
-import SecuritySection from "@/components/home/SecuritySection";
+import ServicesEcosystem from "@/components/home/ServicesEcosystem";
 import ServicesSection from "@/components/home/ServicesSection";
 import SolutionsSection from "@/components/home/SolutionsSection";
-import TechnologySection from "@/components/home/TechnologySection";
 import WhySohanSection from "@/components/home/WhySohanSection";
 
 export const metadata: Metadata = {
@@ -39,31 +38,17 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
-
       <CompanyIntro />
-
       <ServicesSection />
-
+      <ServicesEcosystem />
+      <AutomationFeature />
       <SolutionsSection />
-
       <IndustriesSection />
-
-      <ProductsSection />
-
       <CaseStudiesSection />
-
       <WhySohanSection />
-
       <FounderSection />
-
       <ProcessSection />
-
-      <TechnologySection />
-
-      <SecuritySection />
-
       <ResourcesSection />
-
       <FinalCTA />
     </main>
   );

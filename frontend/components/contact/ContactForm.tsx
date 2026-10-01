@@ -95,7 +95,7 @@ export default function ContactForm() {
             type="text"
             required
             placeholder="Your name"
-            className="w-full rounded-xl border border-[var(--border-light)] bg-white px-4 py-3.5 text-sm outline-none transition focus:border-[var(--brand-green)] focus:ring-2 focus:ring-[var(--brand-green)]/10"
+            className="w-full rounded-xl border border-[var(--border-light)] bg-white px-4 py-3.5 text-sm outline-none transition focus:border-[var(--brand-gold)] focus:ring-2 focus:ring-[var(--brand-gold)]/10"
           />
         </div>
 
@@ -112,7 +112,7 @@ export default function ContactForm() {
             name="company"
             type="text"
             placeholder="Company name"
-            className="w-full rounded-xl border border-[var(--border-light)] bg-white px-4 py-3.5 text-sm outline-none transition focus:border-[var(--brand-green)] focus:ring-2 focus:ring-[var(--brand-green)]/10"
+            className="w-full rounded-xl border border-[var(--border-light)] bg-white px-4 py-3.5 text-sm outline-none transition focus:border-[var(--brand-gold)] focus:ring-2 focus:ring-[var(--brand-gold)]/10"
           />
         </div>
       </div>
@@ -133,7 +133,7 @@ export default function ContactForm() {
             type="email"
             required
             placeholder="you@company.com"
-            className="w-full rounded-xl border border-[var(--border-light)] bg-white px-4 py-3.5 text-sm outline-none transition focus:border-[var(--brand-green)] focus:ring-2 focus:ring-[var(--brand-green)]/10"
+            className="w-full rounded-xl border border-[var(--border-light)] bg-white px-4 py-3.5 text-sm outline-none transition focus:border-[var(--brand-gold)] focus:ring-2 focus:ring-[var(--brand-gold)]/10"
           />
         </div>
 
@@ -150,7 +150,7 @@ export default function ContactForm() {
             name="phone"
             type="tel"
             placeholder="Phone number"
-            className="w-full rounded-xl border border-[var(--border-light)] bg-white px-4 py-3.5 text-sm outline-none transition focus:border-[var(--brand-green)] focus:ring-2 focus:ring-[var(--brand-green)]/10"
+            className="w-full rounded-xl border border-[var(--border-light)] bg-white px-4 py-3.5 text-sm outline-none transition focus:border-[var(--brand-gold)] focus:ring-2 focus:ring-[var(--brand-gold)]/10"
           />
         </div>
       </div>
@@ -170,7 +170,7 @@ export default function ContactForm() {
             name="service"
             required
             defaultValue=""
-            className="w-full rounded-xl border border-[var(--border-light)] bg-white px-4 py-3.5 text-sm outline-none transition focus:border-[var(--brand-green)] focus:ring-2 focus:ring-[var(--brand-green)]/10"
+            className="w-full rounded-xl border border-[var(--border-light)] bg-white px-4 py-3.5 text-sm outline-none transition focus:border-[var(--brand-gold)] focus:ring-2 focus:ring-[var(--brand-gold)]/10"
           >
             <option value="" disabled>
               Select a service
@@ -230,7 +230,7 @@ export default function ContactForm() {
             id="industry"
             name="industry"
             defaultValue=""
-            className="w-full rounded-xl border border-[var(--border-light)] bg-white px-4 py-3.5 text-sm outline-none transition focus:border-[var(--brand-green)] focus:ring-2 focus:ring-[var(--brand-green)]/10"
+            className="w-full rounded-xl border border-[var(--border-light)] bg-white px-4 py-3.5 text-sm outline-none transition focus:border-[var(--brand-gold)] focus:ring-2 focus:ring-[var(--brand-gold)]/10"
           >
             <option value="">
               Select your industry
@@ -278,7 +278,7 @@ export default function ContactForm() {
             id="budget"
             name="budget"
             defaultValue=""
-            className="w-full rounded-xl border border-[var(--border-light)] bg-white px-4 py-3.5 text-sm outline-none transition focus:border-[var(--brand-green)] focus:ring-2 focus:ring-[var(--brand-green)]/10"
+            className="w-full rounded-xl border border-[var(--border-light)] bg-white px-4 py-3.5 text-sm outline-none transition focus:border-[var(--brand-gold)] focus:ring-2 focus:ring-[var(--brand-gold)]/10"
           >
             <option value="">
               Prefer not to say
@@ -318,7 +318,7 @@ export default function ContactForm() {
             id="preferredContact"
             name="preferredContact"
             defaultValue=""
-            className="w-full rounded-xl border border-[var(--border-light)] bg-white px-4 py-3.5 text-sm outline-none transition focus:border-[var(--brand-green)] focus:ring-2 focus:ring-[var(--brand-green)]/10"
+            className="w-full rounded-xl border border-[var(--border-light)] bg-white px-4 py-3.5 text-sm outline-none transition focus:border-[var(--brand-gold)] focus:ring-2 focus:ring-[var(--brand-gold)]/10"
           >
             <option value="">
               Select preference
@@ -346,7 +346,7 @@ export default function ContactForm() {
           required
           rows={6}
           placeholder="Tell us about your project, business requirement, current challenges or what you would like to build."
-          className="w-full resize-y rounded-xl border border-[var(--border-light)] bg-white px-4 py-3.5 text-sm outline-none transition focus:border-[var(--brand-green)] focus:ring-2 focus:ring-[var(--brand-green)]/10"
+          className="w-full resize-y rounded-xl border border-[var(--border-light)] bg-white px-4 py-3.5 text-sm outline-none transition focus:border-[var(--brand-gold)] focus:ring-2 focus:ring-[var(--brand-gold)]/10"
         />
       </div>
 
@@ -364,7 +364,7 @@ export default function ContactForm() {
           name="message"
           rows={4}
           placeholder="Anything else you would like us to know?"
-          className="w-full resize-y rounded-xl border border-[var(--border-light)] bg-white px-4 py-3.5 text-sm outline-none transition focus:border-[var(--brand-green)] focus:ring-2 focus:ring-[var(--brand-green)]/10"
+          className="w-full resize-y rounded-xl border border-[var(--border-light)] bg-white px-4 py-3.5 text-sm outline-none transition focus:border-[var(--brand-gold)] focus:ring-2 focus:ring-[var(--brand-gold)]/10"
         />
       </div>
 
@@ -373,7 +373,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={loading}
-          className="inline-flex w-full items-center justify-center rounded-full bg-[var(--brand-green)] px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[var(--brand-green-dark)] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+          className="inline-flex w-full items-center justify-center rounded-full bg-[var(--brand-gold-deep)] px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[var(--brand-gold-hover)] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
         >
           {loading ? "Sending..." : "Send Enquiry"}
         </button>
@@ -382,7 +382,7 @@ export default function ContactForm() {
       {/* Success */}
       {submitted && (
         <div
-          className="rounded-xl border border-[var(--brand-green)]/20 bg-[var(--brand-green-light)] p-4 text-sm font-medium text-[var(--brand-green-dark)]"
+          className="rounded-xl border border-[var(--status-success-border)] bg-[var(--status-success-soft)] p-4 text-sm font-medium text-[var(--status-success)]"
           role="status"
           aria-live="polite"
         >

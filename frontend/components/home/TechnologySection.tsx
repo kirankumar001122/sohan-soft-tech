@@ -34,11 +34,11 @@ const technologyAreas = [
 
 export default function TechnologySection() {
   return (
-    <Section className="bg-[var(--background-soft)]">
+    <Section tone="paleGold">
       <div className="grid gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
         {/* Introduction */}
         <div>
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-green)]">
+          <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
             Technology
           </p>
 
@@ -62,7 +62,7 @@ export default function TechnologySection() {
               className="rounded-2xl border border-[var(--border-light)] bg-white p-7"
             >
               <div className="flex items-start justify-between">
-                <span className="text-sm font-medium text-[var(--brand-green)]">
+                <span className="text-sm font-medium text-[var(--brand-gold-deep)]">
                   {area.number}
                 </span>
 

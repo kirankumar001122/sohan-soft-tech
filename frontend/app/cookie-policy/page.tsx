@@ -70,23 +70,23 @@ export default function CookiePolicyPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
+      <section className="bg-[var(--background)]">
+        <div className="mx-auto max-w-7xl px-5 py-14 md:py-16 lg:py-18 sm:px-6 sm:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 lg:px-8 lg:py-18 md:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
           <div className="max-w-4xl">
-            <p className="mb-5 text-sm font-medium uppercase tracking-[0.2em] text-[#8B2346]">
+            <p className="mb-5 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
               Legal
             </p>
 
-            <Heading as="h1" className="text-[#172033]">
+            <Heading as="h1" className="text-[var(--ink)]">
               Cookie Policy
             </Heading>
 
-            <p className="mt-6 max-w-2xl text-base leading-8 text-[#64748B] sm:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--text-secondary)] sm:text-lg">
               Information about cookies and similar technologies that may be
               used on the Sohan Soft Tech website.
             </p>
 
-            <div className="mt-8 inline-flex rounded-full border border-[#E5E7EB] bg-[#F8F9FB] px-4 py-2 text-sm text-[#64748B]">
+            <div className="mt-8 inline-flex rounded-full border border-[var(--border-light)] bg-[var(--background-soft)] px-4 py-2 text-sm text-[var(--text-secondary)]">
               Last updated: September 2026
             </div>
           </div>
@@ -94,25 +94,25 @@ export default function CookiePolicyPage() {
       </section>
 
       {/* Introduction */}
-      <Section className="bg-white">
+      <Section className="bg-[var(--background)]">
         <div className="grid gap-12 lg:grid-cols-[280px_1fr]">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#8B2346]">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
               Cookies
             </p>
 
-            <p className="mt-4 text-sm leading-7 text-[#64748B]">
+            <p className="mt-4 text-sm leading-7 text-[var(--text-secondary)]">
               Understanding how cookies and similar technologies may support
               the website.
             </p>
           </div>
 
           <div className="max-w-4xl">
-            <Heading as="h2" className="text-[#172033]">
+            <Heading as="h2" className="text-[var(--ink)]">
               A transparent approach to website technologies.
             </Heading>
 
-            <p className="mt-6 text-base leading-8 text-[#64748B]">
+            <p className="mt-6 text-base leading-8 text-[var(--text-secondary)]">
               This page explains the general purposes for which cookies or
               similar technologies may be used on this website.
             </p>
@@ -121,12 +121,12 @@ export default function CookiePolicyPage() {
       </Section>
 
       {/* Policy sections */}
-      <section className="border-y border-[#E5E7EB] bg-[#F8F9FB]">
-        <div className="mx-auto max-w-5xl px-5 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+      <section className="border-y border-[var(--border-light)] bg-[var(--background-soft)]">
+        <div className="mx-auto max-w-5xl px-5 py-16 sm:px-6 sm:py-14 md:py-16 lg:py-18 lg:px-8 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
           <div className="space-y-14">
             {sections.map((section) => (
               <article key={section.title}>
-                <h2 className="text-2xl font-semibold tracking-tight text-[#172033] sm:text-3xl">
+                <h2 className="text-2xl font-semibold tracking-tight text-[var(--ink)] sm:text-3xl">
                   {section.title}
                 </h2>
 
@@ -134,7 +134,7 @@ export default function CookiePolicyPage() {
                   {section.content.map((paragraph) => (
                     <p
                       key={paragraph}
-                      className="text-base leading-8 text-[#64748B]"
+                      className="text-base leading-8 text-[var(--text-secondary)]"
                     >
                       {paragraph}
                     </p>
@@ -147,18 +147,18 @@ export default function CookiePolicyPage() {
       </section>
 
       {/* CTA */}
-      <Section className="bg-white">
-        <div className="rounded-[var(--radius-lg)] bg-[#F8EEF2] px-6 py-12 sm:px-10 lg:px-14 lg:py-16">
+      <Section className="bg-[var(--background)]">
+        <div className="rounded-[var(--radius-lg)] bg-[var(--background-soft)] px-6 py-12 sm:px-10 lg:px-14 lg:py-16">
           <div className="max-w-3xl">
-            <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#8B2346]">
+            <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
               Need help?
             </p>
 
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[#172033] sm:text-4xl">
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[var(--ink)] sm:text-4xl">
               Have a question about cookies?
             </h2>
 
-            <p className="mt-5 max-w-2xl text-base leading-8 text-[#64748B]">
+            <p className="mt-5 max-w-2xl text-base leading-8 text-[var(--text-secondary)]">
               If you have a question about website technologies or privacy,
               you can reach out through our contact page.
             </p>
@@ -166,14 +166,14 @@ export default function CookiePolicyPage() {
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-[#8B2346] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#6F1837]"
+                className="inline-flex items-center justify-center rounded-full bg-[var(--brand-gold-deep)] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[var(--brand-gold-hover)]"
               >
                 Contact Sohan Soft Tech
               </Link>
 
               <Link
                 href="/privacy-policy"
-                className="inline-flex items-center justify-center rounded-full border border-[#8B2346] px-6 py-3 text-sm font-medium text-[#8B2346] transition-colors hover:bg-[#8B2346] hover:text-white"
+                className="inline-flex items-center justify-center rounded-full border border-[var(--brand-gold)] px-6 py-3 text-sm font-medium text-[var(--brand-gold-deep)] transition-colors hover:bg-[var(--brand-gold-deep)] hover:text-white"
               >
                 Privacy Policy
               </Link>

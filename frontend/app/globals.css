@@ -1,63 +1,66 @@
 @import "tailwindcss";
 
 :root {
-  /* ================================
-     FOOTER BRAND COLORS (PRESERVED FOR FOOTER ONLY)
-     ================================ */
+  --brand-gold: #d99500;
+  --brand-gold-rich: #e6a000;
+  --brand-gold-deep: #8c5a00;
+  --brand-gold-hover: #684600;
+  --brand-gold-soft: #fff4d6;
 
-  --brand-green: #16a36a;
-  --brand-green-dark: #087a4d;
-  --brand-green-light: #eaf8f1;
+  --status-success: #16834a;
+  --status-success-soft: #edf8f1;
+  --status-success-border: #b6e5c8;
 
-  --background-dark: #2C0A19;
-  --background-dark-soft: #3D091F;
-  --border-dark: #26332d;
+  --ink: #111111;
+  --ink-soft: #1b1b1b;
 
-  /* ================================
-     NEW ENTERPRISE CORPORATE PALETTE
-     ================================ */
-
-  --navy: #172033;
-  --wine: #8B2346;
-  --wine-hover: #6F1837;
-  --text-slate: #64748B;
-  --bg-wine-light: #F8EEF2;
-  --bg-light: #F8F9FB;
+  --background-dark: #111111;
+  --background-dark-soft: #1b1b1b;
+  --border-dark: #383838;
 
   --white: #ffffff;
-  --background: #ffffff;
-  --background-soft: #F8F9FB;
+  --background: #f0f6fc;
+  --background-alt: #f0f6fc;
+  --background-soft: #f0f6fc;
+  --background-pale-gold: #fff4d6;
+  --surface-card: var(--white);
+  --muted-surface: #f0f6fc;
 
-  /* ================================
-     TEXT
-     ================================ */
-
-  --text-primary: #172033;
-  --text-secondary: #64748B;
-  --text-muted: #64748B;
-
+  --text-primary: #111111;
+  --text-secondary: #444444;
+  --text-muted: #77736b;
   --text-on-dark: #ffffff;
-  --text-on-dark-muted: #b5c0ba;
+  --text-on-dark-muted: #c7c2b8;
 
-  /* ================================
-     BORDERS
-     ================================ */
+  --border-light: #d7e5f4;
 
-  --border-light: #E5E7EB;
-
-  /* ================================
-     EFFECTS
-     ================================ */
-
-  --shadow-soft: 0 10px 30px rgba(23, 32, 51, 0.06);
-
-  /* ================================
-     RADIUS
-     ================================ */
+  --shadow-soft: 0 10px 30px rgba(17, 17, 17, 0.06);
+  --shadow-card: 0 12px 35px rgba(17, 17, 17, 0.055);
+  --shadow-card-hover: 0 22px 50px rgba(17, 17, 17, 0.1);
 
   --radius-sm: 8px;
   --radius-md: 14px;
-  --radius-lg: 20px;
+  --radius-lg: 22px;
+
+  --font-heading: var(--font-manrope), "Segoe UI", sans-serif;
+  --font-body: var(--font-inter), "Segoe UI", sans-serif;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --color-brand: var(--brand-gold);
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-gold-rich: var(--brand-gold-rich);
+  --color-brand-gold-deep: var(--brand-gold-deep);
+  --color-brand-gold-hover: var(--brand-gold-hover);
+  --color-brand-gold-soft: var(--brand-gold-soft);
+  --color-ink: var(--ink);
+  --color-background: var(--background);
+  --color-background-alt: var(--background-alt);
+  --color-background-soft: var(--background-soft);
+  --color-background-pale-gold: var(--background-pale-gold);
+  --color-surface-card: var(--surface-card);
+  --color-border-light: var(--border-light);
 }
 
 @layer base {
@@ -76,9 +79,9 @@
     padding: 0;
     background: var(--background);
     color: var(--text-primary);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-body);
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
@@ -112,44 +115,52 @@
   h6 {
     margin: 0;
     color: inherit;
-    font-weight: 600;
-    letter-spacing: -0.035em;
+    font-family: var(--font-heading);
+    font-weight: 650;
+    letter-spacing: -0.04em;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--brand-gold);
+    outline-offset: 3px;
   }
 }
 
 ::selection {
-  background: #8B2346;
+  background: var(--brand-gold);
   color: #ffffff;
 }
 
-/* =========================================
-   SOHAN SOFT TECH — TYPOGRAPHY SYSTEM
-   ========================================= */
-
 .text-eyebrow {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   line-height: 1;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-weight: 650;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #8B2346;
+  color: var(--brand-gold-deep);
 }
 
 .text-display {
-  font-size: clamp(3.5rem, 8vw, 7rem);
-  line-height: 0.95;
+  font-family: var(--font-heading);
+  font-size: clamp(2.6rem, 6vw, 5.4rem);
+  line-height: 0.98;
   letter-spacing: -0.05em;
-  font-weight: 600;
+  font-weight: 650;
 }
 
 .text-lead {
   max-width: 720px;
-  font-size: clamp(1.125rem, 2vw, 1.4rem);
-  line-height: 1.6;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.7;
   color: var(--text-secondary);
 }
 
-/* Dark section typography */
+.surface-white {
+  background: var(--surface-card);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-card);
+}
+
 .section-dark h1,
 .section-dark h2,
 .section-dark h3,
@@ -158,5 +169,19 @@
 }
 
 .section-dark p {
-  color: #b5c0ba;
+  color: var(--text-on-dark-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

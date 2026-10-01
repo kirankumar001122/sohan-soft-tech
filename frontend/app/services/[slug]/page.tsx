@@ -123,11 +123,11 @@ export default async function ServicePage({
   }
 
   return (
-    <main>
+    <main className="relative overflow-hidden bg-[radial-gradient(circle_at_86%_8%,rgba(217,149,0,0.045),transparent_28rem),radial-gradient(circle_at_8%_38%,rgba(255,255,255,0.9),transparent_25rem),var(--background-soft)]">
 {/* =====================================================
     HERO
 ====================================================== */}
-<Section className="bg-white text-[#172033]">
+<Section className="relative isolate overflow-hidden bg-[radial-gradient(circle_at_88%_12%,rgba(217,149,0,0.055),transparent_24rem),radial-gradient(circle_at_6%_82%,rgba(255,255,255,0.95),transparent_22rem)] text-[var(--ink)]">
   <div
     className={
       slug === "web-development" ||
@@ -147,41 +147,41 @@ export default async function ServicePage({
     <div className="max-w-3xl">
       <Link
         href="/services"
-        className="mb-7 inline-flex text-sm text-[#64748B] transition-colors hover:text-[#8B2346]"
+        className="mb-7 inline-flex text-sm text-[var(--text-secondary)] transition-colors hover:text-[var(--brand-gold-deep)]"
       >
         ← Back to Services
       </Link>
 
-      <p className="mb-5 text-sm font-medium uppercase tracking-[0.2em] text-[#8B2346]">
+      <p className="mb-5 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
         Service
       </p>
 
-      <Heading as="h1" className="text-[#172033]">
+      <Heading as="h1" className="text-[var(--ink)]">
         {service.title}
       </Heading>
 
-      <p className="mt-6 max-w-2xl text-base leading-8 text-[#64748B] sm:text-lg">
+      <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--text-secondary)] sm:text-lg">
         {service.shortDescription}
       </p>
 
       <div className="mt-5 max-w-2xl">
-        <p className="text-sm leading-7 text-[#64748B] sm:text-base">
+        <p className="text-sm leading-7 text-[var(--text-secondary)] sm:text-base">
           {heroDetails[slug]?.supportingText ??
             `Practical ${service.title.toLowerCase()} solutions designed around business requirements, users and long-term digital needs.`}
         </p>
       </div>
 
-      <div className="mt-7 grid max-w-2xl grid-cols-1 gap-4 border-y border-[#E5E7EB] py-5 sm:grid-cols-3">
+      <div className="mt-7 grid max-w-2xl grid-cols-1 gap-4 border-y border-[var(--border-light)] py-5 sm:grid-cols-3">
         {(heroDetails[slug]?.highlights ?? [
           "Business Requirements",
           "Digital Experience",
           "Technical Support",
         ]).map((item, index) => (
           <div key={item}>
-            <span className="text-xs font-medium text-[#8B2346]">
+            <span className="text-xs font-medium text-[var(--brand-gold-deep)]">
               {String(index + 1).padStart(2, "0")}
             </span>
-            <p className="mt-2 text-sm font-medium leading-5 text-[#172033]">
+            <p className="mt-2 text-sm font-medium leading-5 text-[var(--ink)]">
               {item}
             </p>
           </div>
@@ -190,7 +190,7 @@ export default async function ServicePage({
 
       <Link
         href={`/contact?service=${encodeURIComponent(service.title)}`}
-        className="mt-8 inline-flex rounded-full bg-[#8B2346] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#6F1837]"
+        className="mt-8 inline-flex rounded-full bg-[var(--brand-gold-deep)] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[var(--brand-gold-hover)]"
       >
         Get a Free Consultation
       </Link>
@@ -199,7 +199,7 @@ export default async function ServicePage({
     {/* RIGHT IMAGE */}
     {slug === "web-development" && (
       <div className="relative mx-auto w-full max-w-[620px]">
-        <div className="overflow-hidden rounded-[28px] border border-[#E5E7EB] bg-[#F8F9FB] p-2 shadow-[0_20px_50px_rgba(23,32,51,0.08)]">
+        <div className="overflow-hidden rounded-[28px] border border-white/90 bg-white p-2.5 shadow-[0_28px_70px_rgba(17,17,17,0.14)]">
           <div className="relative aspect-[4/3] overflow-hidden rounded-[22px]">
             <Image
               src="/images/web-development.jpg"
@@ -207,7 +207,7 @@ export default async function ServicePage({
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 620px"
-              className="object-cover"
+              className="object-cover transition-transform duration-700 ease-out hover:scale-[1.03]"
             />
           </div>
         </div>
@@ -216,7 +216,7 @@ export default async function ServicePage({
 
     {slug === "ecommerce" && (
       <div className="relative mx-auto w-full max-w-[620px]">
-        <div className="overflow-hidden rounded-[28px] border border-[#E5E7EB] bg-[#F8F9FB] p-2 shadow-[0_20px_50px_rgba(23,32,51,0.08)]">
+        <div className="overflow-hidden rounded-[28px] border border-white/90 bg-white p-2.5 shadow-[0_28px_70px_rgba(17,17,17,0.14)]">
           <div className="relative aspect-[4/3] overflow-hidden rounded-[22px]">
             <Image
               src="/images/ecommerce.jpg"
@@ -224,7 +224,7 @@ export default async function ServicePage({
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 620px"
-              className="object-cover"
+              className="object-cover transition-transform duration-700 ease-out hover:scale-[1.03]"
             />
           </div>
         </div>
@@ -233,7 +233,7 @@ export default async function ServicePage({
 
     {slug === "mobile-app-development" && (
       <div className="relative mx-auto w-full max-w-[620px]">
-        <div className="overflow-hidden rounded-[28px] border border-[#E5E7EB] bg-[#F8F9FB] p-2 shadow-[0_20px_50px_rgba(23,32,51,0.08)]">
+        <div className="overflow-hidden rounded-[28px] border border-white/90 bg-white p-2.5 shadow-[0_28px_70px_rgba(17,17,17,0.14)]">
           <div className="relative aspect-[4/3] overflow-hidden rounded-[22px]">
             <Image
               src="/images/app.jpg"
@@ -241,7 +241,7 @@ export default async function ServicePage({
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 620px"
-              className="object-cover"
+              className="object-cover transition-transform duration-700 ease-out hover:scale-[1.03]"
             />
           </div>
         </div>
@@ -251,7 +251,7 @@ export default async function ServicePage({
 
     {slug === "ai-automation" && (
       <div className="relative mx-auto w-full max-w-[620px]">
-        <div className="overflow-hidden rounded-[28px] border border-[#E5E7EB] bg-[#F8F9FB] p-2 shadow-[0_20px_50px_rgba(23,32,51,0.08)]">
+        <div className="overflow-hidden rounded-[28px] border border-white/90 bg-white p-2.5 shadow-[0_28px_70px_rgba(17,17,17,0.14)]">
           <div className="relative aspect-[4/3] overflow-hidden rounded-[22px]">
             <Image
               src="/images/ai.jpg"
@@ -259,7 +259,7 @@ export default async function ServicePage({
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 620px"
-              className="object-cover"
+              className="object-cover transition-transform duration-700 ease-out hover:scale-[1.03]"
             />
           </div>
         </div>
@@ -269,7 +269,7 @@ export default async function ServicePage({
 
     {slug === "whatsapp-automation" && (
       <div className="relative mx-auto w-full max-w-[620px]">
-        <div className="overflow-hidden rounded-[28px] border border-[#E5E7EB] bg-[#F8F9FB] p-2 shadow-[0_20px_50px_rgba(23,32,51,0.08)]">
+        <div className="overflow-hidden rounded-[28px] border border-white/90 bg-white p-2.5 shadow-[0_28px_70px_rgba(17,17,17,0.14)]">
           <div className="relative aspect-[4/3] overflow-hidden rounded-[22px]">
             <Image
               src="/images/whatsapp.jpg"
@@ -277,7 +277,7 @@ export default async function ServicePage({
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 620px"
-              className="object-cover"
+              className="object-cover transition-transform duration-700 ease-out hover:scale-[1.03]"
             />
           </div>
         </div>
@@ -287,7 +287,7 @@ export default async function ServicePage({
 
     {slug === "digital-marketing" && (
       <div className="relative mx-auto w-full max-w-[620px]">
-        <div className="overflow-hidden rounded-[28px] border border-[#E5E7EB] bg-[#F8F9FB] p-2 shadow-[0_20px_50px_rgba(23,32,51,0.08)]">
+        <div className="overflow-hidden rounded-[28px] border border-white/90 bg-white p-2.5 shadow-[0_28px_70px_rgba(17,17,17,0.14)]">
           <div className="relative aspect-[4/3] overflow-hidden rounded-[22px]">
             <Image
               src="/images/digital.jpg"
@@ -295,7 +295,7 @@ export default async function ServicePage({
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 620px"
-              className="object-cover"
+              className="object-cover transition-transform duration-700 ease-out hover:scale-[1.03]"
             />
           </div>
         </div>
@@ -305,7 +305,7 @@ export default async function ServicePage({
 
     {slug === "office-it-setup" && (
       <div className="relative mx-auto w-full max-w-[620px]">
-        <div className="overflow-hidden rounded-[28px] border border-[#E5E7EB] bg-[#F8F9FB] p-2 shadow-[0_20px_50px_rgba(23,32,51,0.08)]">
+        <div className="overflow-hidden rounded-[28px] border border-white/90 bg-white p-2.5 shadow-[0_28px_70px_rgba(17,17,17,0.14)]">
           <div className="relative aspect-[4/3] overflow-hidden rounded-[22px]">
             <Image
               src="/images/office.jpg"
@@ -313,7 +313,7 @@ export default async function ServicePage({
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 620px"
-              className="object-cover"
+              className="object-cover transition-transform duration-700 ease-out hover:scale-[1.03]"
             />
           </div>
         </div>
@@ -323,7 +323,7 @@ export default async function ServicePage({
 
     {slug === "business-software" && (
       <div className="relative mx-auto w-full max-w-[620px]">
-        <div className="overflow-hidden rounded-[28px] border border-[#E5E7EB] bg-[#F8F9FB] p-2 shadow-[0_20px_50px_rgba(23,32,51,0.08)]">
+        <div className="overflow-hidden rounded-[28px] border border-white/90 bg-white p-2.5 shadow-[0_28px_70px_rgba(17,17,17,0.14)]">
           <div className="relative aspect-[4/3] overflow-hidden rounded-[22px]">
             <Image
               src="/images/business.jpg"
@@ -331,7 +331,7 @@ export default async function ServicePage({
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 620px"
-              className="object-cover"
+              className="object-cover transition-transform duration-700 ease-out hover:scale-[1.03]"
             />
           </div>
         </div>
@@ -341,7 +341,7 @@ export default async function ServicePage({
 
     {slug === "technical-services" && (
       <div className="relative mx-auto w-full max-w-[620px]">
-        <div className="overflow-hidden rounded-[28px] border border-[#E5E7EB] bg-[#F8F9FB] p-2 shadow-[0_20px_50px_rgba(23,32,51,0.08)]">
+        <div className="overflow-hidden rounded-[28px] border border-white/90 bg-white p-2.5 shadow-[0_28px_70px_rgba(17,17,17,0.14)]">
           <div className="relative aspect-[4/3] overflow-hidden rounded-[22px]">
             <Image
               src="/images/technical.jpg"
@@ -349,7 +349,7 @@ export default async function ServicePage({
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 620px"
-              className="object-cover"
+              className="object-cover transition-transform duration-700 ease-out hover:scale-[1.03]"
             />
           </div>
         </div>
@@ -364,17 +364,17 @@ export default async function ServicePage({
       <Section>
         <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
           <div>
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#8B2346]">
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
               Business Need
             </p>
 
-            <Heading as="h2" className="mt-4 text-[#172033]">
+            <Heading as="h2" className="mt-4 text-[var(--ink)]">
               Why this service matters.
             </Heading>
           </div>
 
           <div>
-            <p className="text-lg leading-8 text-[#64748B]">
+            <p className="text-lg leading-8 text-[var(--text-secondary)]">
               {service.problem}
             </p>
           </div>
@@ -384,17 +384,17 @@ export default async function ServicePage({
       {/* =====================================================
           SERVICE INTRODUCTION
       ====================================================== */}
-      <Section className="bg-[#F8F9FB]">
+      <Section className="bg-[var(--background-soft)]">
         <div className="max-w-3xl">
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[#8B2346]">
+          <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
             Service Overview
           </p>
 
-          <Heading as="h2" className="text-[#172033]">
+          <Heading as="h2" className="text-[var(--ink)]">
             {service.title} built around your requirements.
           </Heading>
 
-          <p className="mt-6 text-base leading-8 text-[#64748B] sm:text-lg">
+          <p className="mt-6 text-base leading-8 text-[var(--text-secondary)] sm:text-lg">
             {service.introduction}
           </p>
         </div>
@@ -403,25 +403,25 @@ export default async function ServicePage({
       {/* =====================================================
           ADDITIONAL SERVICE INFORMATION
       ====================================================== */}
-      <section className="bg-[#F8F9FB]">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-6 sm:py-24 lg:px-8">
+      <section className="bg-[var(--background-soft)]">
+        <div className="mx-auto max-w-7xl px-5 py-14 md:py-16 lg:py-18 sm:px-6 sm:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 lg:px-8">
           <div className="max-w-3xl">
-            <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[#8B2346]">
+            <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
               Web Solutions
             </p>
 
-            <Heading as="h2" className="text-[#172033]">
+            <Heading as="h2" className="text-[var(--ink)]">
               Web experiences designed for the way your business works.
             </Heading>
 
-            <p className="mt-6 text-base leading-8 text-[#64748B] sm:text-lg">
+            <p className="mt-6 text-base leading-8 text-[var(--text-secondary)] sm:text-lg">
               A business website is often the first digital interaction a
               customer has with an organization. It needs to communicate the
               right information clearly while providing a reliable foundation
               for future digital requirements.
             </p>
 
-            <p className="mt-5 text-base leading-8 text-[#64748B]">
+            <p className="mt-5 text-base leading-8 text-[var(--text-secondary)]">
               Our web development approach considers the complete experience,
               including content structure, navigation, responsive behaviour,
               business workflows, forms, integrations and future expansion.
@@ -448,13 +448,13 @@ export default async function ServicePage({
             ].map((item) => (
               <div
                 key={item.title}
-                className="rounded-2xl border border-[#E5E7EB] bg-white p-7"
+                className="rounded-2xl border border-white/90 bg-white p-7 shadow-[0_12px_35px_rgba(17,17,17,0.045)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(17,17,17,0.08)]"
               >
-                <h3 className="text-lg font-semibold text-[#172033]">
+                <h3 className="text-lg font-semibold text-[var(--ink)]">
                   {item.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-[#64748B]">
+                <p className="mt-3 text-sm leading-6 text-[var(--text-secondary)]">
                   {item.description}
                 </p>
               </div>
@@ -468,11 +468,11 @@ export default async function ServicePage({
       ====================================================== */}
       <Section>
         <div className="max-w-3xl">
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[#8B2346]">
+          <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
             Capabilities
           </p>
 
-          <Heading as="h2" className="text-[#172033]">
+          <Heading as="h2" className="text-[var(--ink)]">
             What we can build and support.
           </Heading>
         </div>
@@ -481,13 +481,13 @@ export default async function ServicePage({
           {service.capabilities.map((capability, index) => (
             <div
               key={capability}
-              className="rounded-2xl border border-[#E5E7EB] bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#8B2346] hover:shadow-[0_10px_30px_rgba(23,32,51,0.06)]"
+              className="rounded-2xl border border-[var(--border-light)] bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--brand-gold)] hover:shadow-[0_10px_30px_rgba(17,17,17,0.06)]"
             >
-              <span className="text-sm font-medium text-[#8B2346]">
+              <span className="text-sm font-medium text-[var(--brand-gold-deep)]">
                 {String(index + 1).padStart(2, "0")}
               </span>
 
-              <h3 className="mt-8 text-lg font-semibold tracking-tight text-[#172033]">
+              <h3 className="mt-8 text-lg font-semibold tracking-tight text-[var(--ink)]">
                 {capability}
               </h3>
             </div>
@@ -498,28 +498,28 @@ export default async function ServicePage({
       {/* =====================================================
           SOLUTIONS WE BUILD
       ====================================================== */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-6 sm:py-24 lg:px-8">
+      <section className="bg-transparent">
+        <div className="mx-auto max-w-7xl px-5 py-14 md:py-16 lg:py-18 sm:px-6 sm:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
             <div>
-              <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[#8B2346]">
+              <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
                 Solutions We Build
               </p>
 
-              <Heading as="h2" className="text-[#172033]">
+              <Heading as="h2" className="text-[var(--ink)]">
                 Different web solutions for different business requirements.
               </Heading>
             </div>
 
             <div>
-              <p className="text-base leading-8 text-[#64748B]">
+              <p className="text-base leading-8 text-[var(--text-secondary)]">
                 Not every organization needs the same type of website. Some
                 businesses require a strong corporate presence, while others
                 need customer portals, internal applications or platforms
                 connected to existing systems.
               </p>
 
-              <p className="mt-5 text-base leading-8 text-[#64748B]">
+              <p className="mt-5 text-base leading-8 text-[var(--text-secondary)]">
                 We can structure the development approach around the
                 organization&apos;s users, processes, content, integrations
                 and technology environment.
@@ -527,7 +527,7 @@ export default async function ServicePage({
             </div>
           </div>
 
-          <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-[#E5E7EB] bg-[#E5E7EB] md:grid-cols-2">
+          <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-[var(--border-light)] bg-[var(--border-light)] md:grid-cols-2">
             {[
               [
                 "Corporate Websites",
@@ -555,11 +555,11 @@ export default async function ServicePage({
               ],
             ].map(([title, description]) => (
               <div key={title} className="bg-white p-7 sm:p-8">
-                <h3 className="text-lg font-semibold text-[#172033]">
+                <h3 className="text-lg font-semibold text-[var(--ink)]">
                   {title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-[#64748B]">
+                <p className="mt-3 text-sm leading-6 text-[var(--text-secondary)]">
                   {description}
                 </p>
               </div>
@@ -571,29 +571,29 @@ export default async function ServicePage({
       {/* =====================================================
           FEATURES
       ====================================================== */}
-      <Section className="bg-[#F8F9FB]">
+      <Section className="bg-[var(--background-soft)]">
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <div>
-            <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[#8B2346]">
+            <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
               Features
             </p>
 
-            <Heading as="h2" className="text-[#172033]">
+            <Heading as="h2" className="text-[var(--ink)]">
               Designed around practical requirements.
             </Heading>
           </div>
 
-          <div className="divide-y divide-[#E5E7EB] border-y border-[#E5E7EB]">
+          <div className="divide-y divide-[var(--border-light)] border-y border-[var(--border-light)]">
             {service.features.map((feature, index) => (
               <div
                 key={feature}
                 className="flex gap-5 py-5"
               >
-                <span className="text-sm font-medium text-[#8B2346]">
+                <span className="text-sm font-medium text-[var(--brand-gold-deep)]">
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
-                <p className="text-base text-[#64748B]">
+                <p className="text-base text-[var(--text-secondary)]">
                   {feature}
                 </p>
               </div>
@@ -605,18 +605,18 @@ export default async function ServicePage({
       {/* =====================================================
           BUSINESS CHALLENGES
       ====================================================== */}
-      <section className="bg-[#F8F9FB]">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-6 sm:py-24 lg:px-8">
+      <section className="bg-[var(--background-soft)]">
+        <div className="mx-auto max-w-7xl px-5 py-14 md:py-16 lg:py-18 sm:px-6 sm:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 lg:px-8">
           <div className="max-w-3xl">
-            <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[#8B2346]">
+            <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
               Business Challenges
             </p>
 
-            <Heading as="h2" className="text-[#172033]">
+            <Heading as="h2" className="text-[var(--ink)]">
               Addressing the challenges behind your digital requirements.
             </Heading>
 
-            <p className="mt-6 text-base leading-8 text-[#64748B]">
+            <p className="mt-6 text-base leading-8 text-[var(--text-secondary)]">
               Web development is not only about creating pages. The solution
               also needs to consider how customers interact with the business
               and how the organization manages its digital operations.
@@ -652,13 +652,13 @@ export default async function ServicePage({
             ].map(([title, description]) => (
               <div
                 key={title}
-                className="rounded-2xl border border-[#E5E7EB] bg-white p-7"
+                className="rounded-2xl border border-white/90 bg-white p-7 shadow-[0_12px_35px_rgba(17,17,17,0.045)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(17,17,17,0.08)]"
               >
-                <h3 className="text-lg font-semibold text-[#172033]">
+                <h3 className="text-lg font-semibold text-[var(--ink)]">
                   {title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-[#64748B]">
+                <p className="mt-3 text-sm leading-6 text-[var(--text-secondary)]">
                   {description}
                 </p>
               </div>
@@ -672,38 +672,38 @@ export default async function ServicePage({
       ====================================================== */}
       <Section>
         <div className="max-w-3xl">
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[#8B2346]">
+          <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
             Process
           </p>
 
-          <Heading as="h2" className="text-[#172033]">
+          <Heading as="h2" className="text-[var(--ink)]">
             From requirement to implementation.
           </Heading>
         </div>
 
-        <div className="mt-14 grid gap-0 border-y border-[#E5E7EB] sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-0 border-y border-[var(--border-light)] sm:grid-cols-2 lg:grid-cols-3">
           {service.process.map((step, index) => (
             <div
               key={step}
               className={`p-7 sm:p-8 ${
                 index < 3
-                  ? "lg:border-b lg:border-[#E5E7EB]"
+                  ? "lg:border-b lg:border-[var(--border-light)]"
                   : ""
               } ${
                 index % 3 !== 2
-                  ? "lg:border-r lg:border-[#E5E7EB]"
+                  ? "lg:border-r lg:border-[var(--border-light)]"
                   : ""
               } ${
                 index % 2 === 0
-                  ? "sm:border-r sm:border-[#E5E7EB] lg:border-r"
+                  ? "sm:border-r sm:border-[var(--border-light)] lg:border-r"
                   : ""
               }`}
             >
-              <span className="text-sm font-medium text-[#8B2346]">
+              <span className="text-sm font-medium text-[var(--brand-gold-deep)]">
                 {String(index + 1).padStart(2, "0")}
               </span>
 
-              <h3 className="mt-8 text-lg font-semibold tracking-tight text-[#172033]">
+              <h3 className="mt-8 text-lg font-semibold tracking-tight text-[var(--ink)]">
                 {step}
               </h3>
             </div>
@@ -714,18 +714,18 @@ export default async function ServicePage({
       {/* =====================================================
           TECHNOLOGY
       ====================================================== */}
-      <Section className="bg-[#F8F9FB]">
+      <Section className="bg-[var(--background-soft)]">
         <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
           <div>
-            <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[#8B2346]">
+            <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
               Technology
             </p>
 
-            <Heading as="h2" className="text-[#172033]">
+            <Heading as="h2" className="text-[var(--ink)]">
               Technology aligned with the solution.
             </Heading>
 
-            <p className="mt-6 text-base leading-7 text-[#64748B]">
+            <p className="mt-6 text-base leading-7 text-[var(--text-secondary)]">
               The technology approach can be selected according to the
               requirements, integrations and operating environment of each
               project.
@@ -736,7 +736,7 @@ export default async function ServicePage({
             {service.technology.map((technology) => (
               <span
                 key={technology}
-                className="rounded-full border border-[#E5E7EB] bg-white px-4 py-2.5 text-sm text-[#64748B] transition-colors hover:border-[#8B2346] hover:text-[#8B2346]"
+                className="rounded-full border border-[var(--border-light)] bg-white px-4 py-2.5 text-sm text-[var(--text-secondary)] transition-colors hover:border-[var(--brand-gold)] hover:text-[var(--brand-gold-deep)]"
               >
                 {technology}
               </span>
@@ -748,27 +748,27 @@ export default async function ServicePage({
       {/* =====================================================
           WHAT YOU CAN EXPECT
       ====================================================== */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-6 sm:py-24 lg:px-8">
+      <section className="bg-transparent">
+        <div className="mx-auto max-w-7xl px-5 py-14 md:py-16 lg:py-18 sm:px-6 sm:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
             <div>
-              <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[#8B2346]">
+              <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
                 What You Can Expect
               </p>
 
-              <Heading as="h2" className="text-[#172033]">
+              <Heading as="h2" className="text-[var(--ink)]">
                 A structured web development experience.
               </Heading>
             </div>
 
             <div>
-              <p className="text-base leading-8 text-[#64748B]">
+              <p className="text-base leading-8 text-[var(--text-secondary)]">
                 Our development process is structured around understanding the
                 requirement first and then translating it into a practical
                 digital solution.
               </p>
 
-              <p className="mt-5 text-base leading-8 text-[#64748B]">
+              <p className="mt-5 text-base leading-8 text-[var(--text-secondary)]">
                 The exact implementation depends on the project&apos;s scope,
                 users, integrations, content requirements and technology
                 environment.
@@ -797,13 +797,13 @@ export default async function ServicePage({
             ].map(([title, description]) => (
               <div
                 key={title}
-                className="border-l-2 border-[#8B2346] pl-6"
+                className="border-l-2 border-[var(--brand-gold)] pl-6"
               >
-                <h3 className="text-lg font-semibold text-[#172033]">
+                <h3 className="text-lg font-semibold text-[var(--ink)]">
                   {title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-[#64748B]">
+                <p className="mt-3 text-sm leading-6 text-[var(--text-secondary)]">
                   {description}
                 </p>
               </div>
@@ -817,11 +817,11 @@ export default async function ServicePage({
       ====================================================== */}
       <Section>
         <div className="max-w-3xl">
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[#8B2346]">
+          <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
             Use Cases
           </p>
 
-          <Heading as="h2" className="text-[#172033]">
+          <Heading as="h2" className="text-[var(--ink)]">
             Where this service can be applied.
           </Heading>
         </div>
@@ -830,11 +830,11 @@ export default async function ServicePage({
           {service.useCases.map((useCase) => (
             <div
               key={useCase}
-              className="rounded-2xl border border-[#E5E7EB] bg-[#F8F9FB] p-6 transition-all duration-300 hover:border-[#8B2346]"
+              className="rounded-2xl border border-[var(--border-light)] bg-[var(--background-soft)] p-6 transition-all duration-300 hover:border-[var(--brand-gold)]"
             >
-              <div className="h-2 w-8 rounded-full bg-[#8B2346]" />
+              <div className="h-2 w-8 rounded-full bg-[var(--brand-gold-deep)]" />
 
-              <h3 className="mt-7 text-base font-semibold text-[#172033]">
+              <h3 className="mt-7 text-base font-semibold text-[var(--ink)]">
                 {useCase}
               </h3>
             </div>
@@ -845,14 +845,14 @@ export default async function ServicePage({
       {/* =====================================================
           INDUSTRIES
       ====================================================== */}
-      <Section className="bg-[#F8F9FB]">
+      <Section className="bg-[var(--background-soft)]">
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[#8B2346]">
+            <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
               Industries
             </p>
 
-            <Heading as="h2" className="text-[#172033]">
+            <Heading as="h2" className="text-[var(--ink)]">
               Relevant across different business environments.
             </Heading>
           </div>
@@ -861,7 +861,7 @@ export default async function ServicePage({
             {service.industries.map((industry) => (
               <span
                 key={industry}
-                className="rounded-full border border-[#E5E7EB] bg-white px-4 py-2.5 text-sm text-[#64748B] transition-colors hover:border-[#8B2346] hover:text-[#8B2346]"
+                className="rounded-full border border-[var(--border-light)] bg-white px-4 py-2.5 text-sm text-[var(--text-secondary)] transition-colors hover:border-[var(--brand-gold)] hover:text-[var(--brand-gold-deep)]"
               >
                 {industry}
               </span>
@@ -875,11 +875,11 @@ export default async function ServicePage({
       ====================================================== */}
       <Section>
         <div className="max-w-3xl">
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[#8B2346]">
+          <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
             Related Services
           </p>
 
-          <Heading as="h2" className="text-[#172033]">
+          <Heading as="h2" className="text-[var(--ink)]">
             Other capabilities you may need.
           </Heading>
         </div>
@@ -889,7 +889,7 @@ export default async function ServicePage({
             <Link
               key={relatedService}
               href="/services"
-              className="rounded-full border border-[#E5E7EB] px-5 py-2.5 text-sm font-medium text-[#172033] transition-colors hover:border-[#8B2346] hover:text-[#8B2346]"
+              className="rounded-full border border-[var(--border-light)] px-5 py-2.5 text-sm font-medium text-[var(--ink)] transition-colors hover:border-[var(--brand-gold)] hover:text-[var(--brand-gold-deep)]"
             >
               {relatedService}
             </Link>
@@ -900,18 +900,18 @@ export default async function ServicePage({
       {/* =====================================================
           BUSINESS VALUE
       ====================================================== */}
-      <section className="bg-[#F8F9FB]">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-6 sm:py-24 lg:px-8">
+      <section className="bg-[var(--background-soft)]">
+        <div className="mx-auto max-w-7xl px-5 py-14 md:py-16 lg:py-18 sm:px-6 sm:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 lg:px-8">
           <div className="max-w-3xl">
-            <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[#8B2346]">
+            <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
               Business Value
             </p>
 
-            <Heading as="h2" className="text-[#172033]">
+            <Heading as="h2" className="text-[var(--ink)]">
               More than a website. A foundation for digital operations.
             </Heading>
 
-            <p className="mt-6 text-base leading-8 text-[#64748B]">
+            <p className="mt-6 text-base leading-8 text-[var(--text-secondary)]">
               A well-structured web platform can become an important part of
               how a business communicates, manages enquiries, delivers
               services and connects with customers.
@@ -927,13 +927,13 @@ export default async function ServicePage({
             ].map((item, index) => (
               <div
                 key={item}
-                className="rounded-2xl border border-[#E5E7EB] bg-white p-6"
+                className="rounded-2xl border border-white/90 bg-white p-6 shadow-[0_12px_35px_rgba(17,17,17,0.045)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(17,17,17,0.08)]"
               >
-                <span className="text-sm font-medium text-[#8B2346]">
+                <span className="text-sm font-medium text-[var(--brand-gold-deep)]">
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
-                <p className="mt-6 text-base font-semibold leading-6 text-[#172033]">
+                <p className="mt-6 text-base font-semibold leading-6 text-[var(--ink)]">
                   {item}
                 </p>
               </div>
@@ -945,33 +945,33 @@ export default async function ServicePage({
       {/* =====================================================
           FAQ
       ====================================================== */}
-      <Section className="bg-[#F8F9FB]">
+      <Section className="bg-[var(--background-soft)]">
         <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
           <div>
-            <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[#8B2346]">
+            <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
               FAQ
             </p>
 
-            <Heading as="h2" className="text-[#172033]">
+            <Heading as="h2" className="text-[var(--ink)]">
               Frequently asked questions.
             </Heading>
           </div>
 
-          <div className="divide-y divide-[#E5E7EB] border-y border-[#E5E7EB]">
+          <div className="divide-y divide-[var(--border-light)] border-y border-[var(--border-light)]">
             {service.faqs.map((faq) => (
               <details
                 key={faq.question}
                 className="group py-6"
               >
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-base font-semibold text-[#172033]">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-base font-semibold text-[var(--ink)]">
                   {faq.question}
 
-                  <span className="text-xl font-normal text-[#8B2346] transition-transform group-open:rotate-45">
+                  <span className="text-xl font-normal text-[var(--brand-gold-deep)] transition-transform group-open:rotate-45">
                     +
                   </span>
                 </summary>
 
-                <p className="mt-4 max-w-2xl text-sm leading-7 text-[#64748B]">
+                <p className="mt-4 max-w-2xl text-sm leading-7 text-[var(--text-secondary)]">
                   {faq.answer}
                 </p>
               </details>
@@ -983,24 +983,24 @@ export default async function ServicePage({
       {/* =====================================================
           CTA
       ====================================================== */}
-      <Section className="bg-[#F8EEF2]">
+      <Section className="bg-[var(--background-soft)]">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#8B2346]">
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
             Let&apos;s Talk
           </p>
 
-          <Heading as="h2" className="mt-4 text-[#172033]">
+          <Heading as="h2" className="mt-4 text-[var(--ink)]">
             Have a requirement related to {service.title}?
           </Heading>
 
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-[#64748B]">
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-[var(--text-secondary)]">
             Tell us about your requirement and explore the right approach for
             your business.
           </p>
 
           <Link
             href={`/contact?service=${encodeURIComponent(service.title)}`}
-            className="mt-8 inline-flex rounded-full bg-[#8B2346] px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[#6F1837]"
+            className="mt-8 inline-flex rounded-full bg-[var(--brand-gold-deep)] px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[var(--brand-gold-hover)]"
           >
             Get a Free Consultation
           </Link>

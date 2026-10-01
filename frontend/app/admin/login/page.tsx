@@ -63,7 +63,7 @@ export default function AdminLoginPage() {
               onChange={(event) => setEmail(event.target.value)}
               placeholder="Enter your email"
               required
-              className="w-full rounded-lg border border-[var(--border-light)] px-4 py-3 text-sm outline-none transition focus:border-[var(--brand-green)]"
+              className="w-full rounded-lg border border-[var(--border-light)] px-4 py-3 text-sm outline-none transition focus:border-[var(--brand-gold)]"
             />
           </div>
 
@@ -82,7 +82,7 @@ export default function AdminLoginPage() {
               onChange={(event) => setPassword(event.target.value)}
               placeholder="Enter your password"
               required
-              className="w-full rounded-lg border border-[var(--border-light)] px-4 py-3 text-sm outline-none transition focus:border-[var(--brand-green)]"
+              className="w-full rounded-lg border border-[var(--border-light)] px-4 py-3 text-sm outline-none transition focus:border-[var(--brand-gold)]"
             />
           </div>
 
@@ -95,7 +95,7 @@ export default function AdminLoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full rounded-lg bg-[var(--brand-green)] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[var(--brand-green-dark)] disabled:cursor-not-allowed disabled:opacity-60"
+            className="w-full rounded-lg bg-[var(--brand-gold-deep)] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[var(--brand-gold-hover)] disabled:cursor-not-allowed disabled:opacity-60"
           >
             {loading ? "Signing in..." : "Sign In"}
           </button>

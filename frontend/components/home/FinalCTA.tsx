@@ -1,40 +1,40 @@
 import Link from "next/link";
-import Button from "@/components/ui/Button";
 import Heading from "@/components/ui/Heading";
 import Section from "@/components/ui/Section";
 
 export default function FinalCTA() {
   return (
-    <Section className="bg-[var(--background-dark)] text-white">
-      <div className="relative overflow-hidden rounded-[28px] border border-[var(--border-dark)] bg-[var(--background-dark-soft)] px-6 py-14 sm:px-10 sm:py-16 lg:px-16 lg:py-20">
-        {/* Decorative elements */}
-        <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[var(--brand-green)] opacity-10 blur-3xl" />
-
-        <div className="absolute -bottom-32 -left-24 h-80 w-80 rounded-full bg-[var(--brand-green)] opacity-5 blur-3xl" />
-
-        <div className="relative max-w-4xl">
-          <p className="mb-5 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-green)]">
-            Let's Build Something Useful
+    <Section className="section-dark bg-[var(--background-dark)]">
+      <div className="relative overflow-hidden rounded-[32px] bg-[linear-gradient(135deg,var(--background-dark)_0%,var(--ink-soft)_55%,var(--brand-gold-deep)_140%)] px-6 py-16 sm:px-12 sm:py-20">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-10 top-8 h-48 w-48 rounded-full border border-white/10"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute bottom-8 right-16 h-24 w-24 rounded-full bg-white/10 blur-2xl"
+        />
+        <div className="relative max-w-3xl">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/60">
+            Next step
           </p>
-
-          <Heading as="h2">
-            Have a technology challenge or a business idea?
+          <Heading as="h2" className="mt-5 text-white">
+            Have a technology project in mind?
           </Heading>
-
-          <p className="mt-6 max-w-2xl text-base leading-8 text-gray-300 sm:text-lg">
-            Tell us what you're trying to build, improve or automate. We'll
-            start by understanding your requirement and exploring the right
-            technology approach.
+          <p className="mt-5 max-w-xl text-base leading-8 text-white/75">
+            Tell us what your business needs. Let&apos;s explore the right
+            technology, software or automation solution together.
           </p>
-
-          <div className="mt-9 flex flex-wrap gap-4">
-            <Link href="/contact">
-              <Button>Get a Free Consultation</Button>
-            </Link>
-
+          <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full border border-[var(--border-dark)] px-6 py-3 text-sm font-medium text-white transition-colors hover:border-[var(--brand-green)] hover:text-[var(--brand-green)]"
+              className="inline-flex rounded-full bg-white px-6 py-3 text-sm font-semibold text-[var(--brand-gold-deep)]"
+            >
+              Get a Free Consultation
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white"
             >
               Talk to Us
             </Link>

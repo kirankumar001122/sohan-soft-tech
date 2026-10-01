@@ -1,455 +1,249 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { megaMenus } from "@/data/navigation";
+import { megaMenus, type MegaMenu } from "@/data/navigation";
 
-function getNavIcon(label: string) {
-  const iconClass = "h-4 w-4 text-[#8B2346]";
+const navItems = [
+  { label: "Services", href: "/services", mega: true },
+  { label: "Solutions", href: "/solutions", mega: true },
+  { label: "Industries", href: "/industries", mega: true },
+  { label: "Products", href: "/products", mega: true },
+  { label: "Case Studies", href: "/case-studies", mega: false },
+  { label: "Company", href: "/company", mega: true },
+  { label: "Resources", href: "/resources", mega: true },
+  { label: "Contact", href: "/contact", mega: false },
+];
 
-  if (
-    label.includes("Web") ||
-    label.includes("Code") ||
-    label.includes("Digital Solutions") ||
-    label.includes("Communication")
-  ) {
-    return (
-      <svg
-        className={iconClass}
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        strokeWidth="2"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-        />
-      </svg>
-    );
-  }
-
-  if (
-    label.includes("E-Commerce") ||
-    label.includes("Retail") ||
-    label.includes("POS") ||
-    label.includes("Commerce")
-  ) {
-    return (
-      <svg
-        className={iconClass}
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        strokeWidth="2"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
-        />
-      </svg>
-    );
-  }
-
-  if (
-    label.includes("Mobile") ||
-    label.includes("WhatsApp") ||
-    label.includes("SMS")
-  ) {
-    return (
-      <svg
-        className={iconClass}
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        strokeWidth="2"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
-        />
-      </svg>
-    );
-  }
-
-  if (label.includes("AI") || label.includes("Automation")) {
-    return (
-      <svg
-        className={iconClass}
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        strokeWidth="2"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M13 10V3L4 14h7v7l9-11h-7z"
-        />
-      </svg>
-    );
-  }
-
-  if (
-    label.includes("Software") ||
-    label.includes("ERP") ||
-    label.includes("LMS") ||
-    label.includes("Billing") ||
-    label.includes("Warranty") ||
-    label.includes("Business Solutions") ||
-    label.includes("Digital Transformation")
-  ) {
-    return (
-      <svg
-        className={iconClass}
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        strokeWidth="2"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"
-        />
-      </svg>
-    );
-  }
-
-  if (
-    label.includes("IT") ||
-    label.includes("Technical") ||
-    label.includes("Office") ||
-    label.includes("Infrastructure")
-  ) {
-    return (
-      <svg
-        className={iconClass}
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        strokeWidth="2"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"
-        />
-      </svg>
-    );
-  }
-
-  if (label.includes("Education") || label.includes("Learning")) {
-    return (
-      <svg
-        className={iconClass}
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        strokeWidth="2"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M12 14l9-5-9-5-9 5 9 5z"
-        />
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 01-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-        />
-      </svg>
-    );
-  }
-
-  if (label.includes("Healthcare")) {
-    return (
-      <svg
-        className={iconClass}
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        strokeWidth="2"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-        />
-      </svg>
-    );
-  }
-
-  if (
-    label.includes("Manufacturing") ||
-    label.includes("Work") ||
-    label.includes("Services") ||
-    label.includes("SMB") ||
-    label.includes("Food") ||
-    label.includes("Hospitality")
-  ) {
-    return (
-      <svg
-        className={iconClass}
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        strokeWidth="2"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m0 0h5m-5 0V11m0 0h-5m5 0h5"
-        />
-      </svg>
-    );
-  }
-
-  if (
-    label.includes("Company") ||
-    label.includes("About") ||
-    label.includes("Careers")
-  ) {
-    return (
-      <svg
-        className={iconClass}
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        strokeWidth="2"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-        />
-      </svg>
-    );
-  }
-
-  if (
-    label.includes("Insights") ||
-    label.includes("Case Studies") ||
-    label.includes("FAQs") ||
-    label.includes("Resources") ||
-    label.includes("Contact")
-  ) {
-    return (
-      <svg
-        className={iconClass}
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        strokeWidth="2"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-        />
-      </svg>
-    );
-  }
-
+function NavIcon({ label }: { label: string }) {
   return (
     <svg
-      className={iconClass}
+      className="h-4 w-4 text-[var(--brand-gold-deep)]"
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
-      strokeWidth="2"
+      strokeWidth="1.8"
+      aria-hidden="true"
     >
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
         d="M13 10V3L4 14h7v7l9-11h-7z"
       />
+      <title>{label}</title>
     </svg>
   );
 }
 
-const navItems = [
-  { label: "Services", href: "/services" },
-  { label: "Solutions", href: "/solutions" },
-  { label: "Industries", href: "/industries" },
-  { label: "Products", href: "/products" },
-  { label: "Company", href: "/company" },
-  { label: "Resources", href: "/resources" },
-];
-
 export default function DesktopNav() {
   const pathname = usePathname();
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const navRef = useRef<HTMLElement>(null);
+  const menuId = useId();
 
-  const handleMouseEnter = (label: string) => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-
+  const openMenu = (label: string) => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
     setActiveMenu(label);
   };
 
-  const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {
-      setActiveMenu(null);
-    }, 180);
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "Escape") {
-      setActiveMenu(null);
-    }
+  const scheduleClose = () => {
+    timeoutRef.current = setTimeout(() => setActiveMenu(null), 160);
   };
 
   useEffect(() => {
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
+    const closeOnOutsidePointer = (event: PointerEvent) => {
+      if (!navRef.current?.contains(event.target as Node)) {
+        setActiveMenu(null);
       }
+    };
+    document.addEventListener("pointerdown", closeOnOutsidePointer);
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      document.removeEventListener("pointerdown", closeOnOutsidePointer);
     };
   }, []);
 
-  const currentMegaMenu = activeMenu ? megaMenus[activeMenu] : null;
+  const currentMegaMenu: MegaMenu | null = activeMenu
+    ? megaMenus[activeMenu] ?? null
+    : null;
 
   return (
     <nav
-      className="relative hidden items-center gap-2 lg:flex"
-      onKeyDown={handleKeyDown}
+      ref={navRef}
+      className="relative hidden items-center xl:flex"
+      onKeyDown={(event) => {
+        if (event.key === "Escape") setActiveMenu(null);
+      }}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+          setActiveMenu(null);
+        }
+      }}
     >
-      {navItems.map((item) => {
-        const isOpen = activeMenu === item.label;
+      <ul className="flex items-center gap-0.5">
+        {navItems.map((item) => {
+          const isOpen = activeMenu === item.label;
+          const isActiveRoute =
+            pathname === item.href ||
+            (item.href !== "/" && pathname?.startsWith(item.href));
 
-        const isActiveRoute =
-          pathname === item.href ||
-          (item.href !== "/" && pathname?.startsWith(item.href));
-
-        const isHighlighted = isOpen || isActiveRoute;
-
-        return (
-          <div
-            key={item.label}
-            className="relative"
-            onMouseEnter={() => handleMouseEnter(item.label)}
-            onMouseLeave={handleMouseLeave}
-          >
-            <Link
-              href={item.href}
-              className={`group flex items-center gap-1.5 rounded-full px-3.5 py-2.5 text-[13px] font-medium transition-all duration-200 ${
-                isHighlighted
-                  ? "bg-[#F8EEF2] font-semibold text-[#8B2346]"
-                  : "text-[var(--text-secondary)] hover:bg-[var(--background-soft)] hover:text-[var(--text-primary)]"
-              }`}
+          return (
+            <li
+              key={item.label}
+              className="relative"
+              onMouseEnter={() => item.mega && openMenu(item.label)}
+              onMouseLeave={scheduleClose}
             >
-              <span>{item.label}</span>
+              <div className="flex items-center">
+                <Link
+                  href={item.href}
+                  onClick={() => setActiveMenu(null)}
+                  aria-current={isActiveRoute ? "page" : undefined}
+                  className={`rounded-full px-2.5 py-2 text-[13px] font-medium transition ${
+                    isActiveRoute
+                      ? "font-semibold text-[var(--brand-gold-deep)]"
+                      : "text-[var(--ink)] hover:text-[var(--brand-gold-deep)]"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+                {item.mega && (
+                  <button
+                    type="button"
+                    aria-label={`${item.label} menu`}
+                    aria-expanded={isOpen}
+                    aria-haspopup="true"
+                    aria-controls={`${menuId}-panel`}
+                    onClick={() => {
+                      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+                      setActiveMenu(item.label);
+                    }}
+                    className={`flex h-8 w-7 items-center justify-center rounded-full transition hover:bg-[var(--brand-gold-soft)] ${
+                      isOpen ? "text-[var(--brand-gold-deep)]" : "text-[var(--text-muted)]"
+                    }`}
+                  >
+                  <svg
+                    className={`h-3 w-3 transition-transform ${isOpen ? "rotate-180" : ""}`}
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="2.2"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                  </button>
+                )}
+              </div>
+            </li>
+          );
+        })}
+      </ul>
 
-              <svg
-                className={`h-3 w-3 shrink-0 transition-transform duration-250 ease-in-out ${
-                  isOpen
-                    ? "rotate-180 text-[#8B2346]"
-                    : isHighlighted
-                      ? "text-[#8B2346]"
-                      : "text-[var(--text-muted)] group-hover:text-[var(--text-primary)]"
-                }`}
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2.2"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </Link>
-          </div>
-        );
-      })}
-
-      {/* CTA BUTTON */}
       <Link
         href="/contact"
-        className="ml-3 inline-flex items-center justify-center rounded-full bg-[#8B2346] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#6F1837]"
+        className="ml-3 inline-flex items-center justify-center rounded-full bg-[var(--brand-gold)] px-4 py-2.5 text-[13px] font-semibold text-[var(--ink)] shadow-[0_8px_20px_rgba(217,149,0,0.18)] transition hover:-translate-y-0.5 hover:bg-[var(--brand-gold-rich)]"
       >
         Get a Free Consultation
       </Link>
 
-      {/* MEGA MENU */}
-      {activeMenu && currentMegaMenu && (
+      {currentMegaMenu && (
         <div
-          className="absolute left-1/2 top-full z-50 w-max max-w-[90vw] -translate-x-1/2 pt-2.5 transition-all duration-200"
-          onMouseEnter={() => handleMouseEnter(activeMenu)}
-          onMouseLeave={handleMouseLeave}
+          id={`${menuId}-panel`}
+          role="region"
+          aria-label={`${currentMegaMenu.label} menu`}
+          className="absolute left-1/2 top-full z-50 w-[min(940px,calc(100vw-48px))] -translate-x-1/2 pt-3"
+          onMouseEnter={() => activeMenu && openMenu(activeMenu)}
+          onMouseLeave={scheduleClose}
         >
-          <div className="rounded-[24px] border border-[#E5E7EB] bg-white p-7 shadow-[0_25px_60px_rgba(23,32,51,0.14)]">
-            <div
-              className={`grid gap-8 ${
-                currentMegaMenu.groups.length >= 3
-                  ? "grid-cols-3 min-w-[780px] max-w-[880px]"
-                  : "grid-cols-2 min-w-[520px] max-w-[600px]"
-              }`}
-            >
-              {currentMegaMenu.groups.map((group) => (
-                <div key={group.title} className="space-y-4">
-                  {/* Group Title */}
-                  <div className="flex items-center gap-2 border-b border-[#E5E7EB] pb-2.5">
-                    <span className="text-[10px] text-[#8B2346]">●</span>
-
-                    <h4 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#8B2346]">
-                      {group.title}
-                    </h4>
-                  </div>
-
-                  {/* Group Items */}
-                  <div className="space-y-1">
-                    {group.items.map((subItem) => (
-                      <Link
-                        key={subItem.href}
-                        href={subItem.href}
-                        onClick={() => setActiveMenu(null)}
-                        className="group flex items-start gap-3.5 rounded-xl p-2.5 transition-all duration-150 hover:bg-[#F8EEF2]"
-                      >
-                        {/* Icon */}
-                        <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#F8EEF2] transition-colors group-hover:bg-[#F1DDE5]">
-                          {getNavIcon(subItem.label)}
-                        </div>
-
-                        <div>
-                          <p className="text-xs font-semibold text-[#172033] transition-colors group-hover:text-[#8B2346]">
-                            {subItem.label}
-                          </p>
-
-                          <p className="mt-0.5 line-clamp-1 text-[11.5px] leading-4 text-[#64748B]">
-                            {subItem.description}
-                          </p>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
+          <div className="overflow-hidden rounded-2xl border border-[var(--border-light)] bg-white shadow-[0_28px_70px_rgba(17,17,17,0.14)]">
+            <div className="grid gap-0 lg:grid-cols-[1.6fr_0.9fr]">
+              <div className="p-6">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
+                  {currentMegaMenu.label}
+                </p>
+                <p className="mt-2 max-w-xl text-sm leading-6 text-[var(--text-secondary)]">
+                  {currentMegaMenu.description}
+                </p>
+                <div
+                  className={`mt-6 grid gap-6 ${
+                    currentMegaMenu.groups.length >= 3
+                      ? "grid-cols-3"
+                      : "grid-cols-2"
+                  }`}
+                >
+                  {currentMegaMenu.groups.map((group) => (
+                    <div key={group.title}>
+                      <h4 className="border-b border-[var(--border-light)] pb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--ink)]">
+                        {group.title}
+                      </h4>
+                      <ul className="mt-3 space-y-1">
+                        {group.items.map((subItem) => (
+                          <li key={subItem.href}>
+                            <Link
+                              href={subItem.href}
+                              onClick={() => setActiveMenu(null)}
+                              className="group flex items-start gap-2.5 rounded-lg p-2 transition hover:bg-[var(--brand-gold-soft)]"
+                            >
+                                <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-[var(--border-light)] bg-[var(--background)]">
+                                <NavIcon label={subItem.label} />
+                              </span>
+                              <span>
+                                <span className="block text-[13px] font-semibold text-[var(--ink)] group-hover:text-[var(--brand-gold-deep)]">
+                                  {subItem.label}
+                                </span>
+                                {subItem.description && (
+                                  <span className="mt-0.5 line-clamp-2 block text-[11.5px] leading-4 text-[var(--text-muted)]">
+                                    {subItem.description}
+                                  </span>
+                                )}
+                              </span>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+
+              <div className="relative overflow-hidden bg-[var(--background-dark)] p-6 text-white">
+                <span aria-hidden="true" className="absolute -right-12 -top-12 h-44 w-44 rounded-full border border-[var(--brand-gold)]/20" />
+                <p className="relative text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--brand-gold-rich)]">
+                  Featured
+                </p>
+                <h3 className="relative mt-4 text-xl font-semibold tracking-[-0.03em]">
+                  {currentMegaMenu.featured?.title}
+                </h3>
+                <p className="relative mt-3 text-sm leading-6 text-white/70">
+                  {currentMegaMenu.featured?.description}
+                </p>
+                <Link
+                  href={currentMegaMenu.featured?.href || currentMegaMenu.href}
+                  onClick={() => setActiveMenu(null)}
+                  className="relative mt-6 inline-flex rounded-full bg-[var(--brand-gold)] px-4 py-2 text-sm font-semibold text-[var(--ink)] transition hover:bg-[var(--brand-gold-rich)]"
+                >
+                  {currentMegaMenu.featured?.cta || "Explore"}
+                </Link>
+              </div>
             </div>
 
-            {/* Bottom Footer Action Strip */}
-            <div className="mt-6 flex items-center justify-between border-t border-[#E5E7EB] pt-4">
-              <p className="text-[11px] text-[#64748B]">
-                {currentMegaMenu.bottomCtaText ||
-                  "Looking for tailored technology solutions for your business?"}
+            <div className="flex items-center justify-between border-t border-[var(--border-light)] bg-[var(--background)] px-6 py-3.5">
+              <p className="text-[12px] text-[var(--text-muted)]">
+                {currentMegaMenu.bottomCtaText}
               </p>
-
               <Link
                 href={currentMegaMenu.bottomCtaHref || currentMegaMenu.href}
                 onClick={() => setActiveMenu(null)}
-                className="text-xs font-semibold text-[#8B2346] hover:underline"
+                className="text-[12px] font-semibold text-[var(--brand-gold-deep)] hover:underline"
               >
-                {currentMegaMenu.bottomCtaLinkText ||
-                  `Explore all ${currentMegaMenu.label.toLowerCase()} →`}
+                {currentMegaMenu.bottomCtaLinkText}
               </Link>
             </div>
           </div>

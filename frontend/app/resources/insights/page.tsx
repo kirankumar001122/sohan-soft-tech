@@ -58,20 +58,20 @@ const topics = [
 
 export default function InsightsPage() {
   return (
-    <main className="bg-white">
+    <main className="bg-[var(--background)]">
       {/* Hero */}
-      <section className="bg-white text-[#172033]">
-        <div className="mx-auto max-w-7xl px-5 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-40">
+      <section className="bg-[var(--background)] text-[var(--ink)]">
+        <div className="mx-auto max-w-7xl px-5 py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 sm:px-6 sm:py-18 md:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 lg:px-8 lg:py-40">
           <div className="max-w-4xl">
-            <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
+            <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
               Insights
             </p>
 
-            <Heading as="h1" className="mt-5 text-[#172033]">
+            <Heading as="h1" className="mt-5 text-[var(--ink)]">
               Ideas, perspectives and practical technology insights.
             </Heading>
 
-            <p className="mt-6 max-w-2xl text-base leading-8 text-[#64748B] sm:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--text-secondary)] sm:text-lg">
               Explore practical perspectives on technology, automation,
               software, digital transformation and business technology.
             </p>
@@ -80,19 +80,19 @@ export default function InsightsPage() {
       </section>
 
       {/* Introduction */}
-      <Section className="bg-white">
+      <Section className="bg-[var(--background)]">
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
+            <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
               Knowledge
             </p>
 
-            <Heading as="h2" className="mt-4 text-[#172033]">
+            <Heading as="h2" className="mt-4 text-[var(--ink)]">
               Technology thinking for real business needs.
             </Heading>
           </div>
 
-          <p className="leading-8 text-[#64748B]">
+          <p className="leading-8 text-[var(--text-secondary)]">
             Our insights section is designed to help businesses understand
             technology opportunities, evaluate practical approaches and think
             more clearly about digital solutions.
@@ -101,13 +101,13 @@ export default function InsightsPage() {
       </Section>
 
       {/* Topics */}
-      <Section className="bg-[#F8F9FB]">
+      <Section className="bg-[var(--background-soft)]">
         <div>
-          <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
+          <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
             Explore Topics
           </p>
 
-          <Heading as="h2" className="mt-4 text-[#172033]">
+          <Heading as="h2" className="mt-4 text-[var(--ink)]">
             Explore our areas of knowledge.
           </Heading>
         </div>
@@ -116,13 +116,13 @@ export default function InsightsPage() {
           {topics.map((topic) => (
             <article
               key={topic.title}
-              className="rounded-[20px] border border-[#E5E7EB] bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#8B2346] hover:bg-[#F8EEF2] hover:shadow-[0_10px_30px_rgba(23,32,51,0.06)]"
+              className="rounded-[20px] border border-[var(--border-light)] bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--brand-gold)] hover:bg-[var(--background-soft)] hover:shadow-[0_10px_30px_rgba(17,17,17,0.06)]"
             >
-              <h3 className="text-xl font-semibold text-[#172033]">
+              <h3 className="text-xl font-semibold text-[var(--ink)]">
                 {topic.title}
               </h3>
 
-              <p className="mt-4 leading-7 text-[#64748B]">
+              <p className="mt-4 leading-7 text-[var(--text-secondary)]">
                 {topic.description}
               </p>
             </article>
@@ -131,25 +131,25 @@ export default function InsightsPage() {
       </Section>
 
       {/* Resources CTA */}
-      <Section className="bg-white">
-        <div className="rounded-[20px] border border-[#E5E7EB] bg-[#F8EEF2] p-8 sm:p-12">
+      <Section className="bg-[var(--background)]">
+        <div className="rounded-[20px] border border-[var(--border-light)] bg-[var(--background-soft)] p-8 sm:p-12">
           <div className="max-w-3xl">
-            <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
+            <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
               Resources
             </p>
 
-            <Heading as="h2" className="mt-4 text-[#172033]">
+            <Heading as="h2" className="mt-4 text-[var(--ink)]">
               Explore the Sohan Soft Tech resource hub.
             </Heading>
 
-            <p className="mt-5 leading-8 text-[#64748B]">
+            <p className="mt-5 leading-8 text-[var(--text-secondary)]">
               Browse the wider collection of guides, articles, FAQs and other
               resources as they become available.
             </p>
 
             <Link
               href="/resources"
-              className="mt-8 inline-flex items-center justify-center rounded-full bg-[#8B2346] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#6F1837]"
+              className="mt-8 inline-flex items-center justify-center rounded-full bg-[var(--brand-gold-deep)] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[var(--brand-gold-hover)]"
             >
               Explore All Resources →
             </Link>

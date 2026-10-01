@@ -16,15 +16,15 @@ export default function Button({
   onClick,
 }: ButtonProps) {
   const baseStyles =
-    "inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#8B2346] focus:ring-offset-2";
+    "inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold tracking-[-0.01em] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-gold)] focus-visible:ring-offset-2";
 
   const variants = {
     primary:
-      "bg-[#8B2346] text-white hover:bg-[#6F1837]",
+      "bg-[var(--brand-gold)] text-[var(--ink)] shadow-[0_10px_24px_rgba(217,149,0,0.22)] hover:bg-[var(--brand-gold-rich)] hover:-translate-y-0.5",
     secondary:
-      "bg-[#F8EEF2] text-[#8B2346] hover:bg-[#8B2346] hover:text-white",
+      "bg-[var(--brand-gold-soft)] text-[var(--brand-gold-deep)] hover:bg-[var(--brand-gold)] hover:text-[var(--ink)] hover:-translate-y-0.5",
     outline:
-      "border border-[#E5E7EB] bg-white text-[#172033] hover:border-[#8B2346] hover:text-[#8B2346]",
+      "border border-[var(--brand-gold)] bg-transparent text-[var(--brand-gold-deep)] hover:bg-[var(--brand-gold)] hover:text-[var(--ink)] hover:-translate-y-0.5",
   };
 
   return (

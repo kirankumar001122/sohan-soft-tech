@@ -4,128 +4,62 @@ import Section from "@/components/ui/Section";
 
 const solutions = [
   {
-    number: "01",
     title: "Business Solutions",
-    description:
-      "Connected technology solutions that bring business processes, software and digital operations together.",
+    problem: "Operations, records and daily work live in too many places.",
     href: "/solutions/business",
-    tags: ["Business Systems", "Software", "Digital Operations"],
   },
   {
-    number: "02",
-    title: "Digital Transformation",
-    description:
-      "Modernize business processes and customer experiences with practical digital technology.",
-    href: "/solutions/digital-transformation",
-    tags: ["Digital Processes", "Modernization", "Integration"],
-  },
-  {
-    number: "03",
-    title: "Automation",
-    description:
-      "Reduce repetitive work and connect workflows through intelligent automation.",
-    href: "/solutions/automation",
-    tags: ["Workflow", "AI", "Automation"],
-  },
-  {
-    number: "04",
     title: "Education Solutions",
-    description:
-      "Technology solutions designed around the operational and learning needs of education organizations.",
+    problem: "Institutions need connected academic and parent communication systems.",
     href: "/solutions/education",
-    tags: ["Education ERP", "LMS", "Communication"],
   },
   {
-    number: "05",
-    title: "Digital Communication",
-    description:
-      "Help businesses communicate with customers through connected digital channels.",
-    href: "/solutions/digital-communication",
-    tags: ["WhatsApp", "SMS", "Customer Engagement"],
+    title: "Digital Transformation",
+    problem: "Paper, spreadsheets and disconnected tools slow the organization down.",
+    href: "/solutions/digital-transformation",
   },
   {
-    number: "06",
-    title: "Office Technology",
-    description:
-      "Technology infrastructure and systems that help teams work reliably and efficiently.",
+    title: "Automation Solutions",
+    problem: "Teams repeat the same follow-ups, data entry and notifications.",
+    href: "/solutions/automation",
+  },
+  {
+    title: "Communication Solutions",
+    problem: "Customers expect timely replies across WhatsApp, SMS and email.",
+    href: "/solutions/communication",
+  },
+  {
+    title: "Office Technology Solutions",
+    problem: "Workplaces need reliable networks, devices and attendance systems.",
     href: "/solutions/office-technology",
-    tags: ["IT Infrastructure", "Office Setup", "Support"],
   },
 ];
 
 export default function SolutionsSection() {
   return (
-    <Section className="bg-white">
-      {/* Header */}
-      <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-        <div>
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[#8B2346]">
-            Solutions
-          </p>
-
-          <Heading as="h2" className="text-[#172033]">
-            Technology connected to real business needs.
-          </Heading>
-        </div>
-
-        <p className="max-w-2xl text-base leading-8 text-[#64748B] sm:text-lg">
-          We combine technology capabilities into practical solutions
-          designed around how organizations operate, communicate and grow.
-        </p>
+    <Section className="bg-[var(--background)]">
+      <div className="max-w-3xl">
+        <p className="text-eyebrow">Solutions by business need</p>
+        <Heading as="h2" className="mt-4">
+          Start with the problem. Choose the solution path.
+        </Heading>
       </div>
-
-      {/* Solutions */}
-      <div className="mt-14 grid gap-0 overflow-hidden rounded-3xl border border-[#E5E7EB] bg-white sm:grid-cols-2 lg:grid-cols-3">
-        {solutions.map((solution) => (
+      <div className="mt-12 grid gap-px overflow-hidden rounded-[28px] border border-[var(--border-light)] bg-[var(--border-light)] md:grid-cols-2 lg:grid-cols-3">
+        {solutions.map((item) => (
           <Link
-            key={solution.number}
-            href={solution.href}
-            className="group border-b border-r border-[#E5E7EB] bg-white p-7 transition-colors duration-200 hover:bg-[#F8EEF2] sm:p-8"
+            key={item.href}
+            href={item.href}
+            className="group bg-white p-7 transition hover:bg-[var(--background)]"
           >
-            <div className="flex items-start justify-between">
-              <span className="text-sm font-medium text-[#8B2346]">
-                {solution.number}
-              </span>
-
-              <span className="text-lg text-[#94A3B8] transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[#8B2346]">
-                ↗
-              </span>
-            </div>
-
-            <h3 className="mt-12 text-xl font-semibold tracking-tight text-[#172033]">
-              {solution.title}
-            </h3>
-
-            <p className="mt-4 text-sm leading-6 text-[#64748B]">
-              {solution.description}
+            <h3 className="text-xl tracking-[-0.03em]">{item.title}</h3>
+            <p className="mt-3 text-sm leading-6 text-[var(--text-secondary)]">
+              {item.problem}
             </p>
-
-            <div className="mt-6 flex flex-wrap gap-2">
-              {solution.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full border border-[#D9DEE5] bg-white px-3 py-1.5 text-xs text-[#64748B]"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-
-            <div className="mt-7 text-sm font-semibold text-[#8B2346] transition-colors group-hover:text-[#6F1837]">
+            <p className="mt-6 text-sm font-semibold text-[var(--brand-gold-deep)]">
               Explore solution →
-            </div>
+            </p>
           </Link>
         ))}
-      </div>
-
-      {/* CTA */}
-      <div className="mt-10">
-        <Link
-          href="/solutions"
-          className="inline-flex rounded-full border border-[#8B2346] px-6 py-3 text-sm font-medium text-[#8B2346] transition-colors hover:bg-[#8B2346] hover:text-white"
-        >
-          Explore All Solutions
-        </Link>
       </div>
     </Section>
   );

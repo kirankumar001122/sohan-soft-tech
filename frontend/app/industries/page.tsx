@@ -34,20 +34,20 @@ export default function IndustriesPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-white py-16 text-[#172033] sm:py-24 lg:py-28">
+      <section className="relative overflow-hidden bg-[var(--background)] py-16 text-[var(--ink)] sm:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 lg:py-18 md:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-12 xl:gap-16">
             {/* LEFT — CONTENT */}
             <div className="lg:col-span-7 xl:col-span-7">
-              <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
+              <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
                 Industries
               </p>
 
-              <h1 className="mt-6 text-4xl font-semibold tracking-tight text-[#172033] sm:text-5xl lg:text-6xl xl:text-7xl">
+              <h1 className="mt-6 text-4xl font-semibold tracking-tight text-[var(--ink)] sm:text-5xl lg:text-6xl xl:text-5xl lg:text-6xl">
                 Technology built around the way your industry works.
               </h1>
 
-              <p className="mt-7 max-w-2xl text-lg leading-8 text-[#64748B] sm:text-xl">
+              <p className="mt-7 max-w-2xl text-lg leading-8 text-[var(--text-secondary)] sm:text-xl">
                 Sohan Soft Tech brings software, automation, digital systems
                 and technology services together around the requirements of
                 different industries.
@@ -56,14 +56,14 @@ export default function IndustriesPage() {
               <div className="mt-9 flex flex-wrap gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center rounded-full bg-[#172033] px-6 py-3 text-sm font-medium text-white shadow-[0_10px_30px_rgba(23,32,51,0.14)] transition-colors hover:bg-[#0F172A]"
+                  className="inline-flex items-center justify-center rounded-full bg-[var(--background-dark)] px-6 py-3 text-sm font-medium text-white shadow-[0_10px_30px_rgba(17,17,17,0.14)] transition-colors hover:bg-[var(--background-dark-soft)]"
                 >
                   Get a Free Consultation
                 </Link>
 
                 <Link
                   href="#industry-areas"
-                  className="inline-flex items-center justify-center rounded-full border border-[#8B2346] bg-white px-6 py-3 text-sm font-medium text-[#8B2346] transition-colors hover:bg-[#8B2346] hover:text-white"
+                  className="inline-flex items-center justify-center rounded-full border border-[var(--brand-gold)] bg-white px-6 py-3 text-sm font-medium text-[var(--brand-gold-deep)] transition-colors hover:bg-[var(--brand-gold-deep)] hover:text-white"
                 >
                   Explore Industries
                 </Link>
@@ -75,13 +75,13 @@ export default function IndustriesPage() {
               <div className="relative mx-auto w-full max-w-[550px] lg:max-w-none">
                 {/* Subtle ambient backdrop */}
                 <div
-                  className="pointer-events-none absolute -bottom-6 -right-6 -z-10 h-64 w-64 rounded-full bg-[#8B2346]/10 blur-[80px]"
+                  className="pointer-events-none absolute -bottom-6 -right-6 -z-10 h-64 w-64 rounded-full bg-[var(--brand-gold)]/10 blur-[80px]"
                   aria-hidden="true"
                 />
 
                 {/* Editorial Frame */}
-                <div className="relative overflow-hidden rounded-[24px] border border-[#E5E7EB] bg-white p-2.5 shadow-[0_30px_70px_rgba(23,32,51,0.10)] sm:rounded-[32px]">
-                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[18px] bg-[#F7F8FA] sm:rounded-[26px]">
+                <div className="relative overflow-hidden rounded-[24px] border border-[var(--border-light)] bg-white p-2.5 shadow-[0_30px_70px_rgba(17,17,17,0.10)] sm:rounded-[32px]">
+                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[18px] bg-[var(--background-soft)] sm:rounded-[26px]">
                     <Image
                       src="/images/industry.png"
                       alt="Technology built around your industry"
@@ -102,22 +102,22 @@ export default function IndustriesPage() {
       <Section>
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <div>
-            <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#8B2346]">
+            <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
               Industry-focused technology
             </p>
 
-            <Heading as="h2" className="mt-4 text-[#172033]">
+            <Heading as="h2" className="mt-4 text-[var(--ink)]">
               Technology should fit the business, not the other way around.
             </Heading>
           </div>
 
           <div className="max-w-2xl">
-            <p className="text-lg leading-8 text-[#64748B]">
+            <p className="text-lg leading-8 text-[var(--text-secondary)]">
               Every industry has different workflows, communication
               requirements, operational challenges and technology needs.
             </p>
 
-            <p className="mt-5 text-base leading-7 text-[#64748B]">
+            <p className="mt-5 text-base leading-7 text-[var(--text-secondary)]">
               Explore the industries below to understand the types of
               solutions, services, products and automation opportunities that
               can support different organizations.
@@ -129,19 +129,19 @@ export default function IndustriesPage() {
       {/* Industry Areas */}
       <section
         id="industry-areas"
-        className="bg-[#F8F9FB] py-16 sm:py-20 lg:py-24"
+        className="bg-[var(--background-soft)] py-16 sm:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18"
       >
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#8B2346]">
+            <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
               Industry areas
             </p>
 
-            <Heading as="h2" className="mt-4 text-[#172033]">
+            <Heading as="h2" className="mt-4 text-[var(--ink)]">
               Explore our industry solutions.
             </Heading>
 
-            <p className="mt-5 text-lg leading-8 text-[#64748B]">
+            <p className="mt-5 text-lg leading-8 text-[var(--text-secondary)]">
               Explore technology capabilities aligned with different business
               environments and operational requirements.
             </p>
@@ -152,28 +152,28 @@ export default function IndustriesPage() {
               <Link
                 key={industry.slug}
                 href={`/industries/${industry.slug}`}
-                className="group flex h-full flex-col rounded-[20px] border border-[#E5E7EB] bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#8B2346] hover:shadow-[0_10px_30px_rgba(23,32,51,0.06)]"
+                className="group flex h-full flex-col rounded-[20px] border border-[var(--border-light)] bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--brand-gold)] hover:shadow-[0_10px_30px_rgba(17,17,17,0.06)]"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <span className="text-sm font-semibold text-[#8B2346]">
+                  <span className="text-sm font-semibold text-[var(--brand-gold-deep)]">
                     {String(index + 1).padStart(2, "0")}
                   </span>
 
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#F8EEF2] text-[#8B2346] transition-transform duration-300 group-hover:translate-x-1">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--background-soft)] text-[var(--brand-gold-deep)] transition-transform duration-300 group-hover:translate-x-1">
                     →
                   </span>
                 </div>
 
-                <h3 className="mt-8 text-2xl font-semibold tracking-tight text-[#172033]">
+                <h3 className="mt-8 text-2xl font-semibold tracking-tight text-[var(--ink)]">
                   {industry.title}
                 </h3>
 
-                <p className="mt-4 text-sm leading-7 text-[#64748B]">
+                <p className="mt-4 text-sm leading-7 text-[var(--text-secondary)]">
                   {industry.shortDescription}
                 </p>
 
                 <div className="mt-auto pt-8">
-                  <span className="text-sm font-semibold text-[#172033] transition-colors group-hover:text-[#8B2346]">
+                  <span className="text-sm font-semibold text-[var(--ink)] transition-colors group-hover:text-[var(--brand-gold-deep)]">
                     Explore industry
                     <span className="ml-2 transition-transform duration-200 group-hover:translate-x-1">
                       →
@@ -190,11 +190,11 @@ export default function IndustriesPage() {
       <Section>
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <div>
-            <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#8B2346]">
+            <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
               Our approach
             </p>
 
-            <Heading as="h2" className="mt-4 text-[#172033]">
+            <Heading as="h2" className="mt-4 text-[var(--ink)]">
               Understand the industry. Then build around it.
             </Heading>
           </div>
@@ -228,17 +228,17 @@ export default function IndustriesPage() {
             ].map((item) => (
               <div
                 key={item.number}
-                className="rounded-[14px] border border-[#E5E7EB] p-6"
+                className="rounded-[14px] border border-[var(--border-light)] p-6"
               >
-                <span className="text-sm font-semibold text-[#8B2346]">
+                <span className="text-sm font-semibold text-[var(--brand-gold-deep)]">
                   {item.number}
                 </span>
 
-                <h3 className="mt-5 text-xl font-semibold text-[#172033]">
+                <h3 className="mt-5 text-xl font-semibold text-[var(--ink)]">
                   {item.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-[#64748B]">
+                <p className="mt-3 text-sm leading-6 text-[var(--text-secondary)]">
                   {item.description}
                 </p>
               </div>
@@ -248,18 +248,18 @@ export default function IndustriesPage() {
       </Section>
 
       {/* Cross-Industry Capabilities */}
-      <section className="bg-white py-16 sm:py-20 lg:py-24">
+      <section className="bg-[var(--background)] py-16 sm:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#8B2346]">
+            <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
               Cross-industry capabilities
             </p>
 
-            <Heading as="h2" className="mt-4 text-[#172033]">
+            <Heading as="h2" className="mt-4 text-[var(--ink)]">
               Technology capabilities that can work across industries.
             </Heading>
 
-            <p className="mt-5 text-lg leading-8 text-[#64748B]">
+            <p className="mt-5 text-lg leading-8 text-[var(--text-secondary)]">
               Depending on the requirement, organizations can combine
               technology services, software, products and automation
               capabilities.
@@ -279,13 +279,13 @@ export default function IndustriesPage() {
             ].map((item, index) => (
               <div
                 key={item}
-                className="rounded-[14px] border border-[#E5E7EB] bg-white p-6 transition-colors hover:border-[#8B2346] hover:bg-[#F8EEF2]"
+                className="rounded-[14px] border border-[var(--border-light)] bg-white p-6 transition-colors hover:border-[var(--brand-gold)] hover:bg-[var(--background-soft)]"
               >
-                <span className="text-sm font-semibold text-[#8B2346]">
+                <span className="text-sm font-semibold text-[var(--brand-gold-deep)]">
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
-                <h3 className="mt-5 text-lg font-semibold text-[#172033]">
+                <h3 className="mt-5 text-lg font-semibold text-[var(--ink)]">
                   {item}
                 </h3>
               </div>
@@ -296,18 +296,18 @@ export default function IndustriesPage() {
 
 
       {/* Business Priorities */}
-      <section className="bg-[#F8F9FB] py-16 sm:py-20 lg:py-24">
+      <section className="bg-[var(--background-soft)] py-16 sm:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#8B2346]">
+            <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
               Business priorities
             </p>
 
-            <Heading as="h2" className="mt-4 text-[#172033]">
+            <Heading as="h2" className="mt-4 text-[var(--ink)]">
               Technology focused on practical business outcomes.
             </Heading>
 
-            <p className="mt-5 text-lg leading-8 text-[#64748B]">
+            <p className="mt-5 text-lg leading-8 text-[var(--text-secondary)]">
               Technology should solve real operational problems. Our approach
               focuses on connecting the right digital capabilities with the
               priorities of each organization.
@@ -349,23 +349,23 @@ export default function IndustriesPage() {
             ].map((item, index) => (
               <div
                 key={item.title}
-                className="rounded-[20px] border border-[#E5E7EB] bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#8B2346] hover:shadow-[0_15px_40px_rgba(23,32,51,0.07)]"
+                className="rounded-[20px] border border-[var(--border-light)] bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--brand-gold)] hover:shadow-[0_15px_40px_rgba(17,17,17,0.07)]"
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-semibold text-[#8B2346]">
+                  <span className="text-sm font-semibold text-[var(--brand-gold-deep)]">
                     {String(index + 1).padStart(2, "0")}
                   </span>
 
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#F8EEF2] text-[#8B2346]">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--background-soft)] text-[var(--brand-gold-deep)]">
                     →
                   </span>
                 </div>
 
-                <h3 className="mt-7 text-xl font-semibold tracking-tight text-[#172033]">
+                <h3 className="mt-7 text-xl font-semibold tracking-tight text-[var(--ink)]">
                   {item.title}
                 </h3>
 
-                <p className="mt-4 text-sm leading-7 text-[#64748B]">
+                <p className="mt-4 text-sm leading-7 text-[var(--text-secondary)]">
                   {item.description}
                 </p>
               </div>
@@ -375,31 +375,31 @@ export default function IndustriesPage() {
       </section>
 
       {/* Industry Technology Model */}
-      <section className="bg-white py-16 sm:py-20 lg:py-24">
+      <section className="bg-[var(--background)] py-16 sm:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-20">
             <div>
-              <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#8B2346]">
+              <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
                 Industry technology model
               </p>
 
-              <Heading as="h2" className="mt-4 text-[#172033]">
+              <Heading as="h2" className="mt-4 text-[var(--ink)]">
                 Start with the requirement. Build the technology around it.
               </Heading>
 
-              <p className="mt-6 text-lg leading-8 text-[#64748B]">
+              <p className="mt-6 text-lg leading-8 text-[var(--text-secondary)]">
                 We do not treat every organization the same. The technology
                 approach can be shaped around the organization's workflows,
                 customers, teams, existing systems and future requirements.
               </p>
 
-              <p className="mt-5 text-base leading-7 text-[#64748B]">
+              <p className="mt-5 text-base leading-7 text-[var(--text-secondary)]">
                 This allows different technology capabilities to work together
                 instead of operating as disconnected systems.
               </p>
             </div>
 
-            <div className="rounded-[24px] border border-[#E5E7EB] bg-[#F8F9FB] p-6 sm:p-8">
+            <div className="rounded-[24px] border border-[var(--border-light)] bg-[var(--background-soft)] p-6 sm:p-8">
               <div className="space-y-6">
                 {[
                   {
@@ -429,18 +429,18 @@ export default function IndustriesPage() {
                 ].map((item) => (
                   <div
                     key={item.number}
-                    className="flex gap-5 border-b border-[#E5E7EB] pb-6 last:border-0 last:pb-0"
+                    className="flex gap-5 border-b border-[var(--border-light)] pb-6 last:border-0 last:pb-0"
                   >
-                    <span className="shrink-0 text-sm font-semibold text-[#8B2346]">
+                    <span className="shrink-0 text-sm font-semibold text-[var(--brand-gold-deep)]">
                       {item.number}
                     </span>
 
                     <div>
-                      <h3 className="text-base font-semibold text-[#172033]">
+                      <h3 className="text-base font-semibold text-[var(--ink)]">
                         {item.title}
                       </h3>
 
-                      <p className="mt-2 text-sm leading-6 text-[#64748B]">
+                      <p className="mt-2 text-sm leading-6 text-[var(--text-secondary)]">
                         {item.description}
                       </p>
                     </div>
@@ -453,19 +453,19 @@ export default function IndustriesPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[#F8EEF2]">
-        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <section className="bg-[var(--background-soft)]">
+        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-14 md:py-16 lg:py-18 lg:px-8">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
-              <p className="text-sm font-medium uppercase tracking-[0.16em] text-[#8B2346]">
+              <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
                 Start a conversation
               </p>
 
-              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-[#172033] sm:text-4xl">
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] sm:text-4xl">
                 Looking for technology for your industry?
               </h2>
 
-              <p className="mt-4 text-base leading-7 text-[#64748B]">
+              <p className="mt-4 text-base leading-7 text-[var(--text-secondary)]">
                 Tell us about your organization, workflow or technology
                 requirement and explore the right approach.
               </p>
@@ -473,7 +473,7 @@ export default function IndustriesPage() {
 
             <Link
               href="/contact"
-              className="inline-flex shrink-0 items-center justify-center rounded-full bg-[#8B2346] px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[#6F1837]"
+              className="inline-flex shrink-0 items-center justify-center rounded-full bg-[var(--brand-gold-deep)] px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[var(--brand-gold-hover)]"
             >
               Get a Free Consultation
               <span className="ml-2">→</span>

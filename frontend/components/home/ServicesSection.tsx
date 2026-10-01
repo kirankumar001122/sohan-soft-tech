@@ -2,130 +2,119 @@ import Link from "next/link";
 import Heading from "@/components/ui/Heading";
 import Section from "@/components/ui/Section";
 
-const services = [
+const capabilities = [
   {
-    number: "01",
-    title: "Web & Digital Solutions",
+    title: "Digital Engineering",
     description:
-      "Websites, web applications and digital experiences designed around business needs.",
+      "Websites, web applications and platforms built around real operating requirements.",
+    related: "Web development · Applications · Integrations",
     href: "/services/web-development",
-    items: ["Web Development", "E-Commerce", "Web Applications"],
+    span: "lg:col-span-2",
   },
   {
-    number: "02",
-    title: "Mobile Applications",
+    title: "Experience Design",
     description:
-      "Mobile solutions that help businesses connect with customers and teams.",
-    href: "/services/mobile-app-development",
-    items: ["Android Apps", "Business Apps", "Customer Apps"],
+      "Interfaces and journeys that make products easier to understand and use.",
+    related: "UI/UX · Branding · Content structure",
+    href: "/services/digital-marketing",
+    span: "",
   },
   {
-    number: "03",
+    title: "Commerce",
+    description:
+      "Stores, billing, POS and operational software that keep transactions organized.",
+    related: "E-commerce · Billing · ERP",
+    href: "/services/ecommerce",
+    span: "",
+  },
+  {
+    title: "Mobile",
+    description:
+      "Mobile applications and cloud-ready infrastructure for teams and customers.",
+    related: "iOS · Android · Cloud setup",
+    href: "/services/mobile-app-development",
+    span: "",
+  },
+  {
     title: "AI & Automation",
     description:
-      "Intelligent technology and automation that streamline business processes.",
+      "Practical automation across enquiries, messaging, reporting and internal workflows.",
+    related: "WhatsApp · SMS · AI tools",
     href: "/services/ai-automation",
-    items: ["AI Solutions", "Process Automation", "WhatsApp Automation"],
+    span: "lg:col-span-2",
   },
   {
-    number: "04",
-    title: "Business Software",
-    description:
-      "Custom software and digital systems built around everyday business operations.",
-    href: "/services/business-software",
-    items: ["Business Systems", "Custom Software", "Management Platforms"],
-  },
-  {
-    number: "05",
     title: "Digital Growth",
     description:
-      "Digital services that help businesses improve visibility, communication and customer engagement.",
+      "Search, campaigns and brand presence that help the right audience find you.",
+    related: "SEO · Marketing · Google Business Profile",
     href: "/services/digital-marketing",
-    items: ["SEO", "Digital Marketing", "Social Media"],
-  },
-  {
-    number: "06",
-    title: "IT & Infrastructure",
-    description:
-      "Technology infrastructure and office IT solutions for reliable business operations.",
-    href: "/services/office-it-setup",
-    items: ["Office IT", "Infrastructure", "Technical Support"],
+    span: "lg:col-span-2",
   },
 ];
 
 export default function ServicesSection() {
   return (
-    <Section className="bg-white">
-      {/* Section Header */}
+    <Section tone="warm">
       <div className="max-w-3xl">
-        <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-green)]">
-          Our Services
-        </p>
-
-        <Heading as="h2">
-          Technology services for the way your business works.
+        <p className="text-eyebrow">Core capabilities</p>
+        <Heading as="h2" className="mt-4">
+          Distinct strengths, one delivery team.
         </Heading>
-
-        <p className="mt-6 text-base leading-8 text-[var(--text-secondary)] sm:text-lg">
-          From building digital products to automating operations and
-          supporting business technology, we bring the capabilities needed
-          to solve practical technology challenges.
+        <p className="mt-5 max-w-2xl text-base leading-8 text-[var(--text-secondary)]">
+          Six capability areas that cover how products are designed, built,
+          automated and grown.
         </p>
       </div>
 
-      {/* Services Grid */}
-      <div className="mt-14 grid gap-px overflow-hidden rounded-3xl border border-[var(--border-light)] bg-[var(--border-light)] sm:grid-cols-2 lg:grid-cols-3">
-        {services.map((service) => (
+      <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        {capabilities.map((item, index) => (
           <Link
-            key={service.number}
-            href={service.href}
-            className="group bg-white p-7 transition-colors duration-200 hover:bg-[var(--background-soft)] sm:p-8"
+            key={item.title}
+            href={item.href}
+            className={`group flex min-h-[250px] flex-col justify-between rounded-2xl border border-[var(--border-light)] p-6 transition duration-300 hover:-translate-y-1 hover:border-[var(--brand-gold)] hover:shadow-[var(--shadow-card)] ${
+              index === 0 || index === 4
+                ? "bg-[var(--ink)] text-white"
+                : "bg-white"
+            } ${item.span}`}
           >
-            <div className="flex items-start justify-between">
-              <span className="text-sm font-medium text-[var(--brand-green)]">
-                {service.number}
+            <div>
+              <span
+                className={`text-xs font-semibold ${
+                  index === 0 || index === 4
+                    ? "text-[var(--brand-gold-rich)]"
+                    : "text-[var(--brand-gold-deep)]"
+                }`}
+              >
+                0{index + 1}
               </span>
-
-              <span className="text-lg text-[var(--text-muted)] transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1">
-                ↗
+              <h3 className="mt-5 text-2xl tracking-[-0.03em]">{item.title}</h3>
+              <p
+                className={`mt-3 max-w-md text-sm leading-6 ${
+                  index === 0 || index === 4
+                    ? "text-white/70"
+                    : "text-[var(--text-secondary)]"
+                }`}
+              >
+                {item.description}
+              </p>
+            </div>
+            <div className="mt-8 flex items-end justify-between gap-4">
+              <p
+                className={`text-xs ${
+                  index === 0 || index === 4
+                    ? "text-white/50"
+                    : "text-[var(--text-muted)]"
+                }`}
+              >
+                {item.related}
+              </p>
+              <span aria-hidden="true" className="text-lg">
+                →
               </span>
-            </div>
-
-            <h3 className="mt-12 text-xl font-semibold tracking-tight">
-              {service.title}
-            </h3>
-
-            <p className="mt-4 text-sm leading-6 text-[var(--text-secondary)]">
-              {service.description}
-            </p>
-
-            <div className="mt-6 space-y-2">
-              {service.items.map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-2 text-xs text-[var(--text-muted)]"
-                >
-                  <span className="h-1.5 w-1.5 rounded-full bg-[var(--brand-green)]" />
-                  {item}
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-7 text-sm font-semibold text-[var(--brand-green)]">
-              Explore service →
             </div>
           </Link>
         ))}
-      </div>
-
-      {/* All Services CTA */}
-      <div className="mt-10 flex justify-center">
-        <Link
-          href="/services"
-          className="rounded-full border border-[var(--border-light)] px-6 py-3 text-sm font-medium transition-colors hover:border-[var(--brand-green)] hover:text-[var(--brand-green)]"
-        >
-          Explore All Services
-        </Link>
       </div>
     </Section>
   );

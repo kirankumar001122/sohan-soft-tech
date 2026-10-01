@@ -1,8 +1,21 @@
-import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import type { Metadata } from "next";
+import { Inter, Manrope } from "next/font/google";
+import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import "./globals.css";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -19,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${manrope.variable}`}>
       <body>
         <Header />
         {children}

@@ -12,16 +12,12 @@ export default function Heading({
   className = "",
 }: HeadingProps) {
   const styles = {
-    h1: "text-4xl font-semibold tracking-tight sm:text-5xl lg:text-7xl",
-    h2: "text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl",
-    h3: "text-2xl font-semibold tracking-tight sm:text-3xl",
+    h1: "font-[family-name:var(--font-heading)] text-4xl font-semibold tracking-[-0.045em] sm:text-5xl lg:text-6xl",
+    h2: "font-[family-name:var(--font-heading)] text-3xl font-semibold tracking-[-0.04em] sm:text-4xl lg:text-[2.75rem]",
+    h3: "font-[family-name:var(--font-heading)] text-2xl font-semibold tracking-[-0.03em] sm:text-3xl",
   };
 
   const Tag = as;
 
-  return (
-    <Tag className={`${styles[as]} ${className}`}>
-      {children}
-    </Tag>
-  );
+  return <Tag className={`${styles[as]} ${className}`}>{children}</Tag>;
 }

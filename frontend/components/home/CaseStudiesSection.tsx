@@ -8,7 +8,7 @@ export default function CaseStudiesSection() {
       <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
         {/* Section Introduction */}
         <div>
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-green)]">
+          <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
             Case Studies
           </p>
 
@@ -23,7 +23,7 @@ export default function CaseStudiesSection() {
 
           <Link
             href="/case-studies"
-            className="mt-8 inline-flex rounded-full border border-[var(--border-light)] bg-white px-6 py-3 text-sm font-medium transition-colors hover:border-[var(--brand-green)] hover:text-[var(--brand-green)]"
+            className="mt-8 inline-flex rounded-full border border-[var(--border-light)] bg-white px-6 py-3 text-sm font-medium transition-colors hover:border-[var(--brand-gold)] hover:text-[var(--brand-gold-deep)]"
           >
             View All Case Studies
           </Link>
@@ -42,7 +42,7 @@ export default function CaseStudiesSection() {
               </h3>
             </div>
 
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--brand-green-light)] text-[var(--brand-green)]">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--brand-gold-soft)] text-[var(--brand-gold-deep)]">
               ↗
             </div>
           </div>

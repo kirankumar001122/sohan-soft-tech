@@ -1,96 +1,84 @@
 import Heading from "@/components/ui/Heading";
 import Section from "@/components/ui/Section";
 
-const processSteps = [
+const steps = [
   {
     number: "01",
-    title: "Discover",
-    description:
-      "Understand the business, users, requirements and technology challenges before defining the solution.",
+    title: "Understand",
+    description: "Clarify the business, users, constraints and intended outcome.",
   },
   {
     number: "02",
-    title: "Plan",
-    description:
-      "Translate the requirements into a practical solution structure, priorities and implementation approach.",
+    title: "Strategize",
+    description: "Choose a practical approach, scope and sequence of work.",
   },
   {
     number: "03",
-    title: "Build",
-    description:
-      "Design and develop the required digital products, software, automation or technology systems.",
+    title: "Design",
+    description: "Shape the experience, information and system structure.",
   },
   {
     number: "04",
-    title: "Test & Refine",
-    description:
-      "Review the implementation, identify issues and refine the solution before it moves into use.",
+    title: "Build",
+    description: "Implement software, automation, content or infrastructure.",
   },
   {
     number: "05",
-    title: "Deploy",
-    description:
-      "Prepare the solution for production and connect the required technology, systems and integrations.",
+    title: "Test",
+    description: "Review quality, usability and integration before go-live.",
   },
   {
     number: "06",
-    title: "Support & Evolve",
-    description:
-      "Continue improving the solution as business requirements, technology and users evolve.",
+    title: "Launch",
+    description: "Deploy, train teams and connect the required channels.",
+  },
+  {
+    number: "07",
+    title: "Support",
+    description: "Stay available as requirements and systems evolve.",
   },
 ];
 
 export default function ProcessSection() {
   return (
-    <Section className="bg-white">
-      {/* Header */}
+    <Section id="how-we-work" className="bg-[var(--background)]">
       <div className="max-w-3xl">
-        <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[#8B2346]">
-          How We Work
-        </p>
-
-        <Heading as="h2" className="text-[#172033]">
-          A structured approach from idea to implementation.
+        <p className="text-eyebrow">How we work</p>
+        <Heading as="h2" className="mt-4">
+          Seven stages from first conversation to ongoing support.
         </Heading>
-
-        <p className="mt-6 max-w-2xl text-base leading-8 text-[#64748B] sm:text-lg">
-          Every project starts with understanding the requirement and moves
-          through planning, implementation, testing and deployment.
-        </p>
       </div>
-
-      {/* Process */}
-      <div className="mt-14 grid gap-0 border-y border-[#E5E7EB] md:grid-cols-2 lg:grid-cols-3">
-        {processSteps.map((step, index) => (
-          <div
-            key={step.number}
-            className={`border-[#E5E7EB] p-7 sm:p-8 ${
-              index !== 2 ? "lg:border-r" : ""
-            } ${index < 3 ? "lg:border-b" : ""} ${
-              index % 2 === 0 ? "md:border-r lg:border-r" : ""
-            }`}
-          >
-            <span className="text-sm font-medium text-[#8B2346]">
+      <div className="mt-12 hidden lg:grid lg:grid-cols-7">
+        {steps.map((step, index) => (
+          <div key={step.number} className="relative px-3">
+            <span className="text-xs font-semibold text-[var(--brand-gold-deep)]">
               {step.number}
             </span>
-
-            <h3 className="mt-10 text-xl font-semibold tracking-tight text-[#172033]">
-              {step.title}
-            </h3>
-
-            <p className="mt-4 text-sm leading-6 text-[#64748B]">
+            <h3 className="mt-4 text-lg">{step.title}</h3>
+            <p className="mt-3 text-sm leading-6 text-[var(--text-secondary)]">
+              {step.description}
+            </p>
+            {index < steps.length - 1 && (
+              <span
+                aria-hidden="true"
+                className="absolute right-0 top-2 hidden h-px w-6 bg-[var(--brand-gold)]/40 xl:block"
+              />
+            )}
+          </div>
+        ))}
+      </div>
+      <div className="mt-10 space-y-0 border-y border-[var(--border-light)] lg:hidden">
+        {steps.map((step) => (
+          <div key={step.number} className="border-b border-[var(--border-light)] py-6 last:border-b-0">
+            <span className="text-xs font-semibold text-[var(--brand-gold-deep)]">
+              {step.number}
+            </span>
+            <h3 className="mt-2 text-lg">{step.title}</h3>
+            <p className="mt-2 text-sm leading-6 text-[var(--text-secondary)]">
               {step.description}
             </p>
           </div>
         ))}
-      </div>
-
-      {/* Bottom statement */}
-      <div className="mt-10 border-l-2 border-[#8B2346] pl-5">
-        <p className="max-w-3xl text-sm leading-7 text-[#64748B] sm:text-base">
-          The approach can be adapted to the scope, complexity and technology
-          requirements of each project.
-        </p>
       </div>
     </Section>
   );

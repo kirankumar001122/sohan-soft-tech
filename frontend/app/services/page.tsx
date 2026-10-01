@@ -117,56 +117,56 @@ export default function ServicesPage() {
       {/* =====================================================
           HERO
       ====================================================== */}
-      <section className="relative overflow-hidden bg-white py-16 text-[#172033] sm:py-24 lg:py-28">
-        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-          <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-12 xl:gap-16">
+      <section className="relative overflow-hidden bg-[var(--background)] py-16 text-[var(--ink)] sm:py-20 lg:py-24">
+        <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
+          <div className="grid min-w-0 items-center gap-12 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-12 xl:gap-16">
             {/* LEFT — CONTENT */}
-            <div className="lg:col-span-7 xl:col-span-7">
-              <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
+            <div className="min-w-0">
+              <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
                 Services
               </p>
 
-              <h1 className="mt-6 text-4xl font-semibold tracking-tight text-[#172033] sm:text-5xl lg:text-6xl xl:text-7xl">
+              <h1 className="mt-6 text-4xl font-semibold tracking-tight text-[var(--ink)] sm:text-5xl lg:text-6xl">
                 Technology services built around your business.
               </h1>
 
-              <p className="mt-7 max-w-2xl text-lg leading-8 text-[#64748B] sm:text-xl">
+              <p className="mt-7 max-w-2xl text-lg leading-8 text-[var(--text-secondary)] sm:text-xl">
                 Explore our technology, digital, automation and business
                 services designed to help organizations build, operate and
                 grow.
               </p>
 
-              <p className="mt-5 max-w-2xl text-base leading-7 text-[#64748B]">
+              <p className="mt-5 max-w-2xl text-base leading-7 text-[var(--text-secondary)]">
                 From customer-facing digital products to internal business
                 systems, we design and develop technology around your
                 requirements, workflows and operational needs.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
-                <span className="rounded-full border border-[#E5E7EB] bg-[#F8F9FB] px-4 py-2 text-sm text-[#64748B]">
+                <span className="rounded-full border border-[var(--border-light)] bg-[var(--background-soft)] px-4 py-2 text-sm text-[var(--text-secondary)]">
                   Software & Digital Products
                 </span>
 
-                <span className="rounded-full border border-[#E5E7EB] bg-[#F8F9FB] px-4 py-2 text-sm text-[#64748B]">
+                <span className="rounded-full border border-[var(--border-light)] bg-[var(--background-soft)] px-4 py-2 text-sm text-[var(--text-secondary)]">
                   Automation & AI
                 </span>
 
-                <span className="rounded-full border border-[#E5E7EB] bg-[#F8F9FB] px-4 py-2 text-sm text-[#64748B]">
+                <span className="rounded-full border border-[var(--border-light)] bg-[var(--background-soft)] px-4 py-2 text-sm text-[var(--text-secondary)]">
                   Business Technology
                 </span>
               </div>
             </div>
 
             {/* RIGHT — SERVICES IMAGE */}
-            <div className="lg:col-span-5 xl:col-span-5">
+            <div className="min-w-0">
               <div className="relative mx-auto w-full max-w-[550px] lg:max-w-none">
                 <div
-                  className="pointer-events-none absolute -bottom-6 -right-6 -z-10 h-64 w-64 rounded-full bg-[#8B2346]/10 blur-[80px]"
+                  className="pointer-events-none absolute -bottom-6 -right-6 -z-10 h-64 w-64 rounded-full bg-[var(--brand-gold)]/10 blur-[80px]"
                   aria-hidden="true"
                 />
 
-                <div className="relative overflow-hidden rounded-[24px] border border-[#E5E7EB] bg-white p-2.5 shadow-[0_30px_70px_rgba(23,32,51,0.10)] sm:rounded-[32px]">
-                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[18px] bg-[#F7F8FA] sm:rounded-[26px]">
+                <div className="relative overflow-hidden rounded-[24px] border border-[var(--border-light)] bg-white p-2.5 shadow-[0_30px_70px_rgba(17,17,17,0.10)] sm:rounded-[32px]">
+                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[18px] bg-[var(--background-soft)] sm:rounded-[26px]">
                     <Image
                       src="/images/technologyy.png"
                       alt="Technology services built around your business"
@@ -186,26 +186,26 @@ export default function ServicesPage() {
       {/* =====================================================
           SERVICE FOCUS
       ====================================================== */}
-      <Section className="bg-[#F8F9FB]">
+      <Section className="bg-[var(--background-soft)]">
         <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-end lg:gap-16">
           <div>
-            <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[#8B2346]">
+            <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
               What We Do
             </p>
 
-            <Heading as="h2" className="text-[#172033]">
+            <Heading as="h2" className="text-[var(--ink)]">
               Technology capabilities connected to real business needs.
             </Heading>
           </div>
 
           <div>
-            <p className="max-w-3xl text-base leading-8 text-[#64748B] sm:text-lg">
+            <p className="max-w-3xl text-base leading-8 text-[var(--text-secondary)] sm:text-lg">
               Our services cover the technology areas organizations commonly
               need to build digital experiences, improve internal processes,
               automate repetitive work and support day-to-day operations.
             </p>
 
-            <p className="mt-5 max-w-3xl text-base leading-8 text-[#64748B]">
+            <p className="mt-5 max-w-3xl text-base leading-8 text-[var(--text-secondary)]">
               Each engagement can be shaped around the organization's
               requirements, existing systems, users and technology
               environment.
@@ -217,17 +217,17 @@ export default function ServicesPage() {
           {serviceFocus.map((item) => (
             <div
               key={item.number}
-              className="rounded-2xl border border-[#E5E7EB] bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#8B2346] hover:shadow-[0_10px_30px_rgba(23,32,51,0.06)]"
+              className="rounded-2xl border border-[var(--border-light)] bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--brand-gold)] hover:shadow-[0_10px_30px_rgba(17,17,17,0.06)]"
             >
-              <span className="text-sm font-medium text-[#8B2346]">
+              <span className="text-sm font-medium text-[var(--brand-gold-deep)]">
                 {item.number}
               </span>
 
-              <h3 className="mt-7 text-lg font-semibold tracking-tight text-[#172033]">
+              <h3 className="mt-7 text-lg font-semibold tracking-tight text-[var(--ink)]">
                 {item.title}
               </h3>
 
-              <p className="mt-3 text-sm leading-6 text-[#64748B]">
+              <p className="mt-3 text-sm leading-6 text-[var(--text-secondary)]">
                 {item.description}
               </p>
             </div>
@@ -240,21 +240,21 @@ export default function ServicesPage() {
       ====================================================== */}
       <Section>
         <div className="max-w-3xl">
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[#8B2346]">
+          <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
             Capabilities
           </p>
 
-          <Heading as="h2" className="text-[#172033]">
+          <Heading as="h2" className="text-[var(--ink)]">
             Explore our service capabilities.
           </Heading>
 
-          <p className="mt-6 text-base leading-8 text-[#64748B]">
+          <p className="mt-6 text-base leading-8 text-[var(--text-secondary)]">
             Explore the service areas below to understand how Sohan Soft Tech
             can support different digital, operational and technology
             requirements.
           </p>
 
-          <p className="mt-4 text-base leading-8 text-[#64748B]">
+          <p className="mt-4 text-base leading-8 text-[var(--text-secondary)]">
             Each service page provides more detail about the capability, use
             cases, technology considerations and the types of requirements it
             can support.
@@ -266,27 +266,27 @@ export default function ServicesPage() {
             <Link
               key={service.href}
               href={service.href}
-              className="group rounded-2xl border border-[#E5E7EB] bg-white p-7 transition-all duration-200 hover:-translate-y-1 hover:border-[#8B2346] hover:shadow-[0_10px_30px_rgba(23,32,51,0.06)]"
+              className="group rounded-2xl border border-[var(--border-light)] bg-white p-7 transition-all duration-200 hover:-translate-y-1 hover:border-[var(--brand-gold)] hover:shadow-[0_10px_30px_rgba(17,17,17,0.06)]"
             >
               <div className="flex items-start justify-between">
-                <span className="text-sm font-medium text-[#8B2346]">
+                <span className="text-sm font-medium text-[var(--brand-gold-deep)]">
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
-                <span className="text-lg text-[#64748B] transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[#8B2346]">
+                <span className="text-lg text-[var(--text-secondary)] transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[var(--brand-gold-deep)]">
                   ↗
                 </span>
               </div>
 
-              <h2 className="mt-12 text-xl font-semibold tracking-tight text-[#172033]">
+              <h2 className="mt-12 text-xl font-semibold tracking-tight text-[var(--ink)]">
                 {service.title}
               </h2>
 
-              <p className="mt-4 text-sm leading-6 text-[#64748B]">
+              <p className="mt-4 text-sm leading-6 text-[var(--text-secondary)]">
                 {service.description}
               </p>
 
-              <p className="mt-7 text-sm font-semibold text-[#8B2346] transition-colors group-hover:text-[#6F1837]">
+              <p className="mt-7 text-sm font-semibold text-[var(--brand-gold-deep)] transition-colors group-hover:text-[var(--brand-gold-hover)]">
                 Explore service →
               </p>
             </Link>
@@ -297,28 +297,28 @@ export default function ServicesPage() {
       {/* =====================================================
           APPROACH
       ====================================================== */}
-      <section className="bg-[#F8EEF2]">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-6 sm:py-24 lg:px-8">
+      <section className="bg-[var(--background-soft)]">
+        <div className="mx-auto w-full max-w-7xl px-5 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-20">
             <div>
-              <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[#8B2346]">
+              <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
                 Our Approach
               </p>
 
-              <Heading as="h2" className="text-[#172033]">
+              <Heading as="h2" className="text-[var(--ink)]">
                 From requirement to implementation.
               </Heading>
             </div>
 
             <div>
-              <p className="text-base leading-8 text-[#64748B] sm:text-lg">
+              <p className="text-base leading-8 text-[var(--text-secondary)] sm:text-lg">
                 We begin by understanding the requirement, users, existing
                 processes and technology environment. From there, the
                 appropriate service and implementation approach can be
                 defined.
               </p>
 
-              <p className="mt-5 text-base leading-8 text-[#64748B]">
+              <p className="mt-5 text-base leading-8 text-[var(--text-secondary)]">
                 Whether the requirement involves a new website, business
                 application, automation workflow, mobile experience or
                 technical setup, the objective is to build a solution that
@@ -327,7 +327,7 @@ export default function ServicesPage() {
 
               <Link
                 href="/contact"
-                className="mt-8 inline-flex rounded-full bg-[#8B2346] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#6F1837]"
+                className="mt-8 inline-flex rounded-full bg-[var(--brand-gold-deep)] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[var(--brand-gold-hover)]"
               >
                 Discuss Your Requirement
               </Link>

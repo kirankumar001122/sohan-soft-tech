@@ -56,20 +56,20 @@ const faqs = [
 
 export default function FAQsPage() {
   return (
-    <main className="bg-white">
+    <main className="bg-[var(--background)]">
       {/* Hero */}
-      <section className="bg-white text-[#172033]">
-        <div className="mx-auto max-w-7xl px-5 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-40">
+      <section className="bg-[var(--background)] text-[var(--ink)]">
+        <div className="mx-auto max-w-7xl px-5 py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 sm:px-6 sm:py-18 md:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 lg:px-8 lg:py-40">
           <div className="max-w-4xl">
-            <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
+            <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
               FAQs
             </p>
 
-            <Heading as="h1" className="mt-5 text-[#172033]">
+            <Heading as="h1" className="mt-5 text-[var(--ink)]">
               Answers to common technology questions.
             </Heading>
 
-            <p className="mt-6 max-w-2xl text-base leading-8 text-[#64748B] sm:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--text-secondary)] sm:text-lg">
               Find answers to common questions about our services, solutions,
               software and technology projects.
             </p>
@@ -78,13 +78,13 @@ export default function FAQsPage() {
       </section>
 
       {/* FAQ */}
-      <Section className="bg-[#F8F9FB]">
+      <Section className="bg-[var(--background-soft)]">
         <div className="mx-auto max-w-4xl">
-          <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
+          <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
             Frequently Asked Questions
           </p>
 
-          <Heading as="h2" className="mt-4 text-[#172033]">
+          <Heading as="h2" className="mt-4 text-[var(--ink)]">
             Common questions about working with us.
           </Heading>
 
@@ -92,13 +92,13 @@ export default function FAQsPage() {
             {faqs.map((faq) => (
               <article
                 key={faq.question}
-                className="rounded-[20px] border border-[#E5E7EB] bg-white p-7 transition-all duration-300 hover:border-[#8B2346] hover:shadow-[0_10px_30px_rgba(23,32,51,0.06)]"
+                className="rounded-[20px] border border-[var(--border-light)] bg-white p-7 transition-all duration-300 hover:border-[var(--brand-gold)] hover:shadow-[0_10px_30px_rgba(17,17,17,0.06)]"
               >
-                <h3 className="text-xl font-semibold text-[#172033]">
+                <h3 className="text-xl font-semibold text-[var(--ink)]">
                   {faq.question}
                 </h3>
 
-                <p className="mt-4 leading-7 text-[#64748B]">
+                <p className="mt-4 leading-7 text-[var(--text-secondary)]">
                   {faq.answer}
                 </p>
               </article>
@@ -108,20 +108,20 @@ export default function FAQsPage() {
       </Section>
 
       {/* CTA */}
-      <Section className="bg-white">
-        <div className="rounded-[20px] border border-[#E5E7EB] bg-[#F8EEF2] p-8 sm:p-12">
-          <Heading as="h2" className="text-[#172033]">
+      <Section className="bg-[var(--background)]">
+        <div className="rounded-[20px] border border-[var(--border-light)] bg-[var(--background-soft)] p-8 sm:p-12">
+          <Heading as="h2" className="text-[var(--ink)]">
             Have a question about your project?
           </Heading>
 
-          <p className="mt-5 max-w-2xl leading-8 text-[#64748B]">
+          <p className="mt-5 max-w-2xl leading-8 text-[var(--text-secondary)]">
             Share your requirements with us and we can understand the
             technology or business problem you are looking to solve.
           </p>
 
           <a
             href="/contact"
-            className="mt-8 inline-flex items-center justify-center rounded-full bg-[#8B2346] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#6F1837]"
+            className="mt-8 inline-flex items-center justify-center rounded-full bg-[var(--brand-gold-deep)] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[var(--brand-gold-hover)]"
           >
             Talk to Us →
           </a>

@@ -32,18 +32,18 @@ export default function ResourcesPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-white py-20 text-[#172033] sm:py-24 lg:py-28">
+      <section className="bg-[var(--background)] py-14 md:py-16 lg:py-18 text-[var(--ink)] sm:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 lg:py-18 md:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
-            <p className="mb-5 text-sm font-medium uppercase tracking-[0.2em] text-[#8B2346]">
+            <p className="mb-5 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
               Resources
             </p>
 
-            <Heading as="h1" className="text-[#172033]">
+            <Heading as="h1" className="text-[var(--ink)]">
               Insights for Building, Automating and Growing with Technology.
             </Heading>
 
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-[#64748B] sm:text-xl">
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-[var(--text-secondary)] sm:text-xl">
               Explore technology resources, practical guides and insights
               designed to help businesses understand digital and technology
               opportunities.
@@ -56,23 +56,23 @@ export default function ResourcesPage() {
       <Section>
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <div>
-            <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
+            <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
               Knowledge Hub
             </p>
 
-            <Heading as="h2" className="mt-4 text-[#172033]">
+            <Heading as="h2" className="mt-4 text-[var(--ink)]">
               Practical technology knowledge.
             </Heading>
           </div>
 
           <div className="max-w-2xl">
-            <p className="text-lg leading-8 text-[#64748B]">
+            <p className="text-lg leading-8 text-[var(--text-secondary)]">
               The Resources section is designed to become a knowledge hub for
               technology, automation, software, digital transformation and
               business technology topics.
             </p>
 
-            <p className="mt-5 leading-8 text-[#64748B]">
+            <p className="mt-5 leading-8 text-[var(--text-secondary)]">
               New articles, guides, case studies and FAQs can be added as
               verified content becomes available.
             </p>
@@ -81,13 +81,13 @@ export default function ResourcesPage() {
       </Section>
 
       {/* Categories */}
-      <Section className="bg-[#F8F9FB]">
+      <Section className="bg-[var(--background-soft)]">
         <div className="mb-12 max-w-3xl">
-          <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
+          <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
             Explore Topics
           </p>
 
-          <Heading as="h2" className="mt-4 text-[#172033]">
+          <Heading as="h2" className="mt-4 text-[var(--ink)]">
             Resources across technology and business.
           </Heading>
         </div>
@@ -106,17 +106,17 @@ export default function ResourcesPage() {
           ].map((category, index) => (
             <div
               key={category}
-              className="rounded-[20px] border border-[#E5E7EB] bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#8B2346] hover:shadow-[0_10px_30px_rgba(23,32,51,0.06)]"
+              className="rounded-[20px] border border-[var(--border-light)] bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--brand-gold)] hover:shadow-[0_10px_30px_rgba(17,17,17,0.06)]"
             >
-              <span className="text-sm font-medium text-[#8B2346]">
+              <span className="text-sm font-medium text-[var(--brand-gold-deep)]">
                 {String(index + 1).padStart(2, "0")}
               </span>
 
-              <h3 className="mt-4 text-xl font-semibold text-[#172033]">
+              <h3 className="mt-4 text-xl font-semibold text-[var(--ink)]">
                 {category}
               </h3>
 
-              <p className="mt-3 text-sm leading-6 text-[#64748B]">
+              <p className="mt-3 text-sm leading-6 text-[var(--text-secondary)]">
                 Future resources and insights in this topic area.
               </p>
             </div>
@@ -127,11 +127,11 @@ export default function ResourcesPage() {
       {/* Published Resources */}
       <Section>
         <div className="mb-12 max-w-3xl">
-          <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
+          <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
             Latest Resources
           </p>
 
-          <Heading as="h2" className="mt-4 text-[#172033]">
+          <Heading as="h2" className="mt-4 text-[var(--ink)]">
             Explore our latest insights.
           </Heading>
         </div>
@@ -142,43 +142,43 @@ export default function ResourcesPage() {
               <Link
                 key={resource.slug}
                 href={`/resources/${resource.slug}`}
-                className="group flex h-full flex-col rounded-[20px] border border-[#E5E7EB] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#8B2346] hover:shadow-[0_10px_30px_rgba(23,32,51,0.06)]"
+                className="group flex h-full flex-col rounded-[20px] border border-[var(--border-light)] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--brand-gold)] hover:shadow-[0_10px_30px_rgba(17,17,17,0.06)]"
               >
                 <div className="flex items-center justify-between gap-4">
-                  <span className="rounded-full bg-[#F8EEF2] px-3 py-1 text-xs font-medium text-[#8B2346]">
+                  <span className="rounded-full bg-[var(--background-soft)] px-3 py-1 text-xs font-medium text-[var(--brand-gold-deep)]">
                     {resource.type}
                   </span>
 
-                  <span className="text-sm text-[#64748B]">
+                  <span className="text-sm text-[var(--text-secondary)]">
                     {resource.category}
                   </span>
                 </div>
 
-                <h3 className="mt-7 text-2xl font-semibold tracking-tight text-[#172033]">
+                <h3 className="mt-7 text-2xl font-semibold tracking-tight text-[var(--ink)]">
                   {resource.title}
                 </h3>
 
-                <p className="mt-4 flex-1 leading-7 text-[#64748B]">
+                <p className="mt-4 flex-1 leading-7 text-[var(--text-secondary)]">
                   {resource.description}
                 </p>
 
-                <div className="mt-7 text-sm font-medium text-[#8B2346] transition-colors group-hover:text-[#6F1837]">
+                <div className="mt-7 text-sm font-medium text-[var(--brand-gold-deep)] transition-colors group-hover:text-[var(--brand-gold-hover)]">
                   Read more →
                 </div>
               </Link>
             ))}
           </div>
         ) : (
-          <div className="rounded-[20px] border border-[#E5E7EB] bg-[#F8F9FB] px-7 py-14 text-center sm:px-10">
-            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#F8EEF2] text-xl text-[#8B2346]">
+          <div className="rounded-[20px] border border-[var(--border-light)] bg-[var(--background-soft)] px-7 py-14 text-center sm:px-10">
+            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[var(--background-soft)] text-xl text-[var(--brand-gold-deep)]">
               +
             </div>
 
-            <h3 className="mt-6 text-2xl font-semibold text-[#172033]">
+            <h3 className="mt-6 text-2xl font-semibold text-[var(--ink)]">
               Resources are coming soon.
             </h3>
 
-            <p className="mx-auto mt-4 max-w-2xl leading-7 text-[#64748B]">
+            <p className="mx-auto mt-4 max-w-2xl leading-7 text-[var(--text-secondary)]">
               New technology articles, business guides, case studies and
               insights will appear here as verified content is published.
             </p>
@@ -187,13 +187,13 @@ export default function ResourcesPage() {
       </Section>
 
       {/* Content Areas */}
-<Section className="bg-white">
+<Section className="bg-[var(--background)]">
   <div className="mb-12 max-w-3xl">
-    <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
+    <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
       What You Can Explore
     </p>
 
-    <Heading as="h2" className="mt-4 text-[#172033]">
+    <Heading as="h2" className="mt-4 text-[var(--ink)]">
       Content designed around real technology questions.
     </Heading>
   </div>
@@ -233,13 +233,13 @@ export default function ResourcesPage() {
     ].map((item) => (
       <div
         key={item.title}
-        className="rounded-[20px] border border-[#E5E7EB] bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#8B2346] hover:shadow-[0_10px_30px_rgba(23,32,51,0.06)]"
+        className="rounded-[20px] border border-[var(--border-light)] bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--brand-gold)] hover:shadow-[0_10px_30px_rgba(17,17,17,0.06)]"
       >
-        <h3 className="text-xl font-semibold text-[#172033]">
+        <h3 className="text-xl font-semibold text-[var(--ink)]">
           {item.title}
         </h3>
 
-        <p className="mt-3 leading-7 text-[#64748B]">
+        <p className="mt-3 leading-7 text-[var(--text-secondary)]">
           {item.description}
         </p>
       </div>
@@ -248,17 +248,17 @@ export default function ResourcesPage() {
 </Section>
 
       {/* CTA */}
-      <Section className="bg-[#F8EEF2]">
+      <Section className="bg-[var(--background-soft)]">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8B2346]">
+          <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
             Have a Technology Requirement?
           </p>
 
-          <Heading as="h2" className="mt-4 text-[#172033]">
+          <Heading as="h2" className="mt-4 text-[var(--ink)]">
             Turn an idea into a practical technology solution.
           </Heading>
 
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[#64748B]">
+          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[var(--text-secondary)]">
             If you have a business, software, automation or digital
             requirement, talk to the Sohan Soft Tech team.
           </p>
@@ -266,14 +266,14 @@ export default function ResourcesPage() {
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-[#8B2346] px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[#6F1837]"
+              className="inline-flex items-center justify-center rounded-full bg-[var(--brand-gold-deep)] px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[var(--brand-gold-hover)]"
             >
               Get a Free Consultation
             </Link>
 
             <Link
               href="/products"
-              className="inline-flex items-center justify-center rounded-full border border-[#E5E7EB] bg-white px-7 py-3.5 text-sm font-medium text-[#172033] transition-colors hover:border-[#8B2346] hover:text-[#8B2346]"
+              className="inline-flex items-center justify-center rounded-full border border-[var(--border-light)] bg-white px-7 py-3.5 text-sm font-medium text-[var(--ink)] transition-colors hover:border-[var(--brand-gold)] hover:text-[var(--brand-gold-deep)]"
             >
               Explore Products
             </Link>
