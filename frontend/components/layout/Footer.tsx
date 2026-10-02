@@ -90,7 +90,7 @@ export default function Footer() {
   return (
     <footer className="bg-[var(--background-dark)] text-white">
       <Container>
-        <div className="grid gap-12 border-b border-white/10 py-14 sm:py-16 lg:grid-cols-[0.8fr_2.2fr] lg:gap-16 lg:py-20">
+        <div className="grid gap-10 border-b border-white/10 py-10 sm:py-12 lg:grid-cols-[0.8fr_2.2fr] lg:gap-16 lg:py-14">
           <div className="max-w-sm">
             <Link href="/" className="inline-flex items-center gap-3" aria-label="Sohan Soft Tech Home">
               <div className="relative h-14 w-14 shrink-0">

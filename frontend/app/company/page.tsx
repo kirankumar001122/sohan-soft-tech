@@ -30,7 +30,7 @@ export default function CompanyPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-[var(--background)] py-14 md:py-16 lg:py-18 text-[var(--ink)] sm:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 lg:py-18 md:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
+      <section className="bg-[var(--background)] py-5 text-[var(--ink)] sm:py-6 lg:py-7">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
             <p className="mb-5 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
@@ -203,7 +203,7 @@ export default function CompanyPage() {
       </Section>
 
      {/* How We Work */}
-<section className="bg-[var(--background)] py-16 sm:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
+<section className="bg-[var(--background)] py-5 sm:py-6 lg:py-7">
   <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
     <div className="max-w-3xl">
       <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">

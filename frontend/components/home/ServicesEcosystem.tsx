@@ -92,7 +92,7 @@ export default function ServicesEcosystem() {
               onClick={() => setActive(item.categorySlug)}
               className={`shrink-0 rounded-full px-4 py-2 text-sm font-medium transition ${
                 isActive
-                  ? "bg-[var(--ink)] text-white"
+                  ? "border border-[var(--brand-gold)] bg-[var(--brand-gold-soft)] text-[var(--ink)]"
                   : "border border-[var(--border-light)] bg-white text-[var(--text-secondary)] hover:border-[var(--brand-gold)]"
               }`}
             >
@@ -105,7 +105,7 @@ export default function ServicesEcosystem() {
       <div className="mt-8 rounded-[28px] border border-[var(--border-light)] bg-white p-6 sm:p-8">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h3 className="text-2xl tracking-[-0.03em]">{category.title}</h3>
+            <h3 className="text-2xl tracking-normal">{category.title}</h3>
             <p className="mt-2 max-w-2xl text-sm leading-7 text-[var(--text-secondary)]">
               {category.description}
             </p>

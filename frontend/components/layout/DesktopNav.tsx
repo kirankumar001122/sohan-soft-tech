@@ -4,6 +4,8 @@ import { useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { megaMenus, type MegaMenu } from "@/data/navigation";
+import RequestDemoButton from "@/components/demo/RequestDemoButton";
+import NavigationThumbnail from "./NavigationThumbnail";
 
 const navItems = [
   { label: "Services", href: "/services", mega: true },
@@ -13,28 +15,7 @@ const navItems = [
   { label: "Case Studies", href: "/case-studies", mega: false },
   { label: "Company", href: "/company", mega: true },
   { label: "Resources", href: "/resources", mega: true },
-  { label: "Contact", href: "/contact", mega: false },
 ];
-
-function NavIcon({ label }: { label: string }) {
-  return (
-    <svg
-      className="h-4 w-4 text-[var(--brand-gold-deep)]"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      aria-hidden="true"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M13 10V3L4 14h7v7l9-11h-7z"
-      />
-      <title>{label}</title>
-    </svg>
-  );
-}
 
 export default function DesktopNav() {
   const pathname = usePathname();
@@ -146,12 +127,11 @@ export default function DesktopNav() {
         })}
       </ul>
 
-      <Link
-        href="/contact"
+      <RequestDemoButton
         className="ml-3 inline-flex items-center justify-center rounded-full bg-[var(--brand-gold)] px-4 py-2.5 text-[13px] font-semibold text-[var(--ink)] shadow-[0_8px_20px_rgba(217,149,0,0.18)] transition hover:-translate-y-0.5 hover:bg-[var(--brand-gold-rich)]"
       >
-        Get a Free Consultation
-      </Link>
+        Request a Demo
+      </RequestDemoButton>
 
       {currentMegaMenu && (
         <div
@@ -191,9 +171,7 @@ export default function DesktopNav() {
                               onClick={() => setActiveMenu(null)}
                               className="group flex items-start gap-2.5 rounded-lg p-2 transition hover:bg-[var(--brand-gold-soft)]"
                             >
-                                <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-[var(--border-light)] bg-[var(--background)]">
-                                <NavIcon label={subItem.label} />
-                              </span>
+                                <NavigationThumbnail href={subItem.href} />
                               <span>
                                 <span className="block text-[13px] font-semibold text-[var(--ink)] group-hover:text-[var(--brand-gold-deep)]">
                                   {subItem.label}
@@ -218,7 +196,7 @@ export default function DesktopNav() {
                 <p className="relative text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--brand-gold-rich)]">
                   Featured
                 </p>
-                <h3 className="relative mt-4 text-xl font-semibold tracking-[-0.03em]">
+                <h3 className="relative mt-4 text-xl font-semibold tracking-normal">
                   {currentMegaMenu.featured?.title}
                 </h3>
                 <p className="relative mt-3 text-sm leading-6 text-white/70">

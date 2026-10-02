@@ -59,7 +59,7 @@ export default function FAQsPage() {
     <main className="bg-[var(--background)]">
       {/* Hero */}
       <section className="bg-[var(--background)] text-[var(--ink)]">
-        <div className="mx-auto max-w-7xl px-5 py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 sm:px-6 sm:py-18 md:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 lg:px-8 lg:py-40">
+        <div className="mx-auto max-w-7xl px-5 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-7">
           <div className="max-w-4xl">
             <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
               FAQs

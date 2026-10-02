@@ -25,7 +25,7 @@ export default function Header() {
               />
             </div>
             <div className="flex min-w-0 flex-col">
-              <span className="truncate text-[15px] font-semibold tracking-[-0.02em] text-[var(--ink)]">
+              <span className="truncate text-[15px] font-semibold tracking-normal text-[var(--ink)]">
                 Sohan Soft Tech
               </span>
               <span className="mt-1 hidden text-[9px] font-medium uppercase tracking-[0.2em] text-[var(--text-muted)] sm:block">

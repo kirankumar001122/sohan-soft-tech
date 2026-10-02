@@ -51,7 +51,7 @@ export default function SolutionsSection() {
             href={item.href}
             className="group bg-white p-7 transition hover:bg-[var(--background)]"
           >
-            <h3 className="text-xl tracking-[-0.03em]">{item.title}</h3>
+            <h3 className="text-xl tracking-normal">{item.title}</h3>
             <p className="mt-3 text-sm leading-6 text-[var(--text-secondary)]">
               {item.problem}
             </p>

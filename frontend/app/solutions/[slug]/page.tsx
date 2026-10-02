@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 
 import Heading from "@/components/ui/Heading";
 import Section from "@/components/ui/Section";
+import { solutionCategoryImages, solutionImages } from "@/data/catalogAssets";
 import {
   getSolutionBySlug,
   getSolutionCategoryBySlug,
@@ -22,21 +23,7 @@ interface SolutionPageProps {
  * --------------------------------------------------------- */
 
 function getSolutionImage(slug: string) {
-  const imageMap: Record<string, string> = {
-    "business-solutions": "/images/business_solution.jpg",
-    "digital-transformation": "/images/digital_transformation.jpg",
-    automation: "/images/automation_solution.jpg",
-
-    "education-solutions": "/images/education_solution.jpg",
-    "learning-management": "/images/learning_solution.jpg",
-
-    "whatsapp-business": "/images/whatsapp_solution.jpg",
-
-    "customer-communication": "/images/digital_solution.jpg",
-    "digital-communication": "/images/digital_solution.jpg",
-  };
-
-  return imageMap[slug] ?? "/images/business_solution.jpg";
+  return solutionImages[slug] ?? "/images/business_solution.jpg";
 }
 
 /* ---------------------------------------------------------
@@ -44,16 +31,7 @@ function getSolutionImage(slug: string) {
  * --------------------------------------------------------- */
 
 function getCategoryImage(slug: string) {
-  const imageMap: Record<string, string> = {
-    business: "/images/business_solution.jpg",
-    "digital-transformation": "/images/digital_transformation.jpg",
-    automation: "/images/automation_solution.jpg",
-    education: "/images/education_solution.jpg",
-    communication: "/images/whatsapp_solution.jpg",
-    "office-technology": "/images/business_solution.jpg",
-  };
-
-  return imageMap[slug] ?? "/images/business_solution.jpg";
+  return solutionCategoryImages[slug] ?? "/images/business_solution.jpg";
 }
 
 /* ---------------------------------------------------------
@@ -263,7 +241,7 @@ export default async function SolutionPage({
         ===================================================== */}
 
         <section className="bg-[var(--background)] text-[var(--ink)]">
-          <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-14 md:py-16 lg:py-18 lg:px-8 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
+          <div className="mx-auto max-w-7xl px-5 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-7">
             <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
               {/* LEFT CONTENT */}
 
@@ -361,7 +339,7 @@ export default async function SolutionPage({
 
         <section
           id="capabilities"
-          className="bg-[var(--background-soft)] py-16 sm:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18"
+          className="bg-[var(--background-soft)] py-5 sm:py-6 lg:py-7"
         >
           <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
@@ -523,7 +501,7 @@ export default async function SolutionPage({
             APPROACH
         ===================================================== */}
 
-        <section className="bg-[var(--background)] py-16 sm:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
+        <section className="bg-[var(--background)] py-5 sm:py-6 lg:py-7">
           <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
             <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
               <div>
@@ -622,7 +600,7 @@ export default async function SolutionPage({
             FAQ
         ===================================================== */}
 
-        <section className="bg-[var(--background-soft)] py-16 sm:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
+        <section className="bg-[var(--background-soft)] py-5 sm:py-6 lg:py-7">
           <div className="mx-auto max-w-4xl px-5 sm:px-6 lg:px-8">
             <div className="text-center">
               <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
@@ -661,7 +639,7 @@ export default async function SolutionPage({
         ===================================================== */}
 
         <section className="bg-[var(--background-soft)]">
-          <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-14 md:py-16 lg:py-18 lg:px-8">
+          <div className="mx-auto max-w-7xl px-5 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-7">
             <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-2xl">
                 <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
@@ -716,7 +694,7 @@ export default async function SolutionPage({
       ===================================================== */}
 
       <section className="bg-[var(--background)] text-[var(--ink)]">
-        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-14 md:py-16 lg:py-18 lg:px-8 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
+        <div className="mx-auto max-w-7xl px-5 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-7">
           <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
             {/* LEFT CONTENT */}
 
@@ -813,7 +791,7 @@ export default async function SolutionPage({
           CAPABILITIES
       ===================================================== */}
 
-      <section className="bg-[var(--background-soft)] py-16 sm:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
+      <section className="bg-[var(--background-soft)] py-5 sm:py-6 lg:py-7">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
@@ -904,7 +882,7 @@ export default async function SolutionPage({
       ===================================================== */}
 
       <section className="bg-[var(--background-soft)]">
-        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-14 md:py-16 lg:py-18 lg:px-8">
+        <div className="mx-auto max-w-7xl px-5 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-7">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
               <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">

@@ -404,7 +404,7 @@ export default async function ServicePage({
           ADDITIONAL SERVICE INFORMATION
       ====================================================== */}
       <section className="bg-[var(--background-soft)]">
-        <div className="mx-auto max-w-7xl px-5 py-14 md:py-16 lg:py-18 sm:px-6 sm:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 lg:px-8">
+        <div className="mx-auto max-w-7xl px-5 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-7">
           <div className="max-w-3xl">
             <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
               Web Solutions
@@ -499,7 +499,7 @@ export default async function ServicePage({
           SOLUTIONS WE BUILD
       ====================================================== */}
       <section className="bg-transparent">
-        <div className="mx-auto max-w-7xl px-5 py-14 md:py-16 lg:py-18 sm:px-6 sm:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 lg:px-8">
+        <div className="mx-auto max-w-7xl px-5 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-7">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
             <div>
               <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
@@ -606,7 +606,7 @@ export default async function ServicePage({
           BUSINESS CHALLENGES
       ====================================================== */}
       <section className="bg-[var(--background-soft)]">
-        <div className="mx-auto max-w-7xl px-5 py-14 md:py-16 lg:py-18 sm:px-6 sm:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 lg:px-8">
+        <div className="mx-auto max-w-7xl px-5 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-7">
           <div className="max-w-3xl">
             <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
               Business Challenges
@@ -681,7 +681,7 @@ export default async function ServicePage({
           </Heading>
         </div>
 
-        <div className="mt-14 grid gap-0 border-y border-[var(--border-light)] sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-0 border-y border-[var(--border-light)] sm:grid-cols-2 lg:grid-cols-3">
           {service.process.map((step, index) => (
             <div
               key={step}
@@ -749,7 +749,7 @@ export default async function ServicePage({
           WHAT YOU CAN EXPECT
       ====================================================== */}
       <section className="bg-transparent">
-        <div className="mx-auto max-w-7xl px-5 py-14 md:py-16 lg:py-18 sm:px-6 sm:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 lg:px-8">
+        <div className="mx-auto max-w-7xl px-5 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-7">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
             <div>
               <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
@@ -901,7 +901,7 @@ export default async function ServicePage({
           BUSINESS VALUE
       ====================================================== */}
       <section className="bg-[var(--background-soft)]">
-        <div className="mx-auto max-w-7xl px-5 py-14 md:py-16 lg:py-18 sm:px-6 sm:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 lg:px-8">
+        <div className="mx-auto max-w-7xl px-5 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-7">
           <div className="max-w-3xl">
             <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
               Business Value

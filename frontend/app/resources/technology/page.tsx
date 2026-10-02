@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function TechnologyResourcesPage() {
   return (
     <main>
-      <section className="bg-[var(--background)] py-16 lg:py-20">
+      <section className="bg-[var(--background)] py-5 sm:py-6 lg:py-7">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <p className="text-eyebrow">Resources</p>
           <Heading as="h1" className="mt-4">

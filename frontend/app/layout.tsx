@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
+import DemoBookingProvider from "@/components/demo/DemoBookingProvider";
+import { getSiteUrl } from "@/lib/site-url";
 import "./globals.css";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
@@ -18,6 +20,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(getSiteUrl()),
   title: {
     template: "%s | Sohan Soft Tech",
     default: "Sohan Soft Tech",
@@ -34,10 +37,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${manrope.variable}`}>
       <body>
-        <Header />
-        {children}
-        <WhatsAppButton />
-        <Footer />
+        <DemoBookingProvider>
+          <Header />
+          {children}
+          <WhatsAppButton />
+          <Footer />
+        </DemoBookingProvider>
       </body>
     </html>
   );

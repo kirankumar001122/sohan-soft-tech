@@ -4,6 +4,8 @@ import { useEffect, useId, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { megaMenus } from "@/data/navigation";
+import RequestDemoButton from "@/components/demo/RequestDemoButton";
+import NavigationThumbnail from "./NavigationThumbnail";
 
 const topLinks = [
   { label: "Services", href: "/services" },
@@ -13,7 +15,6 @@ const topLinks = [
   { label: "Case Studies", href: "/case-studies" },
   { label: "Company", href: "/company" },
   { label: "Resources", href: "/resources" },
-  { label: "Contact", href: "/contact" },
 ];
 
 export default function MobileNav() {
@@ -111,10 +112,13 @@ export default function MobileNav() {
                                 key={sub.href}
                                 href={sub.href}
                                 onClick={closeMenu}
-                                className="rounded-lg px-3 py-2.5 transition hover:bg-[var(--background-soft)]"
+                                className="flex items-center gap-3 rounded-lg px-3 py-2.5 transition hover:bg-[var(--background-soft)]"
                               >
-                                <span className="block text-sm font-medium text-[var(--ink)]">{sub.label}</span>
-                                {sub.description && <span className="mt-0.5 block text-xs leading-5 text-[var(--text-muted)]">{sub.description}</span>}
+                                <NavigationThumbnail href={sub.href} />
+                                <span className="min-w-0">
+                                  <span className="block text-sm font-medium text-[var(--ink)]">{sub.label}</span>
+                                  {sub.description && <span className="mt-0.5 block text-xs leading-5 text-[var(--text-muted)]">{sub.description}</span>}
+                                </span>
                               </Link>
                             ))}
                           </div>
@@ -126,13 +130,12 @@ export default function MobileNav() {
               );
             })}
 
-            <Link
-              href="/contact"
+            <RequestDemoButton
               onClick={closeMenu}
               className="mt-5 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-[var(--brand-gold)] px-6 py-3.5 text-sm font-semibold text-[var(--ink)] transition hover:bg-[var(--brand-gold-rich)]"
             >
-              Get a Free Consultation
-            </Link>
+              Request a Demo
+            </RequestDemoButton>
           </nav>
         </div>
       )}

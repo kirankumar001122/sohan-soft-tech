@@ -35,7 +35,7 @@ export default async function ResourcePage({
   return (
     <main>
       {/* Hero */}
-      <section className="bg-[var(--background-dark)] py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 text-white sm:py-18 md:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 lg:py-18 md:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
+      <section className="bg-[var(--background-dark)] py-5 text-white sm:py-6 lg:py-7">
         <div className="mx-auto w-full max-w-4xl px-5 sm:px-6 lg:px-8">
           <Link
             href="/resources"

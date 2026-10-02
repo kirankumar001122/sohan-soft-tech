@@ -10,7 +10,7 @@ export default function PrivacyPolicyPage() {
   return (
     <main>
       <section className="bg-[var(--background)]">
-        <div className="mx-auto max-w-7xl px-5 py-14 md:py-16 lg:py-18 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-5 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-7">
           <p className="mb-5 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
             Legal
           </p>

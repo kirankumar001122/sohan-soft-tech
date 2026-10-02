@@ -32,7 +32,7 @@ export default function ResourcesPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-[var(--background)] py-14 md:py-16 lg:py-18 text-[var(--ink)] sm:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 lg:py-18 md:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
+      <section className="bg-[var(--background)] py-5 text-[var(--ink)] sm:py-6 lg:py-7">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
             <p className="mb-5 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
@@ -169,7 +169,7 @@ export default function ResourcesPage() {
             ))}
           </div>
         ) : (
-          <div className="rounded-[20px] border border-[var(--border-light)] bg-[var(--background-soft)] px-7 py-14 text-center sm:px-10">
+          <div className="rounded-[20px] border border-[var(--border-light)] bg-[var(--background-soft)] px-7 py-8 text-center sm:px-10 sm:py-9">
             <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[var(--background-soft)] text-xl text-[var(--brand-gold-deep)]">
               +
             </div>

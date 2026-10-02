@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Heading from "@/components/ui/Heading";
 import Section from "@/components/ui/Section";
-import ContactForm from "@/components/contact/ContactForm";
+import RequestDemoButton from "@/components/demo/RequestDemoButton";
 
 export const metadata = {
   title: "Contact",
@@ -12,7 +12,7 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <main>
-      <section className="bg-[var(--background)] py-16 lg:py-20">
+      <section className="bg-[var(--background)] py-5 sm:py-6 lg:py-7">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
             <p className="text-eyebrow">Contact Sohan Soft Tech</p>
@@ -20,25 +20,23 @@ export default function ContactPage() {
               Let&apos;s build what your business needs.
             </Heading>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--text-secondary)]">
-              Tell us about your business, technology requirements or project
-              idea. We&apos;ll use the information to understand what you need
-              and determine the right next step.
+              Explore a product or service with our team. Choose a convenient
+              time for a focused demonstration tailored to your goals.
             </p>
           </div>
         </div>
       </section>
 
       <Section className="bg-[var(--background)] !pt-0">
-        <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-          <div>
+        <div className="max-w-4xl">
             <p className="text-eyebrow">Start a conversation</p>
             <Heading as="h2" className="mt-4">
-              Tell us what you&apos;re trying to solve.
+              See the right solution in action.
             </Heading>
             <p className="mt-6 leading-8 text-[var(--text-secondary)]">
-              Whether you need a website, business software, automation,
-              digital transformation or another technology solution, share
-              your requirements with us.
+              Book a live walkthrough of the products, services, or workflows
+              that matter to your business. Our team will help you explore the
+              best next step.
             </p>
             <div className="mt-10 space-y-6">
               {[
@@ -72,20 +70,6 @@ export default function ContactPage() {
             >
               Explore our services →
             </Link>
-          </div>
-
-          <div className="rounded-[var(--radius-lg)] border border-[var(--border-light)] bg-white p-6 shadow-[var(--shadow-soft)] sm:p-8 lg:p-10">
-            <div className="mb-8">
-              <p className="text-eyebrow">Project enquiry</p>
-              <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
-                Tell us about your requirement
-              </h2>
-              <p className="mt-3 text-sm leading-6 text-[var(--text-secondary)]">
-                Fields marked with * are required.
-              </p>
-            </div>
-            <ContactForm />
-          </div>
         </div>
       </Section>
 
@@ -93,12 +77,15 @@ export default function ContactPage() {
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-eyebrow">Direct conversation</p>
           <Heading as="h2" className="mt-4">
-            Prefer a quick conversation?
+            Prefer to see a demo?
           </Heading>
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[var(--text-secondary)]">
-            You can reach the team on WhatsApp using the floating button, or
-            send the form and we will follow up.
+            Choose a time that works for you, or reach the team on WhatsApp
+            using the floating button.
           </p>
+          <RequestDemoButton className="mt-7 inline-flex min-h-12 items-center justify-center rounded-full bg-[var(--brand-gold)] px-7 text-sm font-semibold text-[var(--ink)] transition hover:bg-[var(--brand-gold-rich)]">
+            Request a Demo
+          </RequestDemoButton>
         </div>
       </Section>
     </main>

@@ -106,7 +106,7 @@ export default function TermsPage() {
     <main>
       {/* Hero */}
       <section className="bg-[var(--background)]">
-        <div className="mx-auto max-w-7xl px-5 py-14 md:py-16 lg:py-18 sm:px-6 sm:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 lg:px-8 lg:py-18 md:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
+        <div className="mx-auto max-w-7xl px-5 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-7">
           <div className="max-w-4xl">
             <p className="mb-5 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
               Legal
@@ -156,8 +156,8 @@ export default function TermsPage() {
 
       {/* Terms sections */}
       <section className="border-y border-[var(--border-light)] bg-[var(--background-soft)]">
-        <div className="mx-auto max-w-5xl px-5 py-16 sm:px-6 sm:py-14 md:py-16 lg:py-18 lg:px-8 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
-          <div className="space-y-14">
+        <div className="mx-auto max-w-5xl px-5 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-7">
+          <div className="space-y-10">
             {sections.map((section) => (
               <article key={section.title}>
                 <h2 className="text-2xl font-semibold tracking-tight text-[var(--ink)] sm:text-3xl">
@@ -182,7 +182,7 @@ export default function TermsPage() {
 
       {/* CTA */}
       <Section className="bg-[var(--background)]">
-        <div className="rounded-[var(--radius-lg)] bg-[var(--background-soft)] px-6 py-12 sm:px-10 lg:px-14 lg:py-16">
+        <div className="rounded-[var(--radius-lg)] bg-[var(--background-soft)] px-6 py-6 sm:px-10 sm:py-7 lg:px-14 lg:py-8">
           <div className="max-w-3xl">
             <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
               Questions?

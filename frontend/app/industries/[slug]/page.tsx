@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 
 import Heading from "@/components/ui/Heading";
 import Section from "@/components/ui/Section";
+import { industryImages } from "@/data/catalogAssets";
 import { getIndustryBySlug, industries } from "@/data/industries";
 
 interface IndustryPageProps {
@@ -55,17 +56,6 @@ export function generateStaticParams() {
   }));
 }
 
-const industryImages: Record<string, string> = {
-  education: "/images/education_ind.jpg",
-  healthcare: "/images/healthcare_ind.jpg",
-  "retail-ecommerce": "/images/retaail_ind.jpg",
-  "food-hospitality": "/images/hospitality_ind.jpg",
-  "professional-services": "/images/business_ind.jpg",
-  manufacturing: "/images/manufacturing_ind.jpg",
-  smb: "/images/SMB_ind.png",
-  "corporate-offices": "/images/corporate_ind.jpg",
-};
-
 export default async function IndustryPage({
   params,
 }: IndustryPageProps) {
@@ -81,7 +71,7 @@ export default async function IndustryPage({
     <main>
       {/* Hero */}
       <section className="bg-[var(--background)] text-[var(--ink)]">
-        <div className="mx-auto max-w-7xl px-5 py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 sm:px-6 sm:py-18 md:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 lg:px-8 lg:py-18 md:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
+        <div className="mx-auto max-w-7xl px-5 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-7">
           <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
             <div className="max-w-4xl">
               <Link
@@ -216,7 +206,7 @@ export default async function IndustryPage({
       {/* Challenges */}
       <section
         id="challenges"
-        className="bg-[var(--background-soft)] py-16 sm:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18"
+        className="bg-[var(--background-soft)] py-5 sm:py-6 lg:py-7"
       >
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
@@ -297,7 +287,7 @@ export default async function IndustryPage({
       </Section>
 
       {/* Relevant Services */}
-      <section className="bg-[var(--background-soft)] py-16 sm:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
+      <section className="bg-[var(--background-soft)] py-5 sm:py-6 lg:py-7">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
@@ -364,7 +354,7 @@ export default async function IndustryPage({
       </Section>
 
       {/* Automation */}
-      <section className="bg-[var(--background)] py-16 sm:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
+      <section className="bg-[var(--background)] py-5 sm:py-6 lg:py-7">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
             <div>
@@ -438,7 +428,7 @@ export default async function IndustryPage({
       </Section>
 
       {/* Case Studies Placeholder */}
-      <section className="bg-[var(--background-soft)] py-16 sm:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
+      <section className="bg-[var(--background-soft)] py-5 sm:py-6 lg:py-7">
         <div className="mx-auto max-w-4xl px-5 text-center sm:px-6 lg:px-8">
           <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
             Case studies
@@ -457,7 +447,7 @@ export default async function IndustryPage({
       </section>
 
       {/* FAQ */}
-      <section className="bg-[var(--background)] py-16 sm:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
+      <section className="bg-[var(--background)] py-5 sm:py-6 lg:py-7">
         <div className="mx-auto max-w-4xl px-5 sm:px-6 lg:px-8">
           <div className="text-center">
             <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
@@ -493,7 +483,7 @@ export default async function IndustryPage({
 
       {/* CTA */}
       <section className="bg-[var(--background-soft)]">
-        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-14 md:py-16 lg:py-18 lg:px-8">
+        <div className="mx-auto max-w-7xl px-5 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-7">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
               <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">

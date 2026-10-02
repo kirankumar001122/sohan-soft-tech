@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Heading from "@/components/ui/Heading";
 import Section from "@/components/ui/Section";
+import { serviceImages } from "@/data/catalogAssets";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -117,7 +118,7 @@ export default function ServicesPage() {
       {/* =====================================================
           HERO
       ====================================================== */}
-      <section className="relative overflow-hidden bg-[var(--background)] py-16 text-[var(--ink)] sm:py-20 lg:py-24">
+      <section className="relative overflow-hidden bg-[var(--background)] py-5 text-[var(--ink)] sm:py-6 lg:py-7">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid min-w-0 items-center gap-12 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-12 xl:gap-16">
             {/* LEFT — CONTENT */}
@@ -261,34 +262,71 @@ export default function ServicesPage() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <Link
               key={service.href}
               href={service.href}
-              className="group rounded-2xl border border-[var(--border-light)] bg-white p-7 transition-all duration-200 hover:-translate-y-1 hover:border-[var(--brand-gold)] hover:shadow-[0_10px_30px_rgba(17,17,17,0.06)]"
+              className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--border-light)] bg-white shadow-[0_4px_16px_rgba(17,17,17,0.035)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--brand-gold)] hover:shadow-[0_8px_24px_rgba(17,17,17,0.08)]"
             >
-              <div className="flex items-start justify-between">
-                <span className="text-sm font-medium text-[var(--brand-gold-deep)]">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-
-                <span className="text-lg text-[var(--text-secondary)] transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[var(--brand-gold-deep)]">
-                  ↗
-                </span>
+              <div className="relative aspect-[16/9] w-full overflow-hidden bg-[var(--background-soft)]">
+                <Image
+                  src={serviceImages[service.href.split("/").at(-1) ?? ""]}
+                  alt={`${service.title} service`}
+                  fill
+                  sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.025]"
+                />
               </div>
 
-              <h2 className="mt-12 text-xl font-semibold tracking-tight text-[var(--ink)]">
-                {service.title}
-              </h2>
+              <div className="flex flex-1 flex-col p-6">
+                <div className="flex items-center gap-3">
+                  <span className="text-xs font-semibold tracking-[0.12em] text-[var(--brand-gold-deep)]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--border-light)] bg-[var(--background-soft)] text-[var(--brand-gold-deep)]">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.6"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="h-[18px] w-[18px]"
+                      aria-hidden="true"
+                    >
+                      <path d="M9 6.5h9M9 12h9M9 17.5h6" />
+                      <circle cx="5" cy="6.5" r=".75" fill="currentColor" stroke="none" />
+                      <circle cx="5" cy="12" r=".75" fill="currentColor" stroke="none" />
+                      <circle cx="5" cy="17.5" r=".75" fill="currentColor" stroke="none" />
+                    </svg>
+                  </span>
+                </div>
 
-              <p className="mt-4 text-sm leading-6 text-[var(--text-secondary)]">
-                {service.description}
-              </p>
+                <h2 className="mt-5 text-xl font-semibold text-[var(--ink)]">
+                  {service.title}
+                </h2>
 
-              <p className="mt-7 text-sm font-semibold text-[var(--brand-gold-deep)] transition-colors group-hover:text-[var(--brand-gold-hover)]">
-                Explore service →
-              </p>
+                <p className="mt-2 text-sm leading-6 text-[var(--text-secondary)]">
+                  {service.description}
+                </p>
+
+                <span className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-[var(--brand-gold-deep)] transition-colors group-hover:text-[var(--brand-gold-hover)]">
+                  Explore service
+                  <svg
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.7"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
+                    aria-hidden="true"
+                  >
+                    <path d="M3.5 10h12m-5-5 5 5-5 5" />
+                  </svg>
+                </span>
+              </div>
             </Link>
           ))}
         </div>
@@ -298,7 +336,7 @@ export default function ServicesPage() {
           APPROACH
       ====================================================== */}
       <section className="bg-[var(--background-soft)]">
-        <div className="mx-auto w-full max-w-7xl px-5 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+        <div className="mx-auto w-full max-w-7xl px-5 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-7">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-20">
             <div>
               <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">

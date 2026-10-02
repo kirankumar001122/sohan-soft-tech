@@ -1,11 +1,12 @@
 import Link from "next/link";
+import RequestDemoButton from "@/components/demo/RequestDemoButton";
 import Heading from "@/components/ui/Heading";
 import Section from "@/components/ui/Section";
 
 export default function FinalCTA() {
   return (
     <Section className="section-dark bg-[var(--background-dark)]">
-      <div className="relative overflow-hidden rounded-[32px] bg-[linear-gradient(135deg,var(--background-dark)_0%,var(--ink-soft)_55%,var(--brand-gold-deep)_140%)] px-6 py-16 sm:px-12 sm:py-20">
+      <div className="relative overflow-hidden rounded-[32px] bg-[linear-gradient(135deg,var(--background-dark)_0%,var(--ink-soft)_55%,var(--brand-gold-deep)_140%)] px-6 py-12 sm:px-12 sm:py-14">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -right-10 top-8 h-48 w-48 rounded-full border border-white/10"
@@ -26,12 +27,11 @@ export default function FinalCTA() {
             technology, software or automation solution together.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              href="/contact"
+            <RequestDemoButton
               className="inline-flex rounded-full bg-white px-6 py-3 text-sm font-semibold text-[var(--brand-gold-deep)]"
             >
-              Get a Free Consultation
-            </Link>
+              Request a Demo
+            </RequestDemoButton>
             <Link
               href="/contact"
               className="inline-flex rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white"

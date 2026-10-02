@@ -9,7 +9,6 @@ const capabilities = [
       "Websites, web applications and platforms built around real operating requirements.",
     related: "Web development · Applications · Integrations",
     href: "/services/web-development",
-    span: "lg:col-span-2",
   },
   {
     title: "Experience Design",
@@ -17,7 +16,6 @@ const capabilities = [
       "Interfaces and journeys that make products easier to understand and use.",
     related: "UI/UX · Branding · Content structure",
     href: "/services/digital-marketing",
-    span: "",
   },
   {
     title: "Commerce",
@@ -25,7 +23,6 @@ const capabilities = [
       "Stores, billing, POS and operational software that keep transactions organized.",
     related: "E-commerce · Billing · ERP",
     href: "/services/ecommerce",
-    span: "",
   },
   {
     title: "Mobile",
@@ -33,7 +30,6 @@ const capabilities = [
       "Mobile applications and cloud-ready infrastructure for teams and customers.",
     related: "iOS · Android · Cloud setup",
     href: "/services/mobile-app-development",
-    span: "",
   },
   {
     title: "AI & Automation",
@@ -41,7 +37,6 @@ const capabilities = [
       "Practical automation across enquiries, messaging, reporting and internal workflows.",
     related: "WhatsApp · SMS · AI tools",
     href: "/services/ai-automation",
-    span: "lg:col-span-2",
   },
   {
     title: "Digital Growth",
@@ -49,7 +44,6 @@ const capabilities = [
       "Search, campaigns and brand presence that help the right audience find you.",
     related: "SEO · Marketing · Google Business Profile",
     href: "/services/digital-marketing",
-    span: "lg:col-span-2",
   },
 ];
 
@@ -67,50 +61,61 @@ export default function ServicesSection() {
         </p>
       </div>
 
-      <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+      <div className="mt-8 grid auto-rows-fr gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {capabilities.map((item, index) => (
           <Link
             key={item.title}
             href={item.href}
-            className={`group flex min-h-[250px] flex-col justify-between rounded-2xl border border-[var(--border-light)] p-6 transition duration-300 hover:-translate-y-1 hover:border-[var(--brand-gold)] hover:shadow-[var(--shadow-card)] ${
-              index === 0 || index === 4
-                ? "bg-[var(--ink)] text-white"
-                : "bg-white"
-            } ${item.span}`}
+            className="group flex h-full min-w-0 flex-col rounded-[var(--radius-md)] border border-[var(--border-light)] bg-white p-6 shadow-[var(--shadow-soft)] transition duration-200 hover:-translate-y-0.5 hover:border-[var(--brand-gold)] hover:shadow-[var(--shadow-card-hover)]"
           >
-            <div>
-              <span
-                className={`text-xs font-semibold ${
-                  index === 0 || index === 4
-                    ? "text-[var(--brand-gold-rich)]"
-                    : "text-[var(--brand-gold-deep)]"
-                }`}
-              >
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-semibold tracking-[0.12em] text-[var(--brand-gold-deep)]">
                 0{index + 1}
               </span>
-              <h3 className="mt-5 text-2xl tracking-[-0.03em]">{item.title}</h3>
-              <p
-                className={`mt-3 max-w-md text-sm leading-6 ${
-                  index === 0 || index === 4
-                    ? "text-white/70"
-                    : "text-[var(--text-secondary)]"
-                }`}
-              >
-                {item.description}
-              </p>
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-[var(--border-light)] bg-[var(--background-soft)] text-[var(--brand-gold-deep)]">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-4 w-4"
+                  aria-hidden="true"
+                >
+                  <rect x="4" y="4" width="6" height="6" rx="1" />
+                  <rect x="14" y="4" width="6" height="6" rx="1" />
+                  <rect x="4" y="14" width="6" height="6" rx="1" />
+                  <rect x="14" y="14" width="6" height="6" rx="1" />
+                </svg>
+              </span>
             </div>
-            <div className="mt-8 flex items-end justify-between gap-4">
-              <p
-                className={`text-xs ${
-                  index === 0 || index === 4
-                    ? "text-white/50"
-                    : "text-[var(--text-muted)]"
-                }`}
-              >
+
+            <h3 className="mt-4 text-xl font-semibold leading-snug text-[var(--ink)]">
+              {item.title}
+            </h3>
+            <p className="mt-2 text-sm leading-6 text-[var(--text-secondary)]">
+              {item.description}
+            </p>
+
+            <div className="mt-auto pt-5">
+              <p className="min-h-10 text-xs leading-5 text-[var(--text-muted)]">
                 {item.related}
               </p>
-              <span aria-hidden="true" className="text-lg">
-                →
+              <span className="mt-3 inline-flex w-full items-center gap-2 border-t border-[var(--border-light)] pt-4 text-sm font-semibold text-[var(--brand-gold-deep)] transition-colors group-hover:text-[var(--brand-gold-hover)]">
+                Explore capability
+                <svg
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.7"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
+                  aria-hidden="true"
+                >
+                  <path d="M3.5 10h12m-5-5 5 5-5 5" />
+                </svg>
               </span>
             </div>
           </Link>

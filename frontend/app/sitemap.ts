@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
-
-const baseUrl = "http://localhost:3000";
+import { getSiteUrl } from "@/lib/site-url";
 
 const services = [
   "web-development",
@@ -96,6 +95,7 @@ const staticPages = [
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
+  const baseUrl = getSiteUrl();
 
   const staticRoutes = staticPages.map((path) => ({
     url: `${baseUrl}${path}`,

@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 
 import Heading from "@/components/ui/Heading";
 import Section from "@/components/ui/Section";
+import { productImages } from "@/data/catalogAssets";
 import { getProductBySlug, products } from "@/data/products";
 
 interface ProductPageProps {
@@ -60,40 +61,6 @@ export function generateStaticParams() {
   ];
 }
 
-// =====================================================
-// PRODUCT IMAGES
-// =====================================================
-// Keep these in the SAME ORDER as products in:
-// frontend/data/products.ts
-//
-// 1  -> billing_pr.jpg
-// 2  -> pos_pr.jpg
-// 3  -> BMS_pr.jpg
-// 4  -> WMS_pr.jpeg
-// 5  -> erp_pr.jpg
-// 6  -> lms_pr.jpg
-// 7  -> attendence_pr.jpg
-// 8  -> whatsapp_pr.jpg
-// 9  -> dlt_pr.jpg
-// 10 -> custom_pr.jpg
-//
-// All images should be inside:
-// frontend/public/images/
-// =====================================================
-
-const productImageFiles = [
-  "/images/business_ind.jpg",
-  "/images/pos_pr.jpg",
-  "/images/BMS_pr.jpg",
-  "/images/WMS_pr.jpeg",
-  "/images/erp_pr.jpg",
-  "/images/learning.jpg",
-  "/images/attendence_pr.jpg",
-  "/images/whatsapp_pr.jpg",
-  "/images/dlt.jpg",
-  "/images/custom_pr.jpg",
-];
-
 export default async function ProductPage({
   params,
 }: ProductPageProps) {
@@ -105,19 +72,14 @@ export default async function ProductPage({
     notFound();
   }
 
-  const productIndex = products.findIndex(
-    (item) => item.slug === product.slug
-  );
-
-  const productImage =
-    productIndex >= 0 ? productImageFiles[productIndex] : undefined;
+  const productImage = productImages[product.slug];
 
   return (
     <main>
       {/* =====================================================
           HERO
       ===================================================== */}
-      <section className="bg-[var(--background)] py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 text-[var(--ink)] sm:py-18 md:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 lg:py-18 md:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
+      <section className="bg-[var(--background)] py-5 text-[var(--ink)] sm:py-6 lg:py-7">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
 
@@ -472,7 +434,7 @@ export default async function ProductPage({
       ===================================================== */}
       <Section>
 
-        <div className="rounded-[20px] bg-[var(--background-soft)] px-6 py-12 text-center sm:px-10 lg:px-16 lg:py-16">
+        <div className="rounded-[20px] bg-[var(--background-soft)] px-6 py-8 text-center sm:px-10 sm:py-10 lg:px-16 lg:py-12">
 
           <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">
             Explore Further

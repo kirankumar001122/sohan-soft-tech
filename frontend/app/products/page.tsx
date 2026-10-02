@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Heading from "@/components/ui/Heading";
 import Section from "@/components/ui/Section";
+import { productImages } from "@/data/catalogAssets";
 import { products } from "@/data/products";
 
 export const metadata: Metadata = {
@@ -35,7 +36,7 @@ export default function ProductsPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[var(--background)] py-16 text-[var(--ink)] sm:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 lg:py-18 md:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
+      <section className="relative overflow-hidden bg-[var(--background)] py-5 text-[var(--ink)] sm:py-6 lg:py-7">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-12 xl:gap-16">
 
@@ -131,30 +132,47 @@ export default function ProductsPage() {
             <Link
               key={product.slug}
               href={`/products/${product.slug}`}
-              className="group flex h-full flex-col rounded-[20px] border border-[var(--border-light)] bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--brand-gold)] hover:shadow-[0_10px_30px_rgba(17,17,17,0.06)]"
+              className="group flex h-full flex-col overflow-hidden rounded-[20px] border border-[var(--border-light)] bg-white transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--brand-gold)] hover:shadow-[0_10px_30px_rgba(17,17,17,0.06)]"
             >
-              <div className="mb-8 flex items-center justify-between">
-                <span className="text-sm font-medium text-[var(--text-secondary)]">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--background-soft)] text-[var(--brand-gold-deep)] transition-transform duration-300 group-hover:translate-x-1">
-                  →
-                </span>
+              <div className="relative aspect-[16/9] w-full overflow-hidden bg-[var(--background-soft)]">
+                <Image
+                  src={productImages[product.slug] ?? "/images/product.jpg"}
+                  alt={`${product.title} product preview`}
+                  fill
+                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.025]"
+                />
               </div>
 
-              <h3 className="text-2xl font-semibold tracking-tight text-[var(--ink)]">
-                {product.title}
-              </h3>
+              <div className="flex flex-1 flex-col p-6">
+                <div className="mb-5 flex items-center justify-between">
+                  <span className="text-xs font-semibold tracking-[0.12em] text-[var(--brand-gold-deep)]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--border-light)] bg-[var(--background-soft)] text-[var(--brand-gold-deep)]" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-[18px] w-[18px]">
+                      <rect x="4" y="5" width="16" height="14" rx="2" />
+                      <path d="M8 9h8M8 13h5" />
+                    </svg>
+                  </span>
+                </div>
 
-              <p className="mt-4 flex-1 leading-7 text-[var(--text-secondary)]">
-                {product.shortDescription}
-              </p>
+                <h3 className="text-xl font-semibold tracking-tight text-[var(--ink)]">
+                  {product.title}
+                </h3>
 
-              <div className="mt-8 border-t border-[var(--border-light)] pt-5">
-                <span className="text-sm font-medium text-[var(--brand-gold-deep)] transition-colors group-hover:text-[var(--brand-gold-hover)]">
-                  Explore product
-                </span>
+                <p className="mt-3 flex-1 text-sm leading-6 text-[var(--text-secondary)]">
+                  {product.shortDescription}
+                </p>
+
+                <div className="mt-auto border-t border-[var(--border-light)] pt-5">
+                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--brand-gold-deep)] transition-colors group-hover:text-[var(--brand-gold-hover)]">
+                    Explore product
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">
+                      <path d="M3.5 10h12m-5-5 5 5-5 5" />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </Link>
           ))}
@@ -163,7 +181,7 @@ export default function ProductsPage() {
 
       {/* Connected Technology */}
       <Section>
-        <div className="rounded-[20px] bg-[var(--background-dark)] px-6 py-12 text-white sm:px-10 lg:px-16 lg:py-16">
+        <div className="rounded-[20px] bg-[var(--background-dark)] px-6 py-6 text-white sm:px-10 sm:py-7 lg:px-16 lg:py-8">
           <div className="grid gap-10 lg:grid-cols-[1fr_0.8fr] lg:items-center">
             <div>
               <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--brand-gold-deep)]">

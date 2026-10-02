@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import Heading from "@/components/ui/Heading";
 import Section from "@/components/ui/Section";
+import { industryImages } from "@/data/catalogAssets";
 import { industries } from "@/data/industries";
 
 export const metadata: Metadata = {
@@ -34,7 +35,7 @@ export default function IndustriesPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[var(--background)] py-16 text-[var(--ink)] sm:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18 lg:py-18 md:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
+      <section className="relative overflow-hidden bg-[var(--background)] py-5 text-[var(--ink)] sm:py-6 lg:py-7">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-12 xl:gap-16">
             {/* LEFT — CONTENT */}
@@ -129,7 +130,7 @@ export default function IndustriesPage() {
       {/* Industry Areas */}
       <section
         id="industry-areas"
-        className="bg-[var(--background-soft)] py-16 sm:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18"
+        className="bg-[var(--background-soft)] py-5 sm:py-6 lg:py-7"
       >
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
@@ -152,33 +153,42 @@ export default function IndustriesPage() {
               <Link
                 key={industry.slug}
                 href={`/industries/${industry.slug}`}
-                className="group flex h-full flex-col rounded-[20px] border border-[var(--border-light)] bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--brand-gold)] hover:shadow-[0_10px_30px_rgba(17,17,17,0.06)]"
+                className="group flex h-full flex-col overflow-hidden rounded-[20px] border border-[var(--border-light)] bg-white transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--brand-gold)] hover:shadow-[0_10px_30px_rgba(17,17,17,0.06)]"
               >
-                <div className="flex items-start justify-between gap-4">
-                  <span className="text-sm font-semibold text-[var(--brand-gold-deep)]">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--background-soft)] text-[var(--brand-gold-deep)] transition-transform duration-300 group-hover:translate-x-1">
-                    →
-                  </span>
+                <div className="relative aspect-[16/9] w-full overflow-hidden bg-[var(--background-soft)]">
+                  <Image
+                    src={industryImages[industry.slug] ?? "/images/industry.png"}
+                    alt={`${industry.title} industry technology`}
+                    fill
+                    sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 25vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.025]"
+                  />
                 </div>
 
-                <h3 className="mt-8 text-2xl font-semibold tracking-tight text-[var(--ink)]">
-                  {industry.title}
-                </h3>
-
-                <p className="mt-4 text-sm leading-7 text-[var(--text-secondary)]">
-                  {industry.shortDescription}
-                </p>
-
-                <div className="mt-auto pt-8">
-                  <span className="text-sm font-semibold text-[var(--ink)] transition-colors group-hover:text-[var(--brand-gold-deep)]">
-                    Explore industry
-                    <span className="ml-2 transition-transform duration-200 group-hover:translate-x-1">
-                      →
+                <div className="flex flex-1 flex-col p-6">
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="text-xs font-semibold tracking-[0.12em] text-[var(--brand-gold-deep)]">
+                      {String(index + 1).padStart(2, "0")}
                     </span>
-                  </span>
+                    <span className="text-xs font-medium uppercase tracking-[0.12em] text-[var(--text-muted)]">Industry</span>
+                  </div>
+
+                  <h3 className="mt-4 text-xl font-semibold tracking-tight text-[var(--ink)]">
+                    {industry.title}
+                  </h3>
+
+                  <p className="mt-3 flex-1 text-sm leading-6 text-[var(--text-secondary)]">
+                    {industry.shortDescription}
+                  </p>
+
+                  <div className="mt-auto pt-6">
+                    <span className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--brand-gold-deep)] transition-colors group-hover:text-[var(--brand-gold-hover)]">
+                      Explore industry
+                      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">
+                        <path d="M3.5 10h12m-5-5 5 5-5 5" />
+                      </svg>
+                    </span>
+                  </div>
                 </div>
               </Link>
             ))}
@@ -248,7 +258,7 @@ export default function IndustriesPage() {
       </Section>
 
       {/* Cross-Industry Capabilities */}
-      <section className="bg-[var(--background)] py-16 sm:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
+      <section className="bg-[var(--background)] py-5 sm:py-6 lg:py-7">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
@@ -296,7 +306,7 @@ export default function IndustriesPage() {
 
 
       {/* Business Priorities */}
-      <section className="bg-[var(--background-soft)] py-16 sm:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
+      <section className="bg-[var(--background-soft)] py-5 sm:py-6 lg:py-7">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
@@ -375,7 +385,7 @@ export default function IndustriesPage() {
       </section>
 
       {/* Industry Technology Model */}
-      <section className="bg-[var(--background)] py-16 sm:py-14 md:py-16 lg:py-18 lg:py-16 md:py-18 lg:py-14 md:py-16 lg:py-18">
+      <section className="bg-[var(--background)] py-5 sm:py-6 lg:py-7">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-20">
             <div>
@@ -454,7 +464,7 @@ export default function IndustriesPage() {
 
       {/* CTA */}
       <section className="bg-[var(--background-soft)]">
-        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-14 md:py-16 lg:py-18 lg:px-8">
+        <div className="mx-auto max-w-7xl px-5 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-7">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
               <p className="text-sm font-medium uppercase tracking-[0.16em] text-[var(--brand-gold-deep)]">
