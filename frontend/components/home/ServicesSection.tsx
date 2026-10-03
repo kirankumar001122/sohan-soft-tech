@@ -66,7 +66,7 @@ export default function ServicesSection() {
           <Link
             key={item.title}
             href={item.href}
-            className="group flex h-full min-w-0 flex-col rounded-[var(--radius-md)] border border-[var(--border-light)] bg-white p-6 shadow-[var(--shadow-soft)] transition duration-200 hover:-translate-y-0.5 hover:border-[var(--brand-gold)] hover:shadow-[var(--shadow-card-hover)]"
+            className="group relative flex h-full min-w-0 flex-col overflow-hidden rounded-[var(--radius-lg)] border border-[var(--border-light)] bg-white p-6 shadow-[var(--shadow-soft)] transition duration-300 hover:-translate-y-1 hover:border-[var(--brand-gold)] hover:shadow-[var(--shadow-card-hover)]"
           >
             <div className="flex items-center justify-between">
               <span className="text-xs font-semibold tracking-[0.12em] text-[var(--brand-gold-deep)]">

@@ -6,7 +6,7 @@ import MobileNav from "./MobileNav";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--border-light)] bg-[var(--background)] backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-[var(--border-light)]/80 bg-[var(--background)]/90 backdrop-blur-xl">
       <Container>
         <div className="flex h-20 items-center justify-between gap-4">
           <Link

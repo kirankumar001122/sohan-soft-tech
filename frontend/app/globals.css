@@ -2,10 +2,13 @@
 
 :root {
   --brand-gold: #c58a13;
-  --brand-gold-rich: #e6a000;
+  --brand-gold-rich: #f0b429;
   --brand-gold-deep: #8c5a00;
   --brand-gold-hover: #684600;
   --brand-gold-soft: #f5ebd5;
+  --brand-ink: #101010;
+  --brand-night: #17130c;
+  --brand-glow: rgba(240, 180, 41, 0.2);
 
   --status-success: #16834a;
   --status-success-soft: #edf8f1;
@@ -171,6 +174,37 @@
 
 .section-dark p {
   color: var(--text-on-dark-muted);
+}
+
+.hero-surface {
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 78% 18%, rgba(240, 180, 41, 0.16), transparent 28rem),
+    radial-gradient(circle at 8% 80%, rgba(197, 138, 19, 0.14), transparent 24rem),
+    linear-gradient(135deg, #17130c 0%, #111111 54%, #241b0d 100%);
+}
+
+.hero-surface::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(to bottom, black, transparent 90%);
+  content: "";
+}
+
+.hero-orbit {
+  animation: orbit 12s linear infinite;
+}
+
+.hero-orbit-reverse {
+  animation: orbit 18s linear infinite reverse;
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 @media (prefers-reduced-motion: reduce) {
