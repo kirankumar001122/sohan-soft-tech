@@ -123,11 +123,11 @@ export default async function ServicePage({
   }
 
   return (
-    <main className="relative overflow-hidden bg-[radial-gradient(circle_at_86%_8%,rgba(217,149,0,0.045),transparent_28rem),radial-gradient(circle_at_8%_38%,rgba(255,255,255,0.9),transparent_25rem),var(--background-soft)]">
+    <main className="relative overflow-hidden bg-[radial-gradient(circle_at_86%_8%,rgba(139,35,70,0.045),transparent_28rem),radial-gradient(circle_at_8%_38%,rgba(255,255,255,0.9),transparent_25rem),#F4F5F7]">
 {/* =====================================================
     HERO
 ====================================================== */}
-<Section className="relative isolate overflow-hidden bg-[radial-gradient(circle_at_88%_12%,rgba(217,149,0,0.055),transparent_24rem),radial-gradient(circle_at_6%_82%,rgba(255,255,255,0.95),transparent_22rem)] text-[var(--ink)]">
+<Section className="relative isolate overflow-hidden bg-[radial-gradient(circle_at_88%_12%,rgba(139,35,70,0.055),transparent_24rem),radial-gradient(circle_at_6%_82%,rgba(255,255,255,0.95),transparent_22rem)] text-[#172033]">
   <div
     className={
       slug === "web-development" ||
@@ -199,7 +199,7 @@ export default async function ServicePage({
     {/* RIGHT IMAGE */}
     {slug === "web-development" && (
       <div className="relative mx-auto w-full max-w-[620px]">
-        <div className="overflow-hidden rounded-[28px] border border-white/90 bg-white p-2.5 shadow-[0_28px_70px_rgba(17,17,17,0.14)]">
+        <div className="overflow-hidden rounded-[28px] border border-white/90 bg-white p-2.5 shadow-[0_28px_70px_rgba(23,32,51,0.14)]">
           <div className="relative aspect-[4/3] overflow-hidden rounded-[22px]">
             <Image
               src="/images/web-development.jpg"
@@ -216,7 +216,7 @@ export default async function ServicePage({
 
     {slug === "ecommerce" && (
       <div className="relative mx-auto w-full max-w-[620px]">
-        <div className="overflow-hidden rounded-[28px] border border-white/90 bg-white p-2.5 shadow-[0_28px_70px_rgba(17,17,17,0.14)]">
+        <div className="overflow-hidden rounded-[28px] border border-white/90 bg-white p-2.5 shadow-[0_28px_70px_rgba(23,32,51,0.14)]">
           <div className="relative aspect-[4/3] overflow-hidden rounded-[22px]">
             <Image
               src="/images/ecommerce.jpg"
@@ -233,7 +233,7 @@ export default async function ServicePage({
 
     {slug === "mobile-app-development" && (
       <div className="relative mx-auto w-full max-w-[620px]">
-        <div className="overflow-hidden rounded-[28px] border border-white/90 bg-white p-2.5 shadow-[0_28px_70px_rgba(17,17,17,0.14)]">
+        <div className="overflow-hidden rounded-[28px] border border-white/90 bg-white p-2.5 shadow-[0_28px_70px_rgba(23,32,51,0.14)]">
           <div className="relative aspect-[4/3] overflow-hidden rounded-[22px]">
             <Image
               src="/images/app.jpg"
@@ -251,7 +251,7 @@ export default async function ServicePage({
 
     {slug === "ai-automation" && (
       <div className="relative mx-auto w-full max-w-[620px]">
-        <div className="overflow-hidden rounded-[28px] border border-white/90 bg-white p-2.5 shadow-[0_28px_70px_rgba(17,17,17,0.14)]">
+        <div className="overflow-hidden rounded-[28px] border border-white/90 bg-white p-2.5 shadow-[0_28px_70px_rgba(23,32,51,0.14)]">
           <div className="relative aspect-[4/3] overflow-hidden rounded-[22px]">
             <Image
               src="/images/ai.jpg"
@@ -269,7 +269,7 @@ export default async function ServicePage({
 
     {slug === "whatsapp-automation" && (
       <div className="relative mx-auto w-full max-w-[620px]">
-        <div className="overflow-hidden rounded-[28px] border border-white/90 bg-white p-2.5 shadow-[0_28px_70px_rgba(17,17,17,0.14)]">
+        <div className="overflow-hidden rounded-[28px] border border-white/90 bg-white p-2.5 shadow-[0_28px_70px_rgba(23,32,51,0.14)]">
           <div className="relative aspect-[4/3] overflow-hidden rounded-[22px]">
             <Image
               src="/images/whatsapp.jpg"
@@ -287,7 +287,7 @@ export default async function ServicePage({
 
     {slug === "digital-marketing" && (
       <div className="relative mx-auto w-full max-w-[620px]">
-        <div className="overflow-hidden rounded-[28px] border border-white/90 bg-white p-2.5 shadow-[0_28px_70px_rgba(17,17,17,0.14)]">
+        <div className="overflow-hidden rounded-[28px] border border-white/90 bg-white p-2.5 shadow-[0_28px_70px_rgba(23,32,51,0.14)]">
           <div className="relative aspect-[4/3] overflow-hidden rounded-[22px]">
             <Image
               src="/images/digital.jpg"
@@ -305,7 +305,7 @@ export default async function ServicePage({
 
     {slug === "office-it-setup" && (
       <div className="relative mx-auto w-full max-w-[620px]">
-        <div className="overflow-hidden rounded-[28px] border border-white/90 bg-white p-2.5 shadow-[0_28px_70px_rgba(17,17,17,0.14)]">
+        <div className="overflow-hidden rounded-[28px] border border-white/90 bg-white p-2.5 shadow-[0_28px_70px_rgba(23,32,51,0.14)]">
           <div className="relative aspect-[4/3] overflow-hidden rounded-[22px]">
             <Image
               src="/images/office.jpg"
@@ -323,7 +323,7 @@ export default async function ServicePage({
 
     {slug === "business-software" && (
       <div className="relative mx-auto w-full max-w-[620px]">
-        <div className="overflow-hidden rounded-[28px] border border-white/90 bg-white p-2.5 shadow-[0_28px_70px_rgba(17,17,17,0.14)]">
+        <div className="overflow-hidden rounded-[28px] border border-white/90 bg-white p-2.5 shadow-[0_28px_70px_rgba(23,32,51,0.14)]">
           <div className="relative aspect-[4/3] overflow-hidden rounded-[22px]">
             <Image
               src="/images/business.jpg"
@@ -341,7 +341,7 @@ export default async function ServicePage({
 
     {slug === "technical-services" && (
       <div className="relative mx-auto w-full max-w-[620px]">
-        <div className="overflow-hidden rounded-[28px] border border-white/90 bg-white p-2.5 shadow-[0_28px_70px_rgba(17,17,17,0.14)]">
+        <div className="overflow-hidden rounded-[28px] border border-white/90 bg-white p-2.5 shadow-[0_28px_70px_rgba(23,32,51,0.14)]">
           <div className="relative aspect-[4/3] overflow-hidden rounded-[22px]">
             <Image
               src="/images/technical.jpg"
@@ -384,7 +384,7 @@ export default async function ServicePage({
       {/* =====================================================
           SERVICE INTRODUCTION
       ====================================================== */}
-      <Section className="bg-[var(--background-soft)]">
+      <Section className="bg-[#F4F5F7]">
         <div className="max-w-3xl">
           <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
             Service Overview
@@ -403,8 +403,8 @@ export default async function ServicePage({
       {/* =====================================================
           ADDITIONAL SERVICE INFORMATION
       ====================================================== */}
-      <section className="bg-[var(--background-soft)]">
-        <div className="mx-auto max-w-7xl px-5 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-7">
+      <section className="bg-[#F4F5F7]">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-6 sm:py-24 lg:px-8">
           <div className="max-w-3xl">
             <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
               Web Solutions
@@ -448,7 +448,7 @@ export default async function ServicePage({
             ].map((item) => (
               <div
                 key={item.title}
-                className="rounded-2xl border border-white/90 bg-white p-7 shadow-[0_12px_35px_rgba(17,17,17,0.045)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(17,17,17,0.08)]"
+                className="rounded-2xl border border-white/90 bg-white p-7 shadow-[0_12px_35px_rgba(23,32,51,0.045)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(23,32,51,0.08)]"
               >
                 <h3 className="text-lg font-semibold text-[var(--ink)]">
                   {item.title}
@@ -499,7 +499,7 @@ export default async function ServicePage({
           SOLUTIONS WE BUILD
       ====================================================== */}
       <section className="bg-transparent">
-        <div className="mx-auto max-w-7xl px-5 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-7">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-6 sm:py-24 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
             <div>
               <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
@@ -571,7 +571,7 @@ export default async function ServicePage({
       {/* =====================================================
           FEATURES
       ====================================================== */}
-      <Section className="bg-[var(--background-soft)]">
+      <Section className="bg-[#F4F5F7]">
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <div>
             <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
@@ -605,8 +605,8 @@ export default async function ServicePage({
       {/* =====================================================
           BUSINESS CHALLENGES
       ====================================================== */}
-      <section className="bg-[var(--background-soft)]">
-        <div className="mx-auto max-w-7xl px-5 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-7">
+      <section className="bg-[#F4F5F7]">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-6 sm:py-24 lg:px-8">
           <div className="max-w-3xl">
             <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
               Business Challenges
@@ -652,7 +652,7 @@ export default async function ServicePage({
             ].map(([title, description]) => (
               <div
                 key={title}
-                className="rounded-2xl border border-white/90 bg-white p-7 shadow-[0_12px_35px_rgba(17,17,17,0.045)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(17,17,17,0.08)]"
+                className="rounded-2xl border border-white/90 bg-white p-7 shadow-[0_12px_35px_rgba(23,32,51,0.045)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(23,32,51,0.08)]"
               >
                 <h3 className="text-lg font-semibold text-[var(--ink)]">
                   {title}
@@ -714,7 +714,7 @@ export default async function ServicePage({
       {/* =====================================================
           TECHNOLOGY
       ====================================================== */}
-      <Section className="bg-[var(--background-soft)]">
+      <Section className="bg-[#F4F5F7]">
         <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
           <div>
             <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
@@ -749,7 +749,7 @@ export default async function ServicePage({
           WHAT YOU CAN EXPECT
       ====================================================== */}
       <section className="bg-transparent">
-        <div className="mx-auto max-w-7xl px-5 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-7">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-6 sm:py-24 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
             <div>
               <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
@@ -830,7 +830,7 @@ export default async function ServicePage({
           {service.useCases.map((useCase) => (
             <div
               key={useCase}
-              className="rounded-2xl border border-[var(--border-light)] bg-[var(--background-soft)] p-6 transition-all duration-300 hover:border-[var(--brand-gold)]"
+              className="rounded-2xl border border-[#E5E7EB] bg-[#F4F5F7] p-6 transition-all duration-300 hover:border-[#8B2346]"
             >
               <div className="h-2 w-8 rounded-full bg-[var(--brand-gold-deep)]" />
 
@@ -845,7 +845,7 @@ export default async function ServicePage({
       {/* =====================================================
           INDUSTRIES
       ====================================================== */}
-      <Section className="bg-[var(--background-soft)]">
+      <Section className="bg-[#F4F5F7]">
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
@@ -900,8 +900,8 @@ export default async function ServicePage({
       {/* =====================================================
           BUSINESS VALUE
       ====================================================== */}
-      <section className="bg-[var(--background-soft)]">
-        <div className="mx-auto max-w-7xl px-5 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-7">
+      <section className="bg-[#F4F5F7]">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-6 sm:py-24 lg:px-8">
           <div className="max-w-3xl">
             <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
               Business Value
@@ -927,7 +927,7 @@ export default async function ServicePage({
             ].map((item, index) => (
               <div
                 key={item}
-                className="rounded-2xl border border-white/90 bg-white p-6 shadow-[0_12px_35px_rgba(17,17,17,0.045)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(17,17,17,0.08)]"
+                className="rounded-2xl border border-white/90 bg-white p-6 shadow-[0_12px_35px_rgba(23,32,51,0.045)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(23,32,51,0.08)]"
               >
                 <span className="text-sm font-medium text-[var(--brand-gold-deep)]">
                   {String(index + 1).padStart(2, "0")}
@@ -945,7 +945,7 @@ export default async function ServicePage({
       {/* =====================================================
           FAQ
       ====================================================== */}
-      <Section className="bg-[var(--background-soft)]">
+      <Section className="bg-[#F4F5F7]">
         <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
           <div>
             <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--brand-gold-deep)]">
