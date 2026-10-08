@@ -1,4 +1,5 @@
 
+import { sendDemoBookingWhatsApp } from "@/lib/fast2sms-whatsapp";
 import { NextResponse } from "next/server";
 import { sendDemoBookingSms } from "@/lib/fast2sms";
 import {
@@ -279,12 +280,32 @@ export async function POST(request: Request) {
         );
       }
     }
+// Attempt WhatsApp only after Supabase confirms the booking.
+let whatsappSent = false;
 
+if (cleanPhone) {
+  try {
+    await sendDemoBookingWhatsApp({
+      name: cleanName,
+      phone: cleanPhone,
+      reference,
+      date: cleanDate,
+      time: cleanTime,
+    });
+
+    whatsappSent = true;
+  } catch (whatsappError) {
+    console.error(
+      "Demo booking WhatsApp failed:",
+      whatsappError
+    );
+  }
+}
     return NextResponse.json(
       {
         success: true,
         reference,
-        smsSent,
+        smsSent,whatsappSent,
         message: smsSent
           ? "Your booking has been saved and the SMS provider accepted the request."
           : cleanPhone
