@@ -91,7 +91,7 @@ export default function FounderSection() {
           <div className="overflow-hidden rounded-[var(--radius-lg)] border border-[var(--border-light)] bg-white p-2 shadow-[var(--shadow-soft)]">
             <div className="relative aspect-[4/5] overflow-hidden rounded-[calc(var(--radius-lg)-6px)]">
               <Image
-                src="/images/team.jpg"
+                src="/images/teaam.jpg"
                 alt="Sohan Soft Tech team collaborating on technology and digital solutions"
                 fill
                 sizes="(max-width: 1024px) 100vw, 520px"
