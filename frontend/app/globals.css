@@ -1,4 +1,4 @@
-```css
+
 @import "tailwindcss";
 
 :root {
@@ -264,4 +264,3 @@
     transition-duration: 0.01ms !important;
   }
 }
-```

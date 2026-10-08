@@ -1,4 +1,4 @@
-```tsx
+
 import Image from "next/image";
 import Link from "next/link";
 import Heading from "@/components/ui/Heading";
@@ -151,4 +151,3 @@ export default function CompanyIntro() {
     </Section>
   );
 }
-```
