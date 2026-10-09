@@ -1,5 +1,6 @@
 
 interface DemoBookingWhatsApp {
+  meetingUrl: string;
   name: string;
   phone: string;
   reference: string;
@@ -13,6 +14,7 @@ export async function sendDemoBookingWhatsApp({
   reference,
   date,
   time,
+  meetingUrl,
 }: DemoBookingWhatsApp): Promise<void> {
   const authorization =
     process.env.FAST2SMS_WHATSAPP_AUTHORIZATION?.trim();
@@ -20,11 +22,21 @@ export async function sendDemoBookingWhatsApp({
     process.env.FAST2SMS_WHATSAPP_MESSAGE_ID?.trim();
   const phoneNumberId =
     process.env.FAST2SMS_WHATSAPP_PHONE_NUMBER_ID?.trim();
-  const meetingUrl =
-    process.env.FAST2SMS_WHATSAPP_MEETING_URL?.trim();
 
-  if (!authorization || !messageId || !phoneNumberId || !meetingUrl) {
+  if (!authorization || !messageId || !phoneNumberId) {
     throw new Error("Fast2SMS WhatsApp configuration is incomplete.");
+  }
+
+  // Validate the Google Meet link before sending.
+  if (
+    !meetingUrl ||
+    !/^https:\/\/meet\.google\.com\/[a-z0-9-]+(?:\?.*)?$/i.test(
+      meetingUrl.trim()
+    )
+  ) {
+    throw new Error(
+      "A valid Google Meet link is required for the WhatsApp notification."
+    );
   }
 
   let number = phone.replace(/\D/g, "");
@@ -37,17 +49,23 @@ export async function sendDemoBookingWhatsApp({
     throw new Error("Invalid Indian mobile number for WhatsApp.");
   }
 
-  const formattedDate = new Date(`${date}T00:00:00+05:30`)
-    .toLocaleDateString("en-IN", {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-      timeZone: "Asia/Kolkata",
-    });
+  const formattedDate = new Date(
+    `${date}T00:00:00+05:30`
+  ).toLocaleDateString("en-IN", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "Asia/Kolkata",
+  });
 
-  const [hours, minutes] = time.split(":").map(Number);
+  const [startTime] = time.split("-");
+
+  if (!startTime || !/^([01]\d|2[0-3]):[0-5]\d$/.test(startTime)) {
+    throw new Error("Invalid booking time slot.");
+  }
+
   const formattedTime = new Date(
-    `2000-01-01T${time}:00+05:30`
+    `2000-01-01T${startTime}:00+05:30`
   ).toLocaleTimeString("en-IN", {
     hour: "numeric",
     minute: "2-digit",
@@ -55,14 +73,14 @@ export async function sendDemoBookingWhatsApp({
     timeZone: "Asia/Kolkata",
   });
 
-  // Keep the six values in the same order as template {{1}}–{{6}}.
+  // Must match your approved Fast2SMS template's variable order.
   const variables = [
     name,
     "Website demo",
     reference,
     formattedDate,
     formattedTime,
-    meetingUrl,
+    meetingUrl.trim(),
   ].join("|");
 
   const params = new URLSearchParams({
@@ -86,12 +104,22 @@ export async function sendDemoBookingWhatsApp({
 
   const result: unknown = await response.json().catch(() => null);
 
+  // Log provider response so we can identify delivery/API errors.
+  console.log("Fast2SMS WhatsApp HTTP status:", response.status);
+  console.log("Fast2SMS WhatsApp provider response:", result);
+
   if (!response.ok) {
-    console.error("Fast2SMS WhatsApp HTTP error:", response.status, result);
     throw new Error(
       `Fast2SMS WhatsApp request failed with HTTP ${response.status}.`
     );
   }
 
-  console.log("Fast2SMS WhatsApp provider response:", result);
+  if (
+    result !== null &&
+    typeof result === "object" &&
+    "return" in result &&
+    result.return === false
+  ) {
+    throw new Error("Fast2SMS reported that the WhatsApp request failed.");
+  }
 }
