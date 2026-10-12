@@ -7,6 +7,7 @@ import Heading from "@/components/ui/Heading";
 import Section from "@/components/ui/Section";
 import { industryImages } from "@/data/catalogAssets";
 import { getIndustryBySlug, industries } from "@/data/industries";
+import { educationErpUrl } from "@/data/navigation";
 
 interface IndustryPageProps {
   params: Promise<{
@@ -115,17 +116,29 @@ export default async function IndustryPage({
               <div className="mt-9 flex flex-wrap gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center rounded-full bg-[var(--brand-gold-deep)] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[var(--brand-gold-hover)]"
+                  className="inline-flex items-center justify-center rounded-full bg-[var(--brand-gold)] px-6 py-3 text-sm font-semibold text-[var(--ink)] shadow-[0_8px_20px_rgba(217,149,0,0.18)] transition hover:-translate-y-0.5 hover:bg-[var(--brand-gold-rich)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-gold)] focus-visible:ring-offset-2"
                 >
                   Get a Free Consultation
                 </Link>
 
                 <Link
                   href="#challenges"
-                  className="inline-flex items-center justify-center rounded-full border border-[var(--brand-gold)] bg-white px-6 py-3 text-sm font-medium text-[var(--brand-gold-deep)] transition-colors hover:bg-[var(--brand-gold-deep)] hover:text-white"
+                  className="inline-flex items-center justify-center rounded-full bg-[var(--brand-gold)] px-6 py-3 text-sm font-semibold text-[var(--ink)] shadow-[0_8px_20px_rgba(217,149,0,0.18)] transition hover:-translate-y-0.5 hover:bg-[var(--brand-gold-rich)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-gold)] focus-visible:ring-offset-2"
                 >
                   Explore Industry
                 </Link>
+
+                {slug === "education" && (
+                  <a
+                    href={educationErpUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Open Education ERP portal in a new tab"
+                    className="inline-flex items-center justify-center rounded-full bg-[var(--brand-gold)] px-6 py-3 text-sm font-semibold text-[var(--ink)] shadow-[0_8px_20px_rgba(217,149,0,0.18)] transition hover:-translate-y-0.5 hover:bg-[var(--brand-gold-rich)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-gold)] focus-visible:ring-offset-2"
+                  >
+                    Visit Education ERP
+                  </a>
+                )}
               </div>
             </div>
 

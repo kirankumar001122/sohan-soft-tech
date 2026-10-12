@@ -32,6 +32,7 @@ export interface MegaMenu {
 }
 
 export const educationErpUrl = "https://erp.sohansoft.in/";
+export const hrmsUrl = "https://hrms.sohansoft.in/";
 
 export const mainNavigation: NavigationItem[] = [
   {
@@ -463,6 +464,12 @@ export const companyMenu: MegaMenu = {
           href: "/team",
           description:
             "Meet the people behind Sohan Soft Tech.",
+        },
+        {
+          label: "HRMS",
+          href: hrmsUrl,
+          description:
+            "Open the Sohan Soft Tech human resource management portal.",
         },
       ],
     },

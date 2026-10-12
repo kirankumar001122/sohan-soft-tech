@@ -3,11 +3,7 @@
 import { useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  educationErpUrl,
-  megaMenus,
-  type MegaMenu,
-} from "@/data/navigation";
+import { megaMenus, type MegaMenu } from "@/data/navigation";
 import RequestDemoButton from "@/components/demo/RequestDemoButton";
 import NavigationThumbnail from "./NavigationThumbnail";
 
@@ -131,18 +127,8 @@ export default function DesktopNav() {
         })}
       </ul>
 
-      <a
-        href={educationErpUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Open Education ERP portal in a new tab"
-        className="ml-2 inline-flex items-center justify-center rounded-full bg-[var(--brand-gold)] px-4 py-2.5 text-[13px] font-semibold text-[var(--ink)] shadow-[0_8px_20px_rgba(217,149,0,0.18)] transition hover:-translate-y-0.5 hover:bg-[var(--brand-gold-rich)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-gold)] focus-visible:ring-offset-2"
-      >
-        Education ERP
-      </a>
-
       <RequestDemoButton
-        className="ml-3 inline-flex items-center justify-center rounded-full bg-[var(--brand-gold)] px-4 py-2.5 text-[13px] font-semibold text-[var(--ink)] shadow-[0_8px_20px_rgba(217,149,0,0.18)] transition hover:-translate-y-0.5 hover:bg-[var(--brand-gold-rich)]"
+        className="ml-2 inline-flex items-center justify-center rounded-full bg-[var(--brand-gold)] px-4 py-2.5 text-[13px] font-semibold text-[var(--ink)] shadow-[0_8px_20px_rgba(217,149,0,0.18)] transition hover:-translate-y-0.5 hover:bg-[var(--brand-gold-rich)]"
       >
         Request a Demo
       </RequestDemoButton>
@@ -180,23 +166,45 @@ export default function DesktopNav() {
                       <ul className="mt-3 space-y-1">
                         {group.items.map((subItem) => (
                           <li key={subItem.href}>
-                            <Link
-                              href={subItem.href}
-                              onClick={() => setActiveMenu(null)}
-                              className="group flex items-start gap-2.5 rounded-lg p-2 transition hover:bg-[var(--brand-gold-soft)]"
-                            >
+                            {subItem.href.startsWith("http") ? (
+                              <a
+                                href={subItem.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={() => setActiveMenu(null)}
+                                className="group flex items-start gap-2.5 rounded-lg bg-[var(--brand-gold-soft)] p-2 transition hover:bg-[var(--brand-gold)]"
+                              >
                                 <NavigationThumbnail href={subItem.href} />
-                              <span>
-                                <span className="block text-[13px] font-semibold text-[var(--ink)] group-hover:text-[var(--brand-gold-deep)]">
-                                  {subItem.label}
-                                </span>
-                                {subItem.description && (
-                                  <span className="mt-0.5 line-clamp-2 block text-[11.5px] leading-4 text-[var(--text-muted)]">
-                                    {subItem.description}
+                                <span>
+                                  <span className="block text-[13px] font-semibold text-[var(--ink)] group-hover:text-[var(--brand-gold-deep)]">
+                                    {subItem.label}
                                   </span>
-                                )}
-                              </span>
-                            </Link>
+                                  {subItem.description && (
+                                    <span className="mt-0.5 line-clamp-2 block text-[11.5px] leading-4 text-[var(--text-muted)]">
+                                      {subItem.description}
+                                    </span>
+                                  )}
+                                </span>
+                              </a>
+                            ) : (
+                              <Link
+                                href={subItem.href}
+                                onClick={() => setActiveMenu(null)}
+                                className="group flex items-start gap-2.5 rounded-lg p-2 transition hover:bg-[var(--brand-gold-soft)]"
+                              >
+                                <NavigationThumbnail href={subItem.href} />
+                                <span>
+                                  <span className="block text-[13px] font-semibold text-[var(--ink)] group-hover:text-[var(--brand-gold-deep)]">
+                                    {subItem.label}
+                                  </span>
+                                  {subItem.description && (
+                                    <span className="mt-0.5 line-clamp-2 block text-[11.5px] leading-4 text-[var(--text-muted)]">
+                                      {subItem.description}
+                                    </span>
+                                  )}
+                                </span>
+                              </Link>
+                            )}
                           </li>
                         ))}
                       </ul>
