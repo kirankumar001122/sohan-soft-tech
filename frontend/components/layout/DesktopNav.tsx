@@ -3,7 +3,11 @@
 import { useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { megaMenus, type MegaMenu } from "@/data/navigation";
+import {
+  educationErpUrl,
+  megaMenus,
+  type MegaMenu,
+} from "@/data/navigation";
 import RequestDemoButton from "@/components/demo/RequestDemoButton";
 import NavigationThumbnail from "./NavigationThumbnail";
 
@@ -126,6 +130,16 @@ export default function DesktopNav() {
           );
         })}
       </ul>
+
+      <a
+        href={educationErpUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open Education ERP portal in a new tab"
+        className="ml-2 inline-flex items-center justify-center rounded-full bg-[var(--brand-gold)] px-4 py-2.5 text-[13px] font-semibold text-[var(--ink)] shadow-[0_8px_20px_rgba(217,149,0,0.18)] transition hover:-translate-y-0.5 hover:bg-[var(--brand-gold-rich)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-gold)] focus-visible:ring-offset-2"
+      >
+        Education ERP
+      </a>
 
       <RequestDemoButton
         className="ml-3 inline-flex items-center justify-center rounded-full bg-[var(--brand-gold)] px-4 py-2.5 text-[13px] font-semibold text-[var(--ink)] shadow-[0_8px_20px_rgba(217,149,0,0.18)] transition hover:-translate-y-0.5 hover:bg-[var(--brand-gold-rich)]"

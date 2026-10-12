@@ -92,8 +92,6 @@ export async function POST(request: Request) {
       message: message?.trim() || null,
     };
 
-    console.log("Attempting Supabase insert:", enquiry);
-
     // -----------------------------
     // Insert into Supabase
     // -----------------------------
@@ -117,10 +115,7 @@ export async function POST(request: Request) {
       return NextResponse.json(
         {
           success: false,
-          message: error.message,
-          code: error.code,
-          details: error.details,
-          hint: error.hint,
+          message: "Unable to submit your enquiry right now. Please try again.",
         },
         { status: 500 }
       );
@@ -129,8 +124,6 @@ export async function POST(request: Request) {
     // -----------------------------
     // Success
     // -----------------------------
-
-    console.log("SUPABASE INSERT SUCCESS");
 
     return NextResponse.json(
       {
@@ -145,10 +138,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         success: false,
-        message:
-          error instanceof Error
-            ? error.message
-            : "Unable to process your enquiry.",
+        message: "Unable to process your enquiry right now. Please try again.",
       },
       { status: 500 }
     );

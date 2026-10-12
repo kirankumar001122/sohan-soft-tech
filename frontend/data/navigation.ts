@@ -31,6 +31,8 @@ export interface MegaMenu {
   groups: NavigationGroup[];
 }
 
+export const educationErpUrl = "https://erp.sohansoft.in/";
+
 export const mainNavigation: NavigationItem[] = [
   {
     label: "Services",
@@ -455,6 +457,12 @@ export const companyMenu: MegaMenu = {
           href: "/company/technology",
           description:
             "Explore the technologies behind our solutions.",
+        },
+        {
+          label: "Our Team",
+          href: "/team",
+          description:
+            "Meet the people behind Sohan Soft Tech.",
         },
       ],
     },

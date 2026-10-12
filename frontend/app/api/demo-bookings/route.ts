@@ -1,8 +1,5 @@
 
-import { sendDemoBookingWhatsApp } from "@/lib/fast2sms-whatsapp";
 import { NextResponse } from "next/server";
-import { sendDemoBookingSms } from "@/lib/fast2sms";
-import { createDemoMeeting } from "@/lib/google-calendar";
 import {
   createBookingDatabaseClient,
   BookingSetupError,
@@ -145,6 +142,16 @@ export async function POST(request: Request) {
   }
 
   try {
+    const [
+      { sendDemoBookingWhatsApp },
+      { sendDemoBookingSms },
+      { createDemoMeeting, sendDemoBookingEmail },
+    ] = await Promise.all([
+      import("@/lib/fast2sms-whatsapp"),
+      import("@/lib/fast2sms"),
+      import("@/lib/google-calendar"),
+    ]);
+
     const {
       name,
       email,
@@ -262,6 +269,7 @@ export async function POST(request: Request) {
     let calendarEventId: string | null = null;
     let meetingUrl = "";
     let meetingCreated = false;
+    let emailSent = false;
 
     try {
       const meeting = await createDemoMeeting({
@@ -296,6 +304,22 @@ export async function POST(request: Request) {
       }
 
       meetingCreated = true;
+
+      try {
+        await sendDemoBookingEmail({
+          name: cleanName,
+          email: cleanEmail,
+          category: cleanCategory,
+          date: cleanDate,
+          time: cleanTime,
+          reference,
+          meetingUrl,
+        });
+
+        emailSent = true;
+      } catch (error) {
+        console.error("Demo booking email failed:", error);
+      }
     } catch (error) {
       console.error(
         "Demo booking Calendar integration failed:",
@@ -339,6 +363,7 @@ export async function POST(request: Request) {
         reference,
         meetingCreated,
         meetingUrl: meetingUrl || null,
+        emailSent,
         smsSent,
         whatsappSent,
         message: meetingCreated

@@ -3,7 +3,7 @@
 import { useEffect, useId, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { megaMenus } from "@/data/navigation";
+import { educationErpUrl, megaMenus } from "@/data/navigation";
 import RequestDemoButton from "@/components/demo/RequestDemoButton";
 import NavigationThumbnail from "./NavigationThumbnail";
 
@@ -130,9 +130,20 @@ export default function MobileNav() {
               );
             })}
 
+            <a
+              href={educationErpUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open Education ERP portal in a new tab"
+              onClick={closeMenu}
+              className="mt-5 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-[var(--brand-gold)] px-6 py-3.5 text-sm font-semibold text-[var(--ink)] shadow-[0_8px_20px_rgba(217,149,0,0.18)] transition hover:-translate-y-0.5 hover:bg-[var(--brand-gold-rich)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-gold)] focus-visible:ring-offset-2"
+            >
+              Education ERP
+            </a>
+
             <RequestDemoButton
               onClick={closeMenu}
-              className="mt-5 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-[var(--brand-gold)] px-6 py-3.5 text-sm font-semibold text-[var(--ink)] transition hover:bg-[var(--brand-gold-rich)]"
+              className="mt-3 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-[var(--brand-gold)] px-6 py-3.5 text-sm font-semibold text-[var(--ink)] transition hover:bg-[var(--brand-gold-rich)]"
             >
               Request a Demo
             </RequestDemoButton>

@@ -59,6 +59,7 @@ const footerColumns = [
       { label: "Our Approach", href: "/company/approach" },
       { label: "How We Work", href: "/company/how-we-work" },
       { label: "Technology", href: "/company/technology" },
+      { label: "Our Team", href: "/team" },
       { label: "Careers", href: "/careers" },
     ],
   },
