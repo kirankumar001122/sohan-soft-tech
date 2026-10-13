@@ -1,11 +1,10 @@
+
 import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
-import WhatsAppButton from "@/components/ui/WhatsAppButton";
+import SiteChrome from "@/components/layout/SiteChrome";
 import DemoBookingProvider from "@/components/demo/DemoBookingProvider";
 import { getSiteUrl } from "@/lib/site-url";
 import "./globals.css";
-import Footer from "@/components/layout/Footer";
-import Header from "@/components/layout/Header";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -38,10 +37,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${manrope.variable}`}>
       <body>
         <DemoBookingProvider>
-          <Header />
-          {children}
-          <WhatsAppButton />
-          <Footer />
+          <SiteChrome>{children}</SiteChrome>
         </DemoBookingProvider>
       </body>
     </html>
