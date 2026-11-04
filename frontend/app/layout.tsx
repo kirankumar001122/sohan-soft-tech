@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     default: "Sohan Soft Tech",
   },
   description:
-    "Sohan Soft Tech builds technology, automation and digital solutions that help businesses operate, connect and grow.",
+    "Sohan Soft Tech creates elegant digital products, intelligent automation and connected systems that move businesses forward.",
 };
 
 export default function RootLayout({

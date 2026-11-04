@@ -31,7 +31,7 @@ export default function Section({
     <section
       id={id}
       style={style}
-      className={`py-5 sm:py-6 lg:py-7 ${tones[tone]} ${className}`}
+      className={`py-12 sm:py-16 lg:py-20 ${tones[tone]} ${className}`}
     >
       <Container className={containerClassName}>{children}</Container>
     </section>

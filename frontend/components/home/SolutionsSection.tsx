@@ -39,9 +39,9 @@ export default function SolutionsSection() {
   return (
     <Section className="bg-[var(--background)]">
       <div className="max-w-3xl">
-        <p className="text-eyebrow">Solutions by business need</p>
+        <p className="text-eyebrow">Built around your ambitions</p>
         <Heading as="h2" className="mt-4">
-          Start with the problem. Choose the solution path.
+          Clearer answers to the challenges that matter most.
         </Heading>
       </div>
       <div className="mt-12 grid gap-px overflow-hidden rounded-[28px] border border-[var(--border-light)] bg-[var(--border-light)] md:grid-cols-2 lg:grid-cols-3">

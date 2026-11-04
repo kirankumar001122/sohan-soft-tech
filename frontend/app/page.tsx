@@ -14,9 +14,9 @@ import SolutionsSection from "@/components/home/SolutionsSection";
 import WhySohanSection from "@/components/home/WhySohanSection";
 
 export const metadata: Metadata = {
-  title: "Sohan Soft Tech | Technology That Works for Your Business",
+  title: "Sohan Soft Tech | Technology That Moves Business Forward",
   description:
-    "Sohan Soft Tech builds technology, automation and digital solutions that help businesses operate, connect and grow.",
+    "Sohan Soft Tech creates elegant digital products, intelligent automation and connected systems that move businesses forward.",
   keywords: [
     "Sohan Soft Tech",
     "technology solutions",
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
     "IT services",
   ],
   openGraph: {
-    title: "Sohan Soft Tech | Technology That Works for Your Business",
+    title: "Sohan Soft Tech | Technology That Moves Business Forward",
     description:
-      "Technology, automation and digital solutions that help businesses operate, connect and grow.",
+      "Elegant digital products, intelligent automation and connected systems for ambitious businesses.",
     type: "website",
   },
 };

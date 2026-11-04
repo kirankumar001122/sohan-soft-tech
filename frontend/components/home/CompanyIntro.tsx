@@ -21,24 +21,24 @@ export default function CompanyIntro() {
           </div>
         </div>
         <div>
-          <p className="text-eyebrow">Capability</p>
+          <p className="text-eyebrow">One connected advantage</p>
           <Heading as="h2" className="mt-4 max-w-[16ch]">
-            One technology partner. Multiple ways to move forward.
+            One strategic partner. Every possibility within reach.
           </Heading>
           <p className="mt-6 max-w-xl text-base leading-8 text-[var(--text-secondary)]">
-            Sohan Soft Tech helps businesses build digital products, automate
-            workflows, modernize operations and strengthen their digital
-            presence — without assembling a separate vendor for every need.
+            Sohan Soft Tech helps ambitious businesses turn complexity into
+            momentum through digital products, intelligent automation and
+            modern operations.
           </p>
           <p className="mt-4 max-w-xl text-base leading-8 text-[var(--text-secondary)]">
-            Software, communication, infrastructure and growth services can
-            work as one connected program rather than disconnected projects.
+            From the first idea to long-term growth, every capability works
+            together as one considered, connected experience.
           </p>
           <Link
             href="/company"
             className="mt-8 inline-flex text-sm font-semibold text-[var(--brand-gold-deep)] hover:underline"
           >
-            About Sohan Soft Tech →
+            Discover our approach →
           </Link>
         </div>
       </div>

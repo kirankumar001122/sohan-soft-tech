@@ -43,9 +43,9 @@ export default function ProcessSection() {
   return (
     <Section id="how-we-work" className="bg-[var(--background)]">
       <div className="max-w-3xl">
-        <p className="text-eyebrow">How we work</p>
+        <p className="text-eyebrow">Our way forward</p>
         <Heading as="h2" className="mt-4">
-          Seven stages from first conversation to ongoing support.
+          A considered journey from first conversation to lasting impact.
         </Heading>
       </div>
       <div className="mt-12 hidden lg:grid lg:grid-cols-7">

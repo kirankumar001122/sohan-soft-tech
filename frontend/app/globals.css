@@ -117,14 +117,24 @@
     margin: 0;
     color: inherit;
     font-family: var(--font-heading);
-    font-weight: 650;
-    letter-spacing: 0;
+    font-weight: 700;
+    letter-spacing: -0.025em;
   }
 
   :focus-visible {
     outline: 2px solid var(--brand-gold);
     outline-offset: 3px;
   }
+}
+
+h1.font-semibold,
+h2.font-semibold,
+h3.font-semibold,
+h4.font-semibold,
+h5.font-semibold,
+h6.font-semibold {
+  font-weight: 700;
+  letter-spacing: -0.025em;
 }
 
 ::selection {
@@ -135,7 +145,7 @@
 .text-eyebrow {
   font-size: 0.72rem;
   line-height: 1;
-  font-weight: 650;
+  font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--brand-gold-deep);
@@ -145,8 +155,8 @@
   font-family: var(--font-heading);
   font-size: clamp(2.6rem, 6vw, 5.4rem);
   line-height: 0.98;
-  letter-spacing: 0;
-  font-weight: 650;
+  letter-spacing: -0.045em;
+  font-weight: 700;
 }
 
 .text-lead {
@@ -154,6 +164,41 @@
   font-size: clamp(1.05rem, 1.6vw, 1.25rem);
   line-height: 1.7;
   color: var(--text-secondary);
+}
+
+.hero-surface {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(245, 235, 213, 0.9), transparent 38%),
+    linear-gradient(180deg, #fffdfa 0%, var(--background) 100%);
+}
+
+.hero-surface::before {
+  position: absolute;
+  z-index: -1;
+  top: -9rem;
+  left: 50%;
+  width: 32rem;
+  height: 32rem;
+  border: 1px solid rgba(197, 138, 19, 0.12);
+  border-radius: 9999px;
+  content: "";
+  transform: translateX(-50%);
+}
+
+.lift-card {
+  transition:
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease;
+}
+
+.lift-card:hover {
+  border-color: color-mix(in srgb, var(--brand-gold) 70%, var(--border-light));
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
 }
 
 .surface-white {

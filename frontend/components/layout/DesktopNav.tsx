@@ -82,7 +82,7 @@ export default function DesktopNav() {
                   href={item.href}
                   onClick={() => setActiveMenu(null)}
                   aria-current={isActiveRoute ? "page" : undefined}
-                  className={`rounded-full px-2.5 py-2 text-[13px] font-medium transition ${
+                  className={`rounded-full px-2.5 py-2 text-sm font-medium transition ${
                     isActiveRoute
                       ? "font-semibold text-[var(--brand-gold-deep)]"
                       : "text-[var(--ink)] hover:text-[var(--brand-gold-deep)]"
@@ -128,7 +128,7 @@ export default function DesktopNav() {
       </ul>
 
       <RequestDemoButton
-        className="ml-2 inline-flex items-center justify-center rounded-full bg-[var(--brand-gold)] px-4 py-2.5 text-[13px] font-semibold text-[var(--ink)] shadow-[0_8px_20px_rgba(217,149,0,0.18)] transition hover:-translate-y-0.5 hover:bg-[var(--brand-gold-rich)]"
+        className="ml-2 inline-flex items-center justify-center rounded-full bg-[var(--brand-gold)] px-4 py-2.5 text-sm font-semibold text-[var(--ink)] shadow-[0_8px_20px_rgba(217,149,0,0.18)] transition hover:-translate-y-0.5 hover:bg-[var(--brand-gold-rich)]"
       >
         Request a Demo
       </RequestDemoButton>

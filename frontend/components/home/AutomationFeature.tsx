@@ -15,21 +15,21 @@ export default function AutomationFeature() {
       <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
         <div>
           <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--brand-gold-rich)]">
-            Visual demonstration
+            The connected business
           </p>
           <Heading as="h2" className="mt-4 text-white">
-            Make your business work smarter.
+            Let intelligent systems do more of the heavy lifting.
           </Heading>
           <p className="mt-5 max-w-xl text-base leading-8 text-white/70">
-            A conceptual workflow showing how enquiries can move through
-            automation, operations, customer messaging and reporting. This
-            is an illustrative diagram, not a live system.
+            Imagine every enquiry, interaction and insight moving through one
+            seamless operational rhythm. We design the connections that make
+            smarter work feel effortless.
           </p>
           <ul className="mt-8 space-y-3 text-sm text-white/75">
-            <li>AI-assisted workflow design</li>
+            <li>            Intelligent workflow design</li>
             <li>WhatsApp, email and SMS automation</li>
             <li>Integrations between business tools</li>
-            <li>Reporting that follows the process</li>
+            <li>            Insight that follows the journey</li>
           </ul>
         </div>
 

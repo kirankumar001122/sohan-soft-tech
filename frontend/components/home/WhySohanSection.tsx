@@ -44,14 +44,14 @@ export default function WhySohanSection() {
     <Section className="bg-[var(--background)]">
       <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
         <div>
-          <p className="text-eyebrow">Why Sohan Soft Tech</p>
+          <p className="text-eyebrow">The Sohan difference</p>
           <Heading as="h2" className="mt-4 max-w-[12ch]">
-            A partner for practical technology work.
+            Thoughtful technology. Meaningful progress.
           </Heading>
           <p className="mt-6 max-w-md text-base leading-8 text-[var(--text-secondary)]">
-            We do not publish awards, client counts or testimonials that we
-            cannot verify. The case for working with us is the way we think
-            and deliver.
+            We believe the best technology is measured by the clarity it
+            creates, the time it returns and the confidence it gives your
+            team.
           </p>
         </div>
         <div className="space-y-6">

@@ -17,14 +17,14 @@ export default function FinalCTA() {
         />
         <div className="relative max-w-3xl">
           <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/60">
-            Next step
+            Your next chapter
           </p>
           <Heading as="h2" className="mt-5 text-white">
-            Have a technology project in mind?
+            Ready to make your next move?
           </Heading>
           <p className="mt-5 max-w-xl text-base leading-8 text-white/75">
-            Tell us what your business needs. Let&apos;s explore the right
-            technology, software or automation solution together.
+            Bring us your ambition, your challenge or simply your first idea.
+            Together, we&apos;ll shape the technology that takes it further.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <RequestDemoButton
@@ -36,7 +36,7 @@ export default function FinalCTA() {
               href="/contact"
               className="inline-flex rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white"
             >
-              Talk to Us
+              Start a Conversation
             </Link>
           </div>
         </div>

@@ -12,9 +12,9 @@ export default function Heading({
   className = "",
 }: HeadingProps) {
   const styles = {
-    h1: "font-[family-name:var(--font-heading)] text-4xl font-semibold tracking-normal sm:text-5xl lg:text-6xl",
-    h2: "font-[family-name:var(--font-heading)] text-3xl font-semibold tracking-normal sm:text-4xl lg:text-[2.75rem]",
-    h3: "font-[family-name:var(--font-heading)] text-2xl font-semibold tracking-normal sm:text-3xl",
+    h1: "font-[family-name:var(--font-heading)] text-4xl font-bold tracking-[-0.035em] sm:text-5xl lg:text-6xl",
+    h2: "font-[family-name:var(--font-heading)] text-3xl font-bold tracking-[-0.03em] sm:text-4xl lg:text-[2.75rem]",
+    h3: "font-[family-name:var(--font-heading)] text-2xl font-bold tracking-[-0.025em] sm:text-3xl",
   };
 
   const Tag = as;

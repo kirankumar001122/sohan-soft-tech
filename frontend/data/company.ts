@@ -16,7 +16,7 @@ export interface CompanyApproach {
 export const companyData = {
   name: "Sohan Soft Tech",
 
-  tagline: "Build. Automate. Operate. Grow.",
+  tagline: "Imagine. Build. Elevate.",
 
   introduction:
     "Sohan Soft Tech is positioned as a technology partner for businesses looking to build, automate and improve their digital and technology operations.",

@@ -122,7 +122,7 @@ export default function ServicesEcosystem() {
             <Link
               key={service.slug}
               href={selectedGroup.href}
-              className="rounded-2xl border border-[var(--border-light)] p-4 transition hover:border-[var(--brand-gold)]"
+              className="lift-card rounded-2xl border border-[var(--border-light)] bg-[var(--background)] p-4"
             >
               <p className="font-semibold text-[var(--ink)]">{service.title}</p>
               <p className="mt-2 text-sm leading-6 text-[var(--text-secondary)]">
